@@ -1,0 +1,18 @@
+{
+  "id": "house",
+  "title": { "en": "House & Home", "et": "Kodu" },
+  "level": "A2",
+  "order": 15,
+  "sentences": [
+    { "id": "house-01", "en": "This is the kitchen.", "et": "See on köök.", "words": [{ "et": "köök", "en": "kitchen", "lemma": "köök", "pos": "noun", "ipa": "køːk" }] },
+    { "id": "house-02", "en": "This is the bedroom.", "et": "See on magamistuba.", "words": [{ "et": "magamistuba", "en": "bedroom", "lemma": "magamistuba", "pos": "noun", "ipa": "ˈmɑɡɑmisˌtubɑ" }] },
+    { "id": "house-03", "en": "This is the living room.", "et": "See on elutuba.", "words": [{ "et": "elutuba", "en": "living room", "lemma": "elutuba", "pos": "noun", "ipa": "ˈeluˌtubɑ" }] },
+    { "id": "house-04", "en": "This is the bathroom.", "et": "See on vannituba.", "words": [{ "et": "vannituba", "en": "bathroom", "lemma": "vannituba", "pos": "noun", "ipa": "ˈvɑnniˌtubɑ" }] },
+    { "id": "house-05", "en": "This is a window.", "et": "See on aken.", "words": [{ "et": "aken", "en": "window", "lemma": "aken", "pos": "noun", "ipa": "ˈɑken" }] },
+    { "id": "house-06", "en": "This is a door.", "et": "See on uks.", "words": [{ "et": "uks", "en": "door", "lemma": "uks", "pos": "noun", "ipa": "uks" }] },
+    { "id": "house-07", "en": "This is a table.", "et": "See on laud.", "words": [{ "et": "laud", "en": "table", "lemma": "laud", "pos": "noun", "ipa": "lɑut" }] },
+    { "id": "house-08", "en": "This is a chair.", "et": "See on tool.", "words": [{ "et": "tool", "en": "chair", "lemma": "tool", "pos": "noun", "ipa": "toːl" }] },
+    { "id": "house-09", "en": "This is a bed.", "et": "See on voodi.", "words": [{ "et": "voodi", "en": "bed", "lemma": "voodi", "pos": "noun", "ipa": "ˈvoːdi" }] },
+    { "id": "house-10", "en": "This is a sofa.", "et": "See on diivan.", "words": [{ "et": "diivan", "en": "sofa", "lemma": "diivan", "pos": "noun", "ipa": "ˈdiːvɑn" }] }
+  ]
+}

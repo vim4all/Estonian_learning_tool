@@ -1,0 +1,18 @@
+{
+  "id": "travel",
+  "title": { "en": "Travel & Transportation", "et": "Reisimine ja transport" },
+  "level": "A2",
+  "order": 23,
+  "sentences": [
+    { "id": "travel-01", "en": "This is a bus.", "et": "See on buss.", "words": [{ "et": "buss", "en": "bus", "lemma": "buss", "pos": "noun", "ipa": "busː" }] },
+    { "id": "travel-02", "en": "This is a train.", "et": "See on rong.", "words": [{ "et": "rong", "en": "train", "lemma": "rong", "pos": "noun", "ipa": "roŋɡ" }] },
+    { "id": "travel-03", "en": "This is a car.", "et": "See on auto.", "words": [{ "et": "auto", "en": "car", "lemma": "auto", "pos": "noun", "ipa": "ˈɑuto" }] },
+    { "id": "travel-04", "en": "This is an airplane.", "et": "See on lennuk.", "words": [{ "et": "lennuk", "en": "airplane", "lemma": "lennuk", "pos": "noun", "ipa": "ˈlennuk" }] },
+    { "id": "travel-05", "en": "This is a ship.", "et": "See on laev.", "words": [{ "et": "laev", "en": "ship", "lemma": "laev", "pos": "noun", "ipa": "lɑev" }] },
+    { "id": "travel-06", "en": "This is a bicycle.", "et": "See on jalgratas.", "words": [{ "et": "jalgratas", "en": "bicycle", "lemma": "jalgratas", "pos": "noun", "ipa": "ˈjɑlɡˌrɑtɑs" }] },
+    { "id": "travel-07", "en": "I am going by bus.", "et": "Ma sõidan bussiga.", "words": [{ "et": "bussiga", "en": "by bus", "lemma": "buss", "pos": "noun", "ipa": "ˈbussiɡɑ" }] },
+    { "id": "travel-08", "en": "I am flying to Estonia.", "et": "Ma lendan Eestisse.", "words": [{ "et": "lendan", "en": "am flying", "lemma": "lendama", "pos": "verb", "ipa": "ˈlendɑn" }] },
+    { "id": "travel-09", "en": "Where is the train station?", "et": "Kus on rongijaam?", "words": [{ "et": "rongijaam", "en": "train station", "lemma": "rongijaam", "pos": "noun", "ipa": "ˈroŋɡiˌjɑːm" }] },
+    { "id": "travel-10", "en": "I want to travel to Estonia.", "et": "Ma tahan reisida Eestisse.", "words": [{ "et": "Eestisse", "en": "to Estonia", "lemma": "Eesti", "pos": "proper noun", "ipa": "ˈeːstisse" }] }
+  ]
+}

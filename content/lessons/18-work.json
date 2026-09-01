@@ -1,0 +1,18 @@
+{
+  "id": "work",
+  "title": { "en": "Work & Professions", "et": "Töö ja ametid" },
+  "level": "A2",
+  "order": 18,
+  "sentences": [
+    { "id": "work-01", "en": "I am a teacher.", "et": "Ma olen õpetaja.", "words": [{ "et": "õpetaja", "en": "teacher", "lemma": "õpetaja", "pos": "noun", "ipa": "ˈɤpetɑjɑ" }] },
+    { "id": "work-02", "en": "I am a doctor.", "et": "Ma olen arst.", "words": [{ "et": "arst", "en": "doctor", "lemma": "arst", "pos": "noun", "ipa": "ɑrst" }] },
+    { "id": "work-03", "en": "I am an engineer.", "et": "Ma olen insener.", "words": [{ "et": "insener", "en": "engineer", "lemma": "insener", "pos": "noun", "ipa": "ˈinsener" }] },
+    { "id": "work-04", "en": "I am a cook.", "et": "Ma olen kokk.", "words": [{ "et": "kokk", "en": "cook", "lemma": "kokk", "pos": "noun", "ipa": "kokː" }] },
+    { "id": "work-05", "en": "I am a salesperson.", "et": "Ma olen müüja.", "words": [{ "et": "müüja", "en": "salesperson", "lemma": "müüja", "pos": "noun", "ipa": "ˈmyːjɑ" }] },
+    { "id": "work-06", "en": "I am a hairdresser.", "et": "Ma olen juuksur.", "words": [{ "et": "juuksur", "en": "hairdresser", "lemma": "juuksur", "pos": "noun", "ipa": "ˈjuːksur" }] },
+    { "id": "work-07", "en": "I am a lawyer.", "et": "Ma olen advokaat.", "words": [{ "et": "advokaat", "en": "lawyer", "lemma": "advokaat", "pos": "noun", "ipa": "ˈɑdvokɑːt" }] },
+    { "id": "work-08", "en": "I am a programmer.", "et": "Ma olen programmeerija.", "words": [{ "et": "programmeerija", "en": "programmer", "lemma": "programmeerija", "pos": "noun", "ipa": "proɡrɑmˈmeːrijɑ" }] },
+    { "id": "work-09", "en": "Where do you work?", "et": "Kus sa töötad?", "words": [{ "et": "töötad", "en": "work", "lemma": "töötama", "pos": "verb", "ipa": "ˈtøːtɑt" }] },
+    { "id": "work-10", "en": "I work in an office.", "et": "Ma töötan kontoris.", "words": [{ "et": "kontoris", "en": "in an office", "lemma": "kontor", "pos": "noun", "ipa": "ˈkontoris" }] }
+  ]
+}

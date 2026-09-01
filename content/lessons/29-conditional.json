@@ -1,0 +1,18 @@
+{
+  "id": "conditional",
+  "title": { "en": "Conditional Mood", "et": "Tingiv kõneviis" },
+  "level": "B1",
+  "order": 29,
+  "sentences": [
+    { "id": "conditional-01", "en": "If I had time, I would travel.", "et": "Kui mul oleks aega, ma reisiksin.", "notes": "Conditional mood adds \"-ksi(n)\" to the verb stem: reisima → reisiksin.", "words": [{ "et": "oleks", "en": "would be / had", "lemma": "olema", "pos": "verb", "ipa": "ˈolek" }, { "et": "reisiksin", "en": "would travel", "lemma": "reisima", "pos": "verb", "ipa": "ˈreisiksin" }] },
+    { "id": "conditional-02", "en": "I would like a coffee.", "et": "Ma tahaksin kohvi.", "words": [{ "et": "tahaksin", "en": "would like/want", "lemma": "tahtma", "pos": "verb", "ipa": "ˈtɑhɑksin" }] },
+    { "id": "conditional-03", "en": "I would go with you.", "et": "Ma läheksin sinuga.", "words": [{ "et": "läheksin", "en": "would go", "lemma": "minema", "pos": "verb", "ipa": "ˈlæheksin" }] },
+    { "id": "conditional-04", "en": "I would do it differently.", "et": "Ma teeksin seda teisiti.", "words": [{ "et": "teeksin", "en": "would do", "lemma": "tegema", "pos": "verb", "ipa": "ˈteːksin" }, { "et": "teisiti", "en": "differently", "lemma": "teisiti", "pos": "adverb", "ipa": "ˈteisiti" }] },
+    { "id": "conditional-05", "en": "If I were you, I would rest.", "et": "Kui ma oleksin sina, ma puhkaksin.", "words": [{ "et": "oleksin", "en": "would be", "lemma": "olema", "pos": "verb", "ipa": "ˈoleksin" }, { "et": "puhkaksin", "en": "would rest", "lemma": "puhkama", "pos": "verb", "ipa": "ˈpuhkɑksin" }] },
+    { "id": "conditional-06", "en": "That would be nice.", "et": "See oleks tore.", "words": [{ "et": "tore", "en": "nice", "lemma": "tore", "pos": "adjective", "ipa": "ˈtore" }] },
+    { "id": "conditional-07", "en": "I could help you.", "et": "Ma saaksin sind aidata.", "words": [{ "et": "saaksin", "en": "could / would be able to", "lemma": "saama", "pos": "verb", "ipa": "ˈsɑːksin" }] },
+    { "id": "conditional-08", "en": "Would you like some tea?", "et": "Kas sa tahaksid teed?", "words": [{ "et": "tahaksid", "en": "would like/want", "lemma": "tahtma", "pos": "verb", "ipa": "ˈtɑhɑksit" }] },
+    { "id": "conditional-09", "en": "I wouldn't know.", "et": "Ma ei teaks.", "words": [{ "et": "teaks", "en": "would know", "lemma": "teadma", "pos": "verb", "ipa": "teɑks" }] },
+    { "id": "conditional-10", "en": "It would be good to meet.", "et": "Oleks hea kohtuda.", "words": [{ "et": "kohtuda", "en": "to meet", "lemma": "kohtuma", "pos": "verb", "ipa": "ˈkohtudɑ" }] }
+  ]
+}

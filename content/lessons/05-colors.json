@@ -1,0 +1,18 @@
+{
+  "id": "colors",
+  "title": { "en": "Colors", "et": "Värvid" },
+  "level": "A1",
+  "order": 6,
+  "sentences": [
+    { "id": "colors-01", "en": "The sky is blue.", "et": "Taevas on sinine.", "words": [{ "et": "sinine", "en": "blue", "lemma": "sinine", "pos": "adjective", "ipa": "ˈsinine" }] },
+    { "id": "colors-02", "en": "The grass is green.", "et": "Rohi on roheline.", "words": [{ "et": "roheline", "en": "green", "lemma": "roheline", "pos": "adjective", "ipa": "ˈrohelinɛ" }] },
+    { "id": "colors-03", "en": "The sun is yellow.", "et": "Päike on kollane.", "words": [{ "et": "kollane", "en": "yellow", "lemma": "kollane", "pos": "adjective", "ipa": "ˈkollɑne" }] },
+    { "id": "colors-04", "en": "Snow is white.", "et": "Lumi on valge.", "words": [{ "et": "valge", "en": "white", "lemma": "valge", "pos": "adjective", "ipa": "ˈvɑlge" }] },
+    { "id": "colors-05", "en": "The apple is red.", "et": "Õun on punane.", "words": [{ "et": "punane", "en": "red", "lemma": "punane", "pos": "adjective", "ipa": "ˈpunɑne" }] },
+    { "id": "colors-06", "en": "The night is black.", "et": "Öö on must.", "words": [{ "et": "must", "en": "black", "lemma": "must", "pos": "adjective", "ipa": "must" }] },
+    { "id": "colors-07", "en": "The sky is gray today.", "et": "Taevas on täna hall.", "words": [{ "et": "hall", "en": "gray", "lemma": "hall", "pos": "adjective", "ipa": "hɑlː" }] },
+    { "id": "colors-08", "en": "The bear is brown.", "et": "Karu on pruun.", "words": [{ "et": "pruun", "en": "brown", "lemma": "pruun", "pos": "adjective", "ipa": "pruːn" }] },
+    { "id": "colors-09", "en": "The flower is pink.", "et": "Lill on roosa.", "words": [{ "et": "roosa", "en": "pink", "lemma": "roosa", "pos": "adjective", "ipa": "ˈroːsɑ" }] },
+    { "id": "colors-10", "en": "The orange is orange.", "et": "Apelsin on oranž.", "words": [{ "et": "apelsin", "en": "orange (fruit)", "lemma": "apelsin", "pos": "noun", "ipa": "ˈɑpelsin" }, { "et": "oranž", "en": "orange (color)", "lemma": "oranž", "pos": "adjective", "ipa": "oˈrɑnʒ" }] }
+  ]
+}

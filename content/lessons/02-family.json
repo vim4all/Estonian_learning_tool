@@ -1,0 +1,24 @@
+{
+  "id": "family",
+  "title": { "en": "Family", "et": "Perekond" },
+  "level": "A1",
+  "order": 5,
+  "sentences": [
+    { "id": "family-01", "en": "This is my mother.", "et": "See on minu ema.", "words": [{ "et": "ema", "en": "mother", "lemma": "ema", "pos": "noun", "ipa": "ˈemɑ" }] },
+    { "id": "family-02", "en": "This is my father.", "et": "See on minu isa.", "words": [{ "et": "isa", "en": "father", "lemma": "isa", "pos": "noun", "ipa": "ˈisɑ" }] },
+    { "id": "family-03", "en": "I have a sister.", "et": "Mul on õde.", "words": [{ "et": "õde", "en": "sister", "lemma": "õde", "pos": "noun", "ipa": "ˈɤde" }] },
+    { "id": "family-04", "en": "I have a brother.", "et": "Mul on vend.", "words": [{ "et": "vend", "en": "brother", "lemma": "vend", "pos": "noun", "ipa": "vend" }] },
+    { "id": "family-05", "en": "This is my grandmother.", "et": "See on minu vanaema.", "words": [{ "et": "vanaema", "en": "grandmother", "lemma": "vanaema", "pos": "noun", "ipa": "ˈvɑnɑˌemɑ" }] },
+    { "id": "family-06", "en": "This is my grandfather.", "et": "See on minu vanaisa.", "words": [{ "et": "vanaisa", "en": "grandfather", "lemma": "vanaisa", "pos": "noun", "ipa": "ˈvɑnɑˌisɑ" }] },
+    { "id": "family-07", "en": "I have a son.", "et": "Mul on poeg.", "words": [{ "et": "poeg", "en": "son", "lemma": "poeg", "pos": "noun", "ipa": "poeɡ" }] },
+    { "id": "family-08", "en": "I have a daughter.", "et": "Mul on tütar.", "words": [{ "et": "tütar", "en": "daughter", "lemma": "tütar", "pos": "noun", "ipa": "ˈtytɑr" }] },
+    {
+      "id": "family-09",
+      "en": "This is my wife.",
+      "et": "See on minu naine.",
+      "notes": "\"naine\" means both \"woman\" and \"wife\", same as \"mees\" below for \"man\"/\"husband\".",
+      "words": [{ "et": "naine", "en": "wife / woman", "lemma": "naine", "pos": "noun", "ipa": "ˈnɑine" }]
+    },
+    { "id": "family-10", "en": "This is my husband.", "et": "See on minu mees.", "words": [{ "et": "mees", "en": "husband / man", "lemma": "mees", "pos": "noun", "ipa": "meːs" }] }
+  ]
+}

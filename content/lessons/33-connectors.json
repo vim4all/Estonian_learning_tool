@@ -1,0 +1,18 @@
+{
+  "id": "connectors",
+  "title": { "en": "Connecting Ideas", "et": "Sidesõnad" },
+  "level": "B1",
+  "order": 33,
+  "sentences": [
+    { "id": "connectors-01", "en": "I like tea, but I like coffee more.", "et": "Mulle meeldib tee, aga kohv meeldib rohkem.", "words": [{ "et": "aga", "en": "but", "lemma": "aga", "pos": "conjunction", "ipa": "ˈɑɡɑ" }] },
+    { "id": "connectors-02", "en": "It is cold, but the sun is shining.", "et": "On külm, aga päike paistab.", "words": [{ "et": "aga", "en": "but", "lemma": "aga", "pos": "conjunction", "ipa": "ˈɑɡɑ" }] },
+    { "id": "connectors-03", "en": "He is tired, yet he is working.", "et": "Ta on väsinud, kuid ta töötab.", "notes": "\"kuid\" is a more formal/written synonym of \"aga\".", "words": [{ "et": "kuid", "en": "but / yet", "lemma": "kuid", "pos": "conjunction", "ipa": "kuit" }] },
+    { "id": "connectors-04", "en": "I studied a lot, therefore I passed the exam.", "et": "Ma õppisin palju, seega ma sooritasin eksami.", "words": [{ "et": "seega", "en": "therefore", "lemma": "seega", "pos": "conjunction", "ipa": "ˈseːɡɑ" }, { "et": "sooritasin", "en": "passed", "lemma": "sooritama", "pos": "verb", "ipa": "ˈsoːritɑsin" }] },
+    { "id": "connectors-05", "en": "Although it is raining, I am going outside.", "et": "Kuigi sajab vihma, ma lähen välja.", "words": [{ "et": "kuigi", "en": "although", "lemma": "kuigi", "pos": "conjunction", "ipa": "ˈkuiɡi" }] },
+    { "id": "connectors-06", "en": "I like him, although he is sometimes strange.", "et": "Mulle meeldib tema, kuigi ta on vahel imelik.", "words": [{ "et": "vahel", "en": "sometimes", "lemma": "vahel", "pos": "adverb", "ipa": "ˈvɑhel" }, { "et": "imelik", "en": "strange", "lemma": "imelik", "pos": "adjective", "ipa": "ˈimelik" }] },
+    { "id": "connectors-07", "en": "First I eat, and then I work.", "et": "Kõigepealt ma söön ja siis ma töötan.", "words": [{ "et": "kõigepealt", "en": "first of all", "lemma": "kõigepealt", "pos": "adverb", "ipa": "ˈkɤiɡepeɑlt" }, { "et": "siis", "en": "then", "lemma": "siis", "pos": "adverb", "ipa": "siːs" }] },
+    { "id": "connectors-08", "en": "It is cold and windy.", "et": "On külm ja tuuline.", "words": [{ "et": "ja", "en": "and", "lemma": "ja", "pos": "conjunction", "ipa": "jɑ" }] },
+    { "id": "connectors-09", "en": "I want to travel, but I don't have money.", "et": "Ma tahan reisida, aga mul ei ole raha.", "words": [{ "et": "aga", "en": "but", "lemma": "aga", "pos": "conjunction", "ipa": "ˈɑɡɑ" }] },
+    { "id": "connectors-10", "en": "Despite the rain, we went for a walk.", "et": "Vaatamata vihmale, me läksime jalutama.", "notes": "\"vaatamata\" (\"despite\") takes the allative case.", "words": [{ "et": "vaatamata", "en": "despite", "lemma": "vaatamata", "pos": "adposition", "ipa": "ˈvɑːtɑmɑtɑ" }] }
+  ]
+}

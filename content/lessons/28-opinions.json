@@ -1,0 +1,18 @@
+{
+  "id": "opinions",
+  "title": { "en": "Opinions & Preferences", "et": "Arvamused ja eelistused" },
+  "level": "B1",
+  "order": 28,
+  "sentences": [
+    { "id": "opinions-01", "en": "In my opinion, this is a good idea.", "et": "Minu arvates on see hea mõte.", "words": [{ "et": "minu arvates", "en": "in my opinion", "lemma": "arvates", "pos": "adverb", "ipa": "ˈminu ˈɑrvɑtes" }, { "et": "mõte", "en": "idea / thought", "lemma": "mõte", "pos": "noun", "ipa": "ˈmɤte" }] },
+    { "id": "opinions-02", "en": "I think that Estonian is not difficult.", "et": "Ma arvan, et eesti keel ei ole raske.", "words": [{ "et": "arvan", "en": "think", "lemma": "arvama", "pos": "verb", "ipa": "ˈɑrvɑn" }, { "et": "raske", "en": "difficult", "lemma": "raske", "pos": "adjective", "ipa": "ˈrɑske" }] },
+    { "id": "opinions-03", "en": "I think that this is correct.", "et": "Ma arvan, et see on õige.", "words": [{ "et": "õige", "en": "correct / right", "lemma": "õige", "pos": "adjective", "ipa": "ˈɤiɡe" }] },
+    { "id": "opinions-04", "en": "It seems to me that it will rain.", "et": "Mulle tundub, et hakkab sadama.", "words": [{ "et": "tundub", "en": "seems", "lemma": "tunduma", "pos": "verb", "ipa": "ˈtundup" }] },
+    { "id": "opinions-05", "en": "I prefer tea to coffee.", "et": "Ma eelistan teed kohvile.", "notes": "\"eelistama\" (\"to prefer\") takes a partitive object and an allative \"to\": teed (tea, partitive) kohvile (to coffee, allative).", "words": [{ "et": "eelistan", "en": "prefer", "lemma": "eelistama", "pos": "verb", "ipa": "ˈeːlistɑn" }] },
+    { "id": "opinions-06", "en": "In my opinion, this book is interesting.", "et": "Minu arvates on see raamat huvitav.", "words": [{ "et": "huvitav", "en": "interesting", "lemma": "huvitav", "pos": "adjective", "ipa": "ˈhuvitɑv" }] },
+    { "id": "opinions-07", "en": "I don't think so.", "et": "Ma ei arva nii.", "words": [{ "et": "nii", "en": "so / like that", "lemma": "nii", "pos": "adverb", "ipa": "niː" }] },
+    { "id": "opinions-08", "en": "What do you think?", "et": "Mida sa arvad?", "words": [{ "et": "mida", "en": "what (partitive)", "lemma": "mis", "pos": "pronoun", "ipa": "ˈmidɑ" }] },
+    { "id": "opinions-09", "en": "I agree.", "et": "Ma olen nõus.", "words": [{ "et": "nõus", "en": "in agreement", "lemma": "nõus", "pos": "adjective", "ipa": "nɤus" }] },
+    { "id": "opinions-10", "en": "I disagree.", "et": "Ma ei ole nõus.", "words": [{ "et": "nõus", "en": "in agreement", "lemma": "nõus", "pos": "adjective", "ipa": "nɤus" }] }
+  ]
+}

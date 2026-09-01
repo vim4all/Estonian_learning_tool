@@ -1,0 +1,18 @@
+{
+  "id": "hobbies",
+  "title": { "en": "Hobbies & Free Time", "et": "Hobid ja vaba aeg" },
+  "level": "A2",
+  "order": 17,
+  "sentences": [
+    { "id": "hobbies-01", "en": "I like to read.", "et": "Mulle meeldib lugeda.", "words": [{ "et": "lugeda", "en": "to read", "lemma": "lugema", "pos": "verb", "ipa": "ˈluɡedɑ" }] },
+    { "id": "hobbies-02", "en": "I like to swim.", "et": "Mulle meeldib ujuda.", "words": [{ "et": "ujuda", "en": "to swim", "lemma": "ujuma", "pos": "verb", "ipa": "ˈujudɑ" }] },
+    { "id": "hobbies-03", "en": "I like to dance.", "et": "Mulle meeldib tantsida.", "words": [{ "et": "tantsida", "en": "to dance", "lemma": "tantsima", "pos": "verb", "ipa": "ˈtɑntsidɑ" }] },
+    { "id": "hobbies-04", "en": "I like to sing.", "et": "Mulle meeldib laulda.", "words": [{ "et": "laulda", "en": "to sing", "lemma": "laulma", "pos": "verb", "ipa": "ˈlɑuldɑ" }] },
+    { "id": "hobbies-05", "en": "I like to cook.", "et": "Mulle meeldib süüa valmistada.", "notes": "Literally \"to prepare food\" — the standard way to say \"to cook\".", "words": [{ "et": "valmistada", "en": "to prepare", "lemma": "valmistama", "pos": "verb", "ipa": "ˈvɑlmistɑdɑ" }] },
+    { "id": "hobbies-06", "en": "I like to travel.", "et": "Mulle meeldib reisida.", "words": [{ "et": "reisida", "en": "to travel", "lemma": "reisima", "pos": "verb", "ipa": "ˈreisidɑ" }] },
+    { "id": "hobbies-07", "en": "I like to play football.", "et": "Mulle meeldib jalgpalli mängida.", "words": [{ "et": "mängida", "en": "to play", "lemma": "mängima", "pos": "verb", "ipa": "ˈmæŋɡidɑ" }] },
+    { "id": "hobbies-08", "en": "I like to listen to music.", "et": "Mulle meeldib muusikat kuulata.", "words": [{ "et": "kuulata", "en": "to listen", "lemma": "kuulama", "pos": "verb", "ipa": "ˈkuːlɑtɑ" }] },
+    { "id": "hobbies-09", "en": "I like to draw.", "et": "Mulle meeldib joonistada.", "words": [{ "et": "joonistada", "en": "to draw", "lemma": "joonistama", "pos": "verb", "ipa": "ˈjoːnistɑdɑ" }] },
+    { "id": "hobbies-10", "en": "What do you like to do?", "et": "Mis sulle meeldib teha?", "words": [{ "et": "teha", "en": "to do", "lemma": "tegema", "pos": "verb", "ipa": "ˈtehɑ" }] }
+  ]
+}

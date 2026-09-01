@@ -1,0 +1,18 @@
+{
+  "id": "pronouns",
+  "title": { "en": "Personal Pronouns", "et": "Isikulised asesõnad" },
+  "level": "A0",
+  "order": 2,
+  "sentences": [
+    { "id": "pronouns-01", "en": "I", "et": "Mina", "words": [{ "et": "mina", "en": "I", "lemma": "mina", "pos": "pronoun", "ipa": "ˈminɑ" }] },
+    { "id": "pronouns-02", "en": "You (informal)", "et": "Sina", "words": [{ "et": "sina", "en": "you", "lemma": "sina", "pos": "pronoun", "ipa": "ˈsinɑ" }] },
+    { "id": "pronouns-03", "en": "He / She", "et": "Tema", "notes": "Estonian has no grammatical gender — \"tema\" covers both \"he\" and \"she\".", "words": [{ "et": "tema", "en": "he / she", "lemma": "tema", "pos": "pronoun", "ipa": "ˈtemɑ" }] },
+    { "id": "pronouns-04", "en": "We", "et": "Meie", "words": [{ "et": "meie", "en": "we", "lemma": "meie", "pos": "pronoun", "ipa": "ˈmeie" }] },
+    { "id": "pronouns-05", "en": "You (plural / formal)", "et": "Teie", "words": [{ "et": "teie", "en": "you (plural)", "lemma": "teie", "pos": "pronoun", "ipa": "ˈteie" }] },
+    { "id": "pronouns-06", "en": "They", "et": "Nemad", "words": [{ "et": "nemad", "en": "they", "lemma": "nemad", "pos": "pronoun", "ipa": "ˈnemɑt" }] },
+    { "id": "pronouns-07", "en": "I am here.", "et": "Mina olen siin.", "words": [{ "et": "olen", "en": "am", "lemma": "olema", "pos": "verb", "ipa": "ˈolen" }] },
+    { "id": "pronouns-08", "en": "You are here.", "et": "Sina oled siin.", "words": [{ "et": "oled", "en": "are", "lemma": "olema", "pos": "verb", "ipa": "ˈolet" }] },
+    { "id": "pronouns-09", "en": "He is here.", "et": "Tema on siin.", "words": [{ "et": "on", "en": "is", "lemma": "olema", "pos": "verb", "ipa": "on" }] },
+    { "id": "pronouns-10", "en": "We are here.", "et": "Meie oleme siin.", "words": [{ "et": "oleme", "en": "are", "lemma": "olema", "pos": "verb", "ipa": "ˈoleme" }] }
+  ]
+}

@@ -1,0 +1,18 @@
+{
+  "id": "places",
+  "title": { "en": "Places in Town", "et": "Kohad linnas" },
+  "level": "A1",
+  "order": 9,
+  "sentences": [
+    { "id": "places-01", "en": "This is a shop.", "et": "See on pood.", "words": [{ "et": "pood", "en": "shop", "lemma": "pood", "pos": "noun", "ipa": "poːt" }] },
+    { "id": "places-02", "en": "This is a school.", "et": "See on kool.", "words": [{ "et": "kool", "en": "school", "lemma": "kool", "pos": "noun", "ipa": "koːl" }] },
+    { "id": "places-03", "en": "This is a hospital.", "et": "See on haigla.", "words": [{ "et": "haigla", "en": "hospital", "lemma": "haigla", "pos": "noun", "ipa": "ˈhɑiɡlɑ" }] },
+    { "id": "places-04", "en": "This is a church.", "et": "See on kirik.", "words": [{ "et": "kirik", "en": "church", "lemma": "kirik", "pos": "noun", "ipa": "ˈkirik" }] },
+    { "id": "places-05", "en": "This is a park.", "et": "See on park.", "words": [{ "et": "park", "en": "park", "lemma": "park", "pos": "noun", "ipa": "pɑrk" }] },
+    { "id": "places-06", "en": "This is a train station.", "et": "See on jaam.", "words": [{ "et": "jaam", "en": "station", "lemma": "jaam", "pos": "noun", "ipa": "jɑːm" }] },
+    { "id": "places-07", "en": "This is a library.", "et": "See on raamatukogu.", "words": [{ "et": "raamatukogu", "en": "library", "lemma": "raamatukogu", "pos": "noun", "ipa": "ˈrɑːmɑtuˌkoɡu" }] },
+    { "id": "places-08", "en": "This is a market.", "et": "See on turg.", "words": [{ "et": "turg", "en": "market", "lemma": "turg", "pos": "noun", "ipa": "turɡ" }] },
+    { "id": "places-09", "en": "This is a museum.", "et": "See on muuseum.", "words": [{ "et": "muuseum", "en": "museum", "lemma": "muuseum", "pos": "noun", "ipa": "ˈmuːseum" }] },
+    { "id": "places-10", "en": "This is a restaurant.", "et": "See on restoran.", "words": [{ "et": "restoran", "en": "restaurant", "lemma": "restoran", "pos": "noun", "ipa": "ˈrestorɑn" }] }
+  ]
+}

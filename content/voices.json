@@ -1,0 +1,4 @@
+{
+  "en": { "engine": "edge", "voice": "en-US-AriaNeural" },
+  "et": { "engine": "tartunlp", "speaker": "mari", "speed": 1 }
+}

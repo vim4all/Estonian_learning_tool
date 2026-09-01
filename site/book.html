@@ -1,0 +1,52 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>EstLrn — Book Reader</title>
+  <link rel="stylesheet" href="css/style.css" />
+</head>
+<body>
+  <header class="app-header">
+    <h1>EstLrn</h1>
+    <p class="subtitle">Parallel-text reading, English ↔ Estonian</p>
+    <nav class="mode-nav">
+      <a class="mode-link" href="index.html">Lessons</a>
+      <a class="mode-link active" href="book.html">Book</a>
+    </nav>
+  </header>
+
+  <main class="book-main">
+    <section id="book-picker" class="lesson-picker">
+      <label for="book-select">Book</label>
+      <select id="book-select"></select>
+      <label for="chapter-select">Chapter</label>
+      <select id="chapter-select"></select>
+    </section>
+
+    <section id="book-reader" class="book-reader" hidden>
+      <div class="book-meta">
+        <h2 id="chapter-title-en"></h2>
+        <p id="chapter-title-et" class="chapter-title-et"></p>
+        <p id="book-author" class="book-author"></p>
+      </div>
+
+      <div class="reader-controls">
+        <button id="play-chapter-btn">▶ Play chapter</button>
+        <button id="stop-btn" aria-label="Stop playback">■ Stop</button>
+        <label class="toggle">
+          <input type="checkbox" id="hide-en-toggle" />
+          Hide English (immersion mode)
+        </label>
+        <audio id="chapter-audio-el"></audio>
+      </div>
+
+      <div id="paragraphs" class="paragraphs"></div>
+    </section>
+  </main>
+
+  <audio id="clip-audio-el"></audio>
+
+  <script src="js/book.js"></script>
+</body>
+</html>

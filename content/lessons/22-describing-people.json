@@ -1,0 +1,18 @@
+{
+  "id": "describing-people",
+  "title": { "en": "Describing People", "et": "Inimeste kirjeldamine" },
+  "level": "A2",
+  "order": 22,
+  "sentences": [
+    { "id": "describing-people-01", "en": "He is tall.", "et": "Tema on pikk.", "words": [{ "et": "pikk", "en": "tall", "lemma": "pikk", "pos": "adjective", "ipa": "pikː" }] },
+    { "id": "describing-people-02", "en": "She is short.", "et": "Tema on lühike.", "words": [{ "et": "lühike", "en": "short", "lemma": "lühike", "pos": "adjective", "ipa": "ˈlyhike" }] },
+    { "id": "describing-people-03", "en": "I am young.", "et": "Ma olen noor.", "words": [{ "et": "noor", "en": "young", "lemma": "noor", "pos": "adjective", "ipa": "noːr" }] },
+    { "id": "describing-people-04", "en": "My grandfather is old.", "et": "Minu vanaisa on vana.", "words": [{ "et": "vana", "en": "old", "lemma": "vana", "pos": "adjective", "ipa": "ˈvɑnɑ" }] },
+    { "id": "describing-people-05", "en": "She is friendly.", "et": "Tema on sõbralik.", "words": [{ "et": "sõbralik", "en": "friendly", "lemma": "sõbralik", "pos": "adjective", "ipa": "ˈsɤbrɑlik" }] },
+    { "id": "describing-people-06", "en": "He is smart.", "et": "Tema on tark.", "words": [{ "et": "tark", "en": "smart", "lemma": "tark", "pos": "adjective", "ipa": "tɑrk" }] },
+    { "id": "describing-people-07", "en": "He is strong.", "et": "Tema on tugev.", "words": [{ "et": "tugev", "en": "strong", "lemma": "tugev", "pos": "adjective", "ipa": "ˈtuɡev" }] },
+    { "id": "describing-people-08", "en": "She is beautiful.", "et": "Tema on ilus.", "words": [{ "et": "ilus", "en": "beautiful", "lemma": "ilus", "pos": "adjective", "ipa": "ˈilus" }] },
+    { "id": "describing-people-09", "en": "My friend is very kind.", "et": "Minu sõber on väga lahke.", "words": [{ "et": "lahke", "en": "kind", "lemma": "lahke", "pos": "adjective", "ipa": "ˈlɑhke" }] },
+    { "id": "describing-people-10", "en": "I have a good friend.", "et": "Mul on hea sõber.", "words": [{ "et": "sõber", "en": "friend", "lemma": "sõber", "pos": "noun", "ipa": "ˈsɤber" }] }
+  ]
+}

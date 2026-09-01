@@ -1,0 +1,18 @@
+{
+  "id": "reported-speech",
+  "title": { "en": "Reported Speech", "et": "Kaudne kõne" },
+  "level": "B1",
+  "order": 32,
+  "sentences": [
+    { "id": "reported-speech-01", "en": "He said that he is tired.", "et": "Ta ütles, et ta on väsinud.", "words": [{ "et": "ütles", "en": "said", "lemma": "ütlema", "pos": "verb", "ipa": "ˈytles" }] },
+    { "id": "reported-speech-02", "en": "She said that she likes Estonia.", "et": "Ta ütles, et talle meeldib Eesti.", "words": [{ "et": "talle", "en": "to him/her", "lemma": "tema", "pos": "pronoun", "ipa": "ˈtɑlle" }] },
+    { "id": "reported-speech-03", "en": "He asked whether I have time.", "et": "Ta küsis, kas mul on aega.", "words": [{ "et": "küsis", "en": "asked", "lemma": "küsima", "pos": "verb", "ipa": "ˈkysis" }] },
+    { "id": "reported-speech-04", "en": "She asked where I live.", "et": "Ta küsis, kus ma elan.", "words": [{ "et": "kus", "en": "where", "lemma": "kus", "pos": "adverb", "ipa": "kus" }] },
+    { "id": "reported-speech-05", "en": "I said that I don't understand.", "et": "Ma ütlesin, et ma ei saa aru.", "notes": "\"saama aru\" = \"to understand\" (a fixed idiom, not literal \"to get\").", "words": [{ "et": "ei saa aru", "en": "don't understand", "lemma": "aru saama", "pos": "verb", "ipa": "ei sɑː ˈɑru" }] },
+    { "id": "reported-speech-06", "en": "He said that tomorrow will be warm.", "et": "Ta ütles, et homme on soe.", "words": [{ "et": "homme", "en": "tomorrow", "lemma": "homme", "pos": "adverb", "ipa": "ˈhomme" }] },
+    { "id": "reported-speech-07", "en": "They said that they are coming.", "et": "Nad ütlesid, et nad tulevad.", "words": [{ "et": "ütlesid", "en": "said", "lemma": "ütlema", "pos": "verb", "ipa": "ˈytlesit" }, { "et": "tulevad", "en": "are coming", "lemma": "tulema", "pos": "verb", "ipa": "ˈtulevɑt" }] },
+    { "id": "reported-speech-08", "en": "I asked what her name is.", "et": "Ma küsisin, mis on tema nimi.", "words": [{ "et": "küsisin", "en": "asked", "lemma": "küsima", "pos": "verb", "ipa": "ˈkysisin" }] },
+    { "id": "reported-speech-09", "en": "He told me that he works here.", "et": "Ta ütles mulle, et ta töötab siin.", "words": [{ "et": "mulle", "en": "to me", "lemma": "mina", "pos": "pronoun", "ipa": "ˈmulle" }] },
+    { "id": "reported-speech-10", "en": "She asked if I want tea.", "et": "Ta küsis, kas ma tahan teed.", "words": [{ "et": "kas", "en": "whether / if", "lemma": "kas", "pos": "conjunction", "ipa": "kɑs" }] }
+  ]
+}

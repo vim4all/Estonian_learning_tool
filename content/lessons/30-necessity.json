@@ -1,0 +1,18 @@
+{
+  "id": "necessity",
+  "title": { "en": "Necessity & Obligation", "et": "Vajalikkus ja kohustus" },
+  "level": "B1",
+  "order": 30,
+  "sentences": [
+    { "id": "necessity-01", "en": "I must go now.", "et": "Ma pean nüüd minema.", "words": [{ "et": "pean", "en": "must", "lemma": "pidama", "pos": "verb", "ipa": "peɑn" }] },
+    { "id": "necessity-02", "en": "You must study.", "et": "Sa pead õppima.", "words": [{ "et": "pead", "en": "must", "lemma": "pidama", "pos": "verb", "ipa": "peɑt" }] },
+    { "id": "necessity-03", "en": "You have to wait.", "et": "Sa pead ootama.", "words": [{ "et": "ootama", "en": "to wait", "lemma": "ootama", "pos": "verb", "ipa": "ˈoːtɑmɑ" }] },
+    { "id": "necessity-04", "en": "I need water.", "et": "Mul on vett vaja.", "words": [{ "et": "vaja", "en": "needed", "lemma": "vaja", "pos": "adverb", "ipa": "ˈvɑjɑ" }] },
+    { "id": "necessity-05", "en": "I need help.", "et": "Mul on abi vaja.", "words": [{ "et": "abi", "en": "help", "lemma": "abi", "pos": "noun", "ipa": "ˈɑbi" }] },
+    { "id": "necessity-06", "en": "It is not necessary.", "et": "Seda ei ole vaja.", "words": [{ "et": "seda", "en": "it / this (partitive)", "lemma": "see", "pos": "pronoun", "ipa": "ˈsedɑ" }] },
+    { "id": "necessity-07", "en": "I must eat something.", "et": "Ma pean midagi sööma.", "words": [{ "et": "midagi", "en": "something", "lemma": "midagi", "pos": "pronoun", "ipa": "ˈmidɑɡi" }] },
+    { "id": "necessity-08", "en": "We must hurry.", "et": "Me peame kiirustama.", "words": [{ "et": "peame", "en": "must", "lemma": "pidama", "pos": "verb", "ipa": "peɑme" }, { "et": "kiirustama", "en": "to hurry", "lemma": "kiirustama", "pos": "verb", "ipa": "ˈkiːrustɑmɑ" }] },
+    { "id": "necessity-09", "en": "I don't have to work today.", "et": "Ma ei pea täna töötama.", "words": [{ "et": "ei pea", "en": "don't have to", "lemma": "pidama", "pos": "verb", "ipa": "ei peɑ" }] },
+    { "id": "necessity-10", "en": "It is important to rest.", "et": "On tähtis puhata.", "words": [{ "et": "tähtis", "en": "important", "lemma": "tähtis", "pos": "adjective", "ipa": "ˈtæhtis" }, { "et": "puhata", "en": "to rest", "lemma": "puhkama", "pos": "verb", "ipa": "ˈpuhɑtɑ" }] }
+  ]
+}

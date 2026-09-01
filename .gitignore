@@ -1,0 +1,9 @@
+node_modules/
+.env
+*.key.json
+secrets/
+.cache/
+
+# Generated audio + enriched data (regenerable via `npm run generate-audio`)
+site/audio/
+site/data/

@@ -1,0 +1,18 @@
+{
+  "id": "past-tense",
+  "title": { "en": "Past Tense Basics", "et": "Lihtminevik" },
+  "level": "A2",
+  "order": 20,
+  "sentences": [
+    { "id": "past-tense-01", "en": "I ate.", "et": "Ma sõin.", "words": [{ "et": "sõin", "en": "ate", "lemma": "sööma", "pos": "verb", "ipa": "sɤin" }] },
+    { "id": "past-tense-02", "en": "I slept.", "et": "Ma magasin.", "words": [{ "et": "magasin", "en": "slept", "lemma": "magama", "pos": "verb", "ipa": "ˈmɑɡɑsin" }] },
+    { "id": "past-tense-03", "en": "I read.", "et": "Ma lugesin.", "words": [{ "et": "lugesin", "en": "read (past)", "lemma": "lugema", "pos": "verb", "ipa": "ˈluɡesin" }] },
+    { "id": "past-tense-04", "en": "I worked.", "et": "Ma töötasin.", "words": [{ "et": "töötasin", "en": "worked", "lemma": "töötama", "pos": "verb", "ipa": "ˈtøːtɑsin" }] },
+    { "id": "past-tense-05", "en": "I walked.", "et": "Ma kõndisin.", "words": [{ "et": "kõndisin", "en": "walked", "lemma": "kõndima", "pos": "verb", "ipa": "ˈkɤndisin" }] },
+    { "id": "past-tense-06", "en": "I was at home.", "et": "Ma olin kodus.", "words": [{ "et": "olin", "en": "was", "lemma": "olema", "pos": "verb", "ipa": "ˈolin" }] },
+    { "id": "past-tense-07", "en": "I had time.", "et": "Mul oli aega.", "words": [{ "et": "oli", "en": "was / had", "lemma": "olema", "pos": "verb", "ipa": "ˈoli" }] },
+    { "id": "past-tense-08", "en": "Yesterday I worked.", "et": "Eile ma töötasin.", "words": [{ "et": "eile", "en": "yesterday", "lemma": "eile", "pos": "adverb", "ipa": "ˈeile" }] },
+    { "id": "past-tense-09", "en": "Yesterday was Monday.", "et": "Eile oli esmaspäev.", "words": [{ "et": "eile", "en": "yesterday", "lemma": "eile", "pos": "adverb", "ipa": "ˈeile" }] },
+    { "id": "past-tense-10", "en": "I saw a film.", "et": "Ma nägin filmi.", "words": [{ "et": "nägin", "en": "saw", "lemma": "nägema", "pos": "verb", "ipa": "ˈnæɡin" }] }
+  ]
+}

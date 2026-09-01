@@ -1,0 +1,24 @@
+{
+  "id": "clothing",
+  "title": { "en": "Clothing", "et": "Riided" },
+  "level": "A1",
+  "order": 12,
+  "sentences": [
+    { "id": "clothing-01", "en": "This is a shirt.", "et": "See on särk.", "words": [{ "et": "särk", "en": "shirt", "lemma": "särk", "pos": "noun", "ipa": "særk" }] },
+    {
+      "id": "clothing-02",
+      "en": "These are pants.",
+      "et": "Need on püksid.",
+      "notes": "\"püksid\" is grammatically always plural in Estonian, like \"trousers\" in English — so it takes \"need\" (these), not \"see\" (this).",
+      "words": [{ "et": "püksid", "en": "pants", "lemma": "püksid", "pos": "noun", "ipa": "ˈpyksit" }]
+    },
+    { "id": "clothing-03", "en": "This is a dress.", "et": "See on kleit.", "words": [{ "et": "kleit", "en": "dress", "lemma": "kleit", "pos": "noun", "ipa": "kleit" }] },
+    { "id": "clothing-04", "en": "These are shoes.", "et": "Need on kingad.", "words": [{ "et": "kingad", "en": "shoes", "lemma": "kingad", "pos": "noun", "ipa": "ˈkiŋɡɑt" }] },
+    { "id": "clothing-05", "en": "This is a hat.", "et": "See on müts.", "words": [{ "et": "müts", "en": "hat", "lemma": "müts", "pos": "noun", "ipa": "myts" }] },
+    { "id": "clothing-06", "en": "These are gloves.", "et": "Need on kindad.", "words": [{ "et": "kindad", "en": "gloves", "lemma": "kindad", "pos": "noun", "ipa": "ˈkindɑt" }] },
+    { "id": "clothing-07", "en": "This is a jacket.", "et": "See on jakk.", "words": [{ "et": "jakk", "en": "jacket", "lemma": "jakk", "pos": "noun", "ipa": "jɑkː" }] },
+    { "id": "clothing-08", "en": "This is a skirt.", "et": "See on seelik.", "words": [{ "et": "seelik", "en": "skirt", "lemma": "seelik", "pos": "noun", "ipa": "ˈseːlik" }] },
+    { "id": "clothing-09", "en": "These are socks.", "et": "Need on sokid.", "words": [{ "et": "sokid", "en": "socks", "lemma": "sokid", "pos": "noun", "ipa": "ˈsokit" }] },
+    { "id": "clothing-10", "en": "I like this shirt.", "et": "Mulle meeldib see särk.", "words": [{ "et": "särk", "en": "shirt", "lemma": "särk", "pos": "noun", "ipa": "særk" }] }
+  ]
+}

@@ -1,0 +1,18 @@
+{
+  "id": "time",
+  "title": { "en": "Telling Time", "et": "Kellaaeg" },
+  "level": "A2",
+  "order": 11,
+  "sentences": [
+    { "id": "time-01", "en": "What time is it?", "et": "Mis kell on?", "words": [{ "et": "kell", "en": "clock / o'clock", "lemma": "kell", "pos": "noun", "ipa": "kelː" }] },
+    { "id": "time-02", "en": "It is one o'clock.", "et": "Kell on üks.", "words": [{ "et": "üks", "en": "one", "lemma": "üks", "pos": "numeral", "ipa": "yks" }] },
+    { "id": "time-03", "en": "It is two o'clock.", "et": "Kell on kaks.", "words": [{ "et": "kaks", "en": "two", "lemma": "kaks", "pos": "numeral", "ipa": "kɑks" }] },
+    { "id": "time-04", "en": "It is three o'clock.", "et": "Kell on kolm.", "words": [{ "et": "kolm", "en": "three", "lemma": "kolm", "pos": "numeral", "ipa": "kolm" }] },
+    { "id": "time-05", "en": "It is twelve o'clock.", "et": "Kell on kaksteist.", "words": [{ "et": "kaksteist", "en": "twelve", "lemma": "kaksteist", "pos": "numeral", "ipa": "ˈkɑksteist" }] },
+    { "id": "time-06", "en": "It is morning.", "et": "On hommik.", "words": [{ "et": "hommik", "en": "morning", "lemma": "hommik", "pos": "noun", "ipa": "ˈhommik" }] },
+    { "id": "time-07", "en": "It is evening.", "et": "On õhtu.", "words": [{ "et": "õhtu", "en": "evening", "lemma": "õhtu", "pos": "noun", "ipa": "ˈɤhtu" }] },
+    { "id": "time-08", "en": "It is night.", "et": "On öö.", "words": [{ "et": "öö", "en": "night", "lemma": "öö", "pos": "noun", "ipa": "øː" }] },
+    { "id": "time-09", "en": "I have time.", "et": "Mul on aega.", "words": [{ "et": "aega", "en": "time", "lemma": "aeg", "pos": "noun", "ipa": "ˈɑegɑ" }] },
+    { "id": "time-10", "en": "I have no time.", "et": "Mul ei ole aega.", "words": [{ "et": "ei ole", "en": "is not / don't have", "lemma": "olema", "pos": "verb", "ipa": "ei ˈole" }] }
+  ]
+}

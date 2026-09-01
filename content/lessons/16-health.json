@@ -1,0 +1,18 @@
+{
+  "id": "health",
+  "title": { "en": "Body & Health", "et": "Keha ja tervis" },
+  "level": "A2",
+  "order": 16,
+  "sentences": [
+    { "id": "health-01", "en": "This is my head.", "et": "See on minu pea.", "words": [{ "et": "pea", "en": "head", "lemma": "pea", "pos": "noun", "ipa": "peɑ" }] },
+    { "id": "health-02", "en": "This is my hand.", "et": "See on minu käsi.", "words": [{ "et": "käsi", "en": "hand", "lemma": "käsi", "pos": "noun", "ipa": "ˈkæsi" }] },
+    { "id": "health-03", "en": "This is my leg.", "et": "See on minu jalg.", "words": [{ "et": "jalg", "en": "leg", "lemma": "jalg", "pos": "noun", "ipa": "jɑlɡ" }] },
+    { "id": "health-04", "en": "This is my eye.", "et": "See on minu silm.", "words": [{ "et": "silm", "en": "eye", "lemma": "silm", "pos": "noun", "ipa": "silm" }] },
+    { "id": "health-05", "en": "This is my ear.", "et": "See on minu kõrv.", "words": [{ "et": "kõrv", "en": "ear", "lemma": "kõrv", "pos": "noun", "ipa": "kɤrv" }] },
+    { "id": "health-06", "en": "This is my nose.", "et": "See on minu nina.", "words": [{ "et": "nina", "en": "nose", "lemma": "nina", "pos": "noun", "ipa": "ˈninɑ" }] },
+    { "id": "health-07", "en": "This is my mouth.", "et": "See on minu suu.", "words": [{ "et": "suu", "en": "mouth", "lemma": "suu", "pos": "noun", "ipa": "suː" }] },
+    { "id": "health-08", "en": "I am sick.", "et": "Ma olen haige.", "words": [{ "et": "haige", "en": "sick", "lemma": "haige", "pos": "adjective", "ipa": "ˈhɑiɡe" }] },
+    { "id": "health-09", "en": "I have a headache.", "et": "Mul on peavalu.", "words": [{ "et": "peavalu", "en": "headache", "lemma": "peavalu", "pos": "noun", "ipa": "ˈpeɑˌvɑlu" }] },
+    { "id": "health-10", "en": "I am healthy.", "et": "Ma olen terve.", "words": [{ "et": "terve", "en": "healthy", "lemma": "terve", "pos": "adjective", "ipa": "ˈterve" }] }
+  ]
+}

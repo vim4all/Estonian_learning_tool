@@ -1,0 +1,18 @@
+{
+  "id": "comparatives",
+  "title": { "en": "Comparatives & Superlatives", "et": "Võrdlusastmed" },
+  "level": "B1",
+  "order": 25,
+  "sentences": [
+    { "id": "comparatives-01", "en": "My brother is taller than me.", "et": "Minu vend on pikem kui mina.", "notes": "Comparative = genitive stem + \"-m\": pikk → pika → pikem.", "words": [{ "et": "pikem", "en": "taller", "lemma": "pikk", "pos": "adjective", "ipa": "ˈpikem" }] },
+    { "id": "comparatives-02", "en": "This house is bigger than that one.", "et": "See maja on suurem kui too.", "words": [{ "et": "suurem", "en": "bigger", "lemma": "suur", "pos": "adjective", "ipa": "ˈsuːrem" }, { "et": "too", "en": "that (one)", "lemma": "too", "pos": "pronoun", "ipa": "toː" }] },
+    { "id": "comparatives-03", "en": "Today is colder than yesterday.", "et": "Täna on külmem kui eile.", "words": [{ "et": "külmem", "en": "colder", "lemma": "külm", "pos": "adjective", "ipa": "ˈkylmem" }] },
+    { "id": "comparatives-04", "en": "This is the best restaurant.", "et": "See on parim restoran.", "notes": "\"hea\" (good) is irregular: hea → parem (better) → parim (best).", "words": [{ "et": "parim", "en": "best", "lemma": "hea", "pos": "adjective", "ipa": "ˈpɑrim" }] },
+    { "id": "comparatives-05", "en": "This is the tallest building.", "et": "See on kõige kõrgem hoone.", "notes": "\"kõrge\" (tall/high) is used for buildings; \"pikk\" is for people or length.", "words": [{ "et": "kõige kõrgem", "en": "the tallest", "lemma": "kõrge", "pos": "adjective", "ipa": "ˈkɤiɡe ˈkɤrɡem" }, { "et": "hoone", "en": "building", "lemma": "hoone", "pos": "noun", "ipa": "ˈhoːne" }] },
+    { "id": "comparatives-06", "en": "She is younger than her brother.", "et": "Tema on noorem kui tema vend.", "words": [{ "et": "noorem", "en": "younger", "lemma": "noor", "pos": "adjective", "ipa": "ˈnoːrem" }] },
+    { "id": "comparatives-07", "en": "This is the smallest room.", "et": "See on kõige väiksem tuba.", "words": [{ "et": "kõige väiksem", "en": "the smallest", "lemma": "väike", "pos": "adjective", "ipa": "ˈkɤiɡe ˈvæiksem" }] },
+    { "id": "comparatives-08", "en": "My friend is older than me.", "et": "Minu sõber on vanem kui mina.", "words": [{ "et": "vanem", "en": "older", "lemma": "vana", "pos": "adjective", "ipa": "ˈvɑnem" }] },
+    { "id": "comparatives-09", "en": "This coffee is better than that one.", "et": "See kohv on parem kui too.", "words": [{ "et": "parem", "en": "better", "lemma": "hea", "pos": "adjective", "ipa": "ˈpɑrem" }] },
+    { "id": "comparatives-10", "en": "This is worse.", "et": "See on halvem.", "notes": "\"halb\" (bad) is also irregular: halb → halvem → halvim.", "words": [{ "et": "halvem", "en": "worse", "lemma": "halb", "pos": "adjective", "ipa": "ˈhɑlvem" }] }
+  ]
+}

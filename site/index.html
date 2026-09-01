@@ -1,0 +1,58 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>EstLrn — Learn Estonian</title>
+  <link rel="stylesheet" href="css/style.css" />
+</head>
+<body>
+  <header class="app-header">
+    <h1>EstLrn</h1>
+    <p class="subtitle">English ↔ Estonian, sentence by sentence</p>
+    <nav class="mode-nav">
+      <a class="mode-link active" href="index.html">Lessons</a>
+      <a class="mode-link" href="book.html">Book</a>
+    </nav>
+  </header>
+
+  <main>
+    <section id="lesson-picker" class="lesson-picker">
+      <label for="lesson-select">Lesson</label>
+      <select id="lesson-select"></select>
+    </section>
+
+    <section id="carousel" class="carousel" hidden>
+      <div class="progress" id="progress"></div>
+
+      <div class="sentence-card">
+        <p class="topic-tag" id="topic-tag" hidden></p>
+        <p class="sentence sentence-en" id="sentence-en"></p>
+        <p class="sentence sentence-et" id="sentence-et"></p>
+        <p class="notes" id="notes"></p>
+        <div class="words" id="words"></div>
+      </div>
+
+      <div class="controls">
+        <button id="prev-btn" aria-label="Previous sentence">&larr; Prev</button>
+        <button id="play-sentence-btn" aria-label="Play this sentence">▶ Play sentence</button>
+        <button id="next-btn" aria-label="Next sentence">Next &rarr;</button>
+      </div>
+
+      <div class="lesson-audio-controls">
+        <button id="play-lesson-btn">▶ Play full lesson</button>
+        <button id="stop-btn" aria-label="Stop playback">■ Stop</button>
+        <label class="toggle">
+          <input type="checkbox" id="loop-toggle" />
+          Loop
+        </label>
+        <audio id="lesson-audio-el"></audio>
+      </div>
+    </section>
+  </main>
+
+  <audio id="clip-audio-el"></audio>
+
+  <script src="js/app.js"></script>
+</body>
+</html>

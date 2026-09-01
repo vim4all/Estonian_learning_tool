@@ -1,0 +1,18 @@
+{
+  "id": "ability",
+  "title": { "en": "Permission & Ability", "et": "Luba ja oskus" },
+  "level": "B1",
+  "order": 31,
+  "sentences": [
+    { "id": "ability-01", "en": "May I ask a question?", "et": "Kas ma võin midagi küsida?", "notes": "Three Estonian \"can\"s: võima (permission), oskama (skill), saama (circumstance/ability).", "words": [{ "et": "võin", "en": "may", "lemma": "võima", "pos": "verb", "ipa": "vɤin" }] },
+    { "id": "ability-02", "en": "You may go.", "et": "Sa võid minna.", "notes": "\"minema\"'s da-infinitive is the irregular \"minna\".", "words": [{ "et": "võid", "en": "may", "lemma": "võima", "pos": "verb", "ipa": "vɤit" }] },
+    { "id": "ability-03", "en": "I know how to swim.", "et": "Ma oskan ujuda.", "words": [{ "et": "oskan", "en": "know how to", "lemma": "oskama", "pos": "verb", "ipa": "ˈoskɑn" }] },
+    { "id": "ability-04", "en": "I know how to cook.", "et": "Ma oskan süüa teha.", "words": [{ "et": "oskan", "en": "know how to", "lemma": "oskama", "pos": "verb", "ipa": "ˈoskɑn" }] },
+    { "id": "ability-05", "en": "I don't know how to dance.", "et": "Ma ei oska tantsida.", "words": [{ "et": "ei oska", "en": "don't know how to", "lemma": "oskama", "pos": "verb", "ipa": "ei ˈoskɑ" }] },
+    { "id": "ability-06", "en": "I can help you today.", "et": "Ma saan sind täna aidata.", "words": [{ "et": "saan", "en": "can / am able to", "lemma": "saama", "pos": "verb", "ipa": "sɑːn" }] },
+    { "id": "ability-07", "en": "I cannot come today.", "et": "Ma ei saa täna tulla.", "words": [{ "et": "ei saa", "en": "cannot", "lemma": "saama", "pos": "verb", "ipa": "ei sɑː" }] },
+    { "id": "ability-08", "en": "Can I open the window?", "et": "Kas ma võin akna avada?", "words": [{ "et": "avada", "en": "to open", "lemma": "avama", "pos": "verb", "ipa": "ˈɑvɑdɑ" }] },
+    { "id": "ability-09", "en": "She can speak Estonian.", "et": "Tema oskab rääkida eesti keelt.", "words": [{ "et": "oskab", "en": "knows how to", "lemma": "oskama", "pos": "verb", "ipa": "ˈoskɑp" }] },
+    { "id": "ability-10", "en": "We may not park here.", "et": "Me ei tohi siin parkida.", "notes": "\"tohtima\" is a separate, stronger prohibition verb — \"ei tohi\" = \"must not / not allowed\".", "words": [{ "et": "ei tohi", "en": "must not / not allowed", "lemma": "tohtima", "pos": "verb", "ipa": "ei ˈtohi" }] }
+  ]
+}
