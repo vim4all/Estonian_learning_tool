@@ -1,18 +1,18 @@
 {
   "id": "health",
-  "title": { "en": "Body & Health", "et": "Keha ja tervis" },
+  "title": { "en": "Body & Health", "et": "Keha ja tervis", "uk": "Тіло та здоров'я" },
   "level": "A2",
   "order": 16,
   "sentences": [
-    { "id": "health-01", "en": "This is my head.", "et": "See on minu pea.", "words": [{ "et": "pea", "en": "head", "lemma": "pea", "pos": "noun", "ipa": "peɑ" }] },
-    { "id": "health-02", "en": "This is my hand.", "et": "See on minu käsi.", "words": [{ "et": "käsi", "en": "hand", "lemma": "käsi", "pos": "noun", "ipa": "ˈkæsi" }] },
-    { "id": "health-03", "en": "This is my leg.", "et": "See on minu jalg.", "words": [{ "et": "jalg", "en": "leg", "lemma": "jalg", "pos": "noun", "ipa": "jɑlɡ" }] },
-    { "id": "health-04", "en": "This is my eye.", "et": "See on minu silm.", "words": [{ "et": "silm", "en": "eye", "lemma": "silm", "pos": "noun", "ipa": "silm" }] },
-    { "id": "health-05", "en": "This is my ear.", "et": "See on minu kõrv.", "words": [{ "et": "kõrv", "en": "ear", "lemma": "kõrv", "pos": "noun", "ipa": "kɤrv" }] },
-    { "id": "health-06", "en": "This is my nose.", "et": "See on minu nina.", "words": [{ "et": "nina", "en": "nose", "lemma": "nina", "pos": "noun", "ipa": "ˈninɑ" }] },
-    { "id": "health-07", "en": "This is my mouth.", "et": "See on minu suu.", "words": [{ "et": "suu", "en": "mouth", "lemma": "suu", "pos": "noun", "ipa": "suː" }] },
-    { "id": "health-08", "en": "I am sick.", "et": "Ma olen haige.", "words": [{ "et": "haige", "en": "sick", "lemma": "haige", "pos": "adjective", "ipa": "ˈhɑiɡe" }] },
-    { "id": "health-09", "en": "I have a headache.", "et": "Mul on peavalu.", "words": [{ "et": "peavalu", "en": "headache", "lemma": "peavalu", "pos": "noun", "ipa": "ˈpeɑˌvɑlu" }] },
-    { "id": "health-10", "en": "I am healthy.", "et": "Ma olen terve.", "words": [{ "et": "terve", "en": "healthy", "lemma": "terve", "pos": "adjective", "ipa": "ˈterve" }] }
+    { "id": "health-01", "en": "This is my head.", "et": "See on minu pea.", "uk": "Це моя голова.", "words": [{ "et": "pea", "en": "head", "uk": "голова", "lemma": "pea", "pos": "noun", "ipa": "peɑ" }] },
+    { "id": "health-02", "en": "This is my hand.", "et": "See on minu käsi.", "uk": "Це моя рука.", "words": [{ "et": "käsi", "en": "hand", "uk": "рука", "lemma": "käsi", "pos": "noun", "ipa": "ˈkæsi" }] },
+    { "id": "health-03", "en": "This is my leg.", "et": "See on minu jalg.", "uk": "Це моя нога.", "words": [{ "et": "jalg", "en": "leg", "uk": "нога", "lemma": "jalg", "pos": "noun", "ipa": "jɑlɡ" }] },
+    { "id": "health-04", "en": "This is my eye.", "et": "See on minu silm.", "uk": "Це моє око.", "words": [{ "et": "silm", "en": "eye", "uk": "око", "lemma": "silm", "pos": "noun", "ipa": "silm" }] },
+    { "id": "health-05", "en": "This is my ear.", "et": "See on minu kõrv.", "uk": "Це моє вухо.", "words": [{ "et": "kõrv", "en": "ear", "uk": "вухо", "lemma": "kõrv", "pos": "noun", "ipa": "kɤrv" }] },
+    { "id": "health-06", "en": "This is my nose.", "et": "See on minu nina.", "uk": "Це мій ніс.", "words": [{ "et": "nina", "en": "nose", "uk": "ніс", "lemma": "nina", "pos": "noun", "ipa": "ˈninɑ" }] },
+    { "id": "health-07", "en": "This is my mouth.", "et": "See on minu suu.", "uk": "Це мій рот.", "words": [{ "et": "suu", "en": "mouth", "uk": "рот", "lemma": "suu", "pos": "noun", "ipa": "suː" }] },
+    { "id": "health-08", "en": "I am sick.", "et": "Ma olen haige.", "uk": "Я хворію.", "words": [{ "et": "haige", "en": "sick", "uk": "хворий", "lemma": "haige", "pos": "adjective", "ipa": "ˈhɑiɡe" }] },
+    { "id": "health-09", "en": "I have a headache.", "et": "Mul on peavalu.", "uk": "У мене болить голова.", "words": [{ "et": "peavalu", "en": "headache", "uk": "головний біль", "lemma": "peavalu", "pos": "noun", "ipa": "ˈpeɑˌvɑlu" }] },
+    { "id": "health-10", "en": "I am healthy.", "et": "Ma olen terve.", "uk": "Я здоровий.", "words": [{ "et": "terve", "en": "healthy", "uk": "здоровий", "lemma": "terve", "pos": "adjective", "ipa": "ˈterve" }] }
   ]
 }

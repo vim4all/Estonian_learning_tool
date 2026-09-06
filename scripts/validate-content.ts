@@ -14,7 +14,7 @@ try {
   }
 
   console.log(`OK — ${lessons.length} lesson(s), ${sentenceCount} sentence(s), ${wordCount} word gloss(es)`);
-  console.log(`Voices: en=${voiceId(voices.en)}, et=${voiceId(voices.et)}`);
+  console.log(`Voices: en=${voiceId(voices.en)}, et=${voiceId(voices.et)}, uk=${voiceId(voices.uk)}`);
   for (const lesson of lessons) {
     console.log(`  [${lesson.order}] ${lesson.id} (${lesson.level}) — ${lesson.sentences.length} sentences`);
   }

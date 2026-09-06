@@ -1,18 +1,18 @@
 {
   "id": "reported-speech",
-  "title": { "en": "Reported Speech", "et": "Kaudne kõne" },
+  "title": { "en": "Reported Speech", "et": "Kaudne kõne", "uk": "Непряма мова" },
   "level": "B1",
   "order": 32,
   "sentences": [
-    { "id": "reported-speech-01", "en": "He said that he is tired.", "et": "Ta ütles, et ta on väsinud.", "words": [{ "et": "ütles", "en": "said", "lemma": "ütlema", "pos": "verb", "ipa": "ˈytles" }] },
-    { "id": "reported-speech-02", "en": "She said that she likes Estonia.", "et": "Ta ütles, et talle meeldib Eesti.", "words": [{ "et": "talle", "en": "to him/her", "lemma": "tema", "pos": "pronoun", "ipa": "ˈtɑlle" }] },
-    { "id": "reported-speech-03", "en": "He asked whether I have time.", "et": "Ta küsis, kas mul on aega.", "words": [{ "et": "küsis", "en": "asked", "lemma": "küsima", "pos": "verb", "ipa": "ˈkysis" }] },
-    { "id": "reported-speech-04", "en": "She asked where I live.", "et": "Ta küsis, kus ma elan.", "words": [{ "et": "kus", "en": "where", "lemma": "kus", "pos": "adverb", "ipa": "kus" }] },
-    { "id": "reported-speech-05", "en": "I said that I don't understand.", "et": "Ma ütlesin, et ma ei saa aru.", "notes": "\"saama aru\" = \"to understand\" (a fixed idiom, not literal \"to get\").", "words": [{ "et": "ei saa aru", "en": "don't understand", "lemma": "aru saama", "pos": "verb", "ipa": "ei sɑː ˈɑru" }] },
-    { "id": "reported-speech-06", "en": "He said that tomorrow will be warm.", "et": "Ta ütles, et homme on soe.", "words": [{ "et": "homme", "en": "tomorrow", "lemma": "homme", "pos": "adverb", "ipa": "ˈhomme" }] },
-    { "id": "reported-speech-07", "en": "They said that they are coming.", "et": "Nad ütlesid, et nad tulevad.", "words": [{ "et": "ütlesid", "en": "said", "lemma": "ütlema", "pos": "verb", "ipa": "ˈytlesit" }, { "et": "tulevad", "en": "are coming", "lemma": "tulema", "pos": "verb", "ipa": "ˈtulevɑt" }] },
-    { "id": "reported-speech-08", "en": "I asked what her name is.", "et": "Ma küsisin, mis on tema nimi.", "words": [{ "et": "küsisin", "en": "asked", "lemma": "küsima", "pos": "verb", "ipa": "ˈkysisin" }] },
-    { "id": "reported-speech-09", "en": "He told me that he works here.", "et": "Ta ütles mulle, et ta töötab siin.", "words": [{ "et": "mulle", "en": "to me", "lemma": "mina", "pos": "pronoun", "ipa": "ˈmulle" }] },
-    { "id": "reported-speech-10", "en": "She asked if I want tea.", "et": "Ta küsis, kas ma tahan teed.", "words": [{ "et": "kas", "en": "whether / if", "lemma": "kas", "pos": "conjunction", "ipa": "kɑs" }] }
+    { "id": "reported-speech-01", "en": "He said that he is tired.", "et": "Ta ütles, et ta on väsinud.", "uk": "Він сказав, що втомився.", "words": [{ "et": "ütles", "en": "said", "uk": "сказав", "lemma": "ütlema", "pos": "verb", "ipa": "ˈytles" }] },
+    { "id": "reported-speech-02", "en": "She said that she likes Estonia.", "et": "Ta ütles, et talle meeldib Eesti.", "uk": "Вона сказала, що їй подобається Естонія.", "words": [{ "et": "talle", "en": "to him/her", "uk": "йому/їй", "lemma": "tema", "pos": "pronoun", "ipa": "ˈtɑlle" }] },
+    { "id": "reported-speech-03", "en": "He asked whether I have time.", "et": "Ta küsis, kas mul on aega.", "uk": "Він запитав, чи є в мене час.", "words": [{ "et": "küsis", "en": "asked", "uk": "запитав", "lemma": "küsima", "pos": "verb", "ipa": "ˈkysis" }] },
+    { "id": "reported-speech-04", "en": "She asked where I live.", "et": "Ta küsis, kus ma elan.", "uk": "Вона запитала, де я живу.", "words": [{ "et": "kus", "en": "where", "uk": "де", "lemma": "kus", "pos": "adverb", "ipa": "kus" }] },
+    { "id": "reported-speech-05", "en": "I said that I don't understand.", "et": "Ma ütlesin, et ma ei saa aru.", "uk": "Я сказав, що не розумію.", "notes": "\"saama aru\" = \"to understand\" (a fixed idiom, not literal \"to get\").", "words": [{ "et": "ei saa aru", "en": "don't understand", "uk": "не розумію", "lemma": "aru saama", "pos": "verb", "ipa": "ei sɑː ˈɑru" }] },
+    { "id": "reported-speech-06", "en": "He said that tomorrow will be warm.", "et": "Ta ütles, et homme on soe.", "uk": "Він сказав, що завтра буде тепло.", "words": [{ "et": "homme", "en": "tomorrow", "uk": "завтра", "lemma": "homme", "pos": "adverb", "ipa": "ˈhomme" }] },
+    { "id": "reported-speech-07", "en": "They said that they are coming.", "et": "Nad ütlesid, et nad tulevad.", "uk": "Вони сказали, що прийдуть.", "words": [{ "et": "ütlesid", "en": "said", "uk": "сказали", "lemma": "ütlema", "pos": "verb", "ipa": "ˈytlesit" }, { "et": "tulevad", "en": "are coming", "uk": "приходять / прийдуть", "lemma": "tulema", "pos": "verb", "ipa": "ˈtulevɑt" }] },
+    { "id": "reported-speech-08", "en": "I asked what her name is.", "et": "Ma küsisin, mis on tema nimi.", "uk": "Я запитав, як її звати.", "words": [{ "et": "küsisin", "en": "asked", "uk": "запитав", "lemma": "küsima", "pos": "verb", "ipa": "ˈkysisin" }] },
+    { "id": "reported-speech-09", "en": "He told me that he works here.", "et": "Ta ütles mulle, et ta töötab siin.", "uk": "Він сказав мені, що працює тут.", "words": [{ "et": "mulle", "en": "to me", "uk": "мені", "lemma": "mina", "pos": "pronoun", "ipa": "ˈmulle" }] },
+    { "id": "reported-speech-10", "en": "She asked if I want tea.", "et": "Ta küsis, kas ma tahan teed.", "uk": "Вона запитала, чи хочу я чаю.", "words": [{ "et": "kas", "en": "whether / if", "uk": "чи / якщо", "lemma": "kas", "pos": "conjunction", "ipa": "kɑs" }] }
   ]
 }

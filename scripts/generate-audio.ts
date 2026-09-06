@@ -5,13 +5,31 @@ import { audioFilename } from "./lib/audioKey.ts";
 import { synthesize } from "./lib/ttsClient.ts";
 import { concatFiles, ensureSilenceClip } from "./lib/concat.ts";
 import { getDurationSeconds } from "./lib/audioConvert.ts";
-import { voiceId, type Book, type Lang, type Lesson, type Sentence, type VoiceConfig } from "./lib/schema.ts";
+import {
+  voiceId,
+  NATIVE_LANGS,
+  type Book,
+  type Lang,
+  type Lesson,
+  type NativeLang,
+  type Sentence,
+  type VoiceConfig,
+} from "./lib/schema.ts";
 
-type EnrichedWord = Sentence["words"][number] & { audioEt: string; audioEn: string };
+// Audio field names are capitalized-suffix per language ("en" -> "audioEn"), so a NativeLang can be
+// turned into the right key on enriched words/sentences without a lookup table.
+function audioField(lang: NativeLang): "audioEn" | "audioUk" {
+  return `audio${lang[0]!.toUpperCase()}${lang.slice(1)}` as "audioEn" | "audioUk";
+}
+
+type EnrichedWord = Sentence["words"][number] & { audioEt: string; audioEn: string; audioUk: string };
 type EnrichedSentence = Omit<Sentence, "words"> & {
   audioEn: string;
   audioEt: string;
-  audioStart: number;
+  audioUk: string;
+  // Per-native-language cumulative offset into that language's own combined lesson track — English
+  // and Ukrainian renderings of the same sentence differ in length, so the two tracks drift apart.
+  audioStart: Record<NativeLang, number>;
   words: EnrichedWord[];
 };
 
@@ -108,40 +126,59 @@ async function main(): Promise<void> {
     console.log(`Lesson: ${lesson.id} (${lesson.sentences.length} sentences)`);
 
     const enrichedSentences: EnrichedSentence[] = [];
-    const lessonClipPaths: string[] = [];
-    let cumulativeSeconds = 0;
+    // One clip sequence + running offset per native language, since an EN and a UK rendering of the
+    // same sentence differ in length and so drift apart minute by minute across a whole lesson.
+    const lessonClipPaths: Record<NativeLang, string[]> = { en: [], uk: [] };
+    const cumulativeSeconds: Record<NativeLang, number> = { en: 0, uk: 0 };
 
     for (const sentence of lesson.sentences) {
-      const audioEn = await ensureClip("sentences", "en", sentence.en, voices.en, manifest);
       const audioEt = await ensureClip("sentences", "et", sentence.et, voices.et, manifest);
+      const audioStart = {} as Record<NativeLang, number>;
+      const nativeAudio = {} as Record<NativeLang, string>;
 
-      const audioStart = cumulativeSeconds;
-      cumulativeSeconds += getDurationSeconds(join(SITE_DIR, audioEn)) + pauseShortDur;
-      cumulativeSeconds += getDurationSeconds(join(SITE_DIR, audioEt)) + pauseLongDur;
-
-      lessonClipPaths.push(join(SITE_DIR, audioEn), pauseShortPath, join(SITE_DIR, audioEt), pauseLongPath);
+      for (const lang of NATIVE_LANGS) {
+        const audio = await ensureClip("sentences", lang, sentence[lang], voices[lang], manifest);
+        nativeAudio[lang] = audio;
+        audioStart[lang] = cumulativeSeconds[lang];
+        cumulativeSeconds[lang] += getDurationSeconds(join(SITE_DIR, audio)) + pauseShortDur;
+        cumulativeSeconds[lang] += getDurationSeconds(join(SITE_DIR, audioEt)) + pauseLongDur;
+        lessonClipPaths[lang].push(join(SITE_DIR, audio), pauseShortPath, join(SITE_DIR, audioEt), pauseLongPath);
+      }
 
       const enrichedWords = [];
       for (const word of sentence.words) {
         const wordAudioEt = await ensureClip("words", "et", word.et, voices.et, manifest);
-        const wordAudioEn = await ensureClip("words", "en", word.en, voices.en, manifest);
-        enrichedWords.push({ ...word, audioEt: wordAudioEt, audioEn: wordAudioEn });
+        const wordAudio = {} as Record<NativeLang, string>;
+        for (const lang of NATIVE_LANGS) {
+          wordAudio[lang] = await ensureClip("words", lang, word[lang], voices[lang], manifest);
+        }
+        enrichedWords.push({ ...word, audioEt: wordAudioEt, audioEn: wordAudio.en, audioUk: wordAudio.uk });
       }
 
-      enrichedSentences.push({ ...sentence, audioEn, audioEt, audioStart, words: enrichedWords });
+      enrichedSentences.push({
+        ...sentence,
+        audioEn: nativeAudio.en,
+        audioUk: nativeAudio.uk,
+        audioEt,
+        audioStart,
+        words: enrichedWords,
+      });
     }
 
-    const lessonAudioRel = `audio/lessons/${lesson.id}.mp3`;
-    const lessonAudioAbs = join(SITE_DIR, lessonAudioRel);
-    console.log(`  concatenating lesson track -> ${lessonAudioRel}`);
-    concatFiles(lessonClipPaths, lessonAudioAbs);
+    const lessonAudio = {} as Record<NativeLang, string>;
+    for (const lang of NATIVE_LANGS) {
+      const rel = `audio/lessons/${lesson.id}-${lang}.mp3`;
+      console.log(`  concatenating lesson track [${lang}] -> ${rel}`);
+      concatFiles(lessonClipPaths[lang], join(SITE_DIR, rel));
+      lessonAudio[lang] = rel;
+    }
 
     const lessonData = {
       id: lesson.id,
       title: lesson.title,
       level: lesson.level,
       order: lesson.order,
-      lessonAudio: lessonAudioRel,
+      lessonAudio,
       sentences: enrichedSentences,
     };
     writeFileSync(join(DATA_DIR, "lessons", `${lesson.id}.json`), JSON.stringify(lessonData, null, 2), "utf-8");
@@ -168,9 +205,9 @@ async function main(): Promise<void> {
   ) {
     console.log(`Combined: ${id} (${group.length} lessons)`);
 
-    const clipPaths: string[] = [];
+    const clipPaths: Record<NativeLang, string[]> = { en: [], uk: [] };
+    const cumulativeSeconds: Record<NativeLang, number> = { en: 0, uk: 0 };
     const sentences: (EnrichedSentence & { lessonId: string; lessonTitle: Lesson["title"] })[] = [];
-    let cumulativeSeconds = 0;
 
     for (const { lesson, enrichedSentences } of group) {
       enrichedSentences.forEach((sentence, i) => {
@@ -178,21 +215,33 @@ async function main(): Promise<void> {
         const trailingPausePath = isLastOfLesson ? pauseLessonPath : pauseLongPath;
         const trailingPauseDur = isLastOfLesson ? pauseLessonDur : pauseLongDur;
 
-        const audioStart = cumulativeSeconds;
-        cumulativeSeconds += getDurationSeconds(join(SITE_DIR, sentence.audioEn)) + pauseShortDur;
-        cumulativeSeconds += getDurationSeconds(join(SITE_DIR, sentence.audioEt)) + trailingPauseDur;
+        const audioStart = {} as Record<NativeLang, number>;
+        for (const lang of NATIVE_LANGS) {
+          audioStart[lang] = cumulativeSeconds[lang];
+          cumulativeSeconds[lang] += getDurationSeconds(join(SITE_DIR, sentence[audioField(lang)])) + pauseShortDur;
+          cumulativeSeconds[lang] += getDurationSeconds(join(SITE_DIR, sentence.audioEt)) + trailingPauseDur;
+          clipPaths[lang].push(
+            join(SITE_DIR, sentence[audioField(lang)]),
+            pauseShortPath,
+            join(SITE_DIR, sentence.audioEt),
+            trailingPausePath
+          );
+        }
 
-        clipPaths.push(join(SITE_DIR, sentence.audioEn), pauseShortPath, join(SITE_DIR, sentence.audioEt), trailingPausePath);
         sentences.push({ ...sentence, audioStart, lessonId: lesson.id, lessonTitle: lesson.title });
       });
     }
 
-    const audioRel = `audio/lessons/${id}.mp3`;
-    console.log(`  concatenating combined track -> ${audioRel}`);
-    concatFiles(clipPaths, join(SITE_DIR, audioRel));
+    const lessonAudio = {} as Record<NativeLang, string>;
+    for (const lang of NATIVE_LANGS) {
+      const rel = `audio/lessons/${id}-${lang}.mp3`;
+      console.log(`  concatenating combined track [${lang}] -> ${rel}`);
+      concatFiles(clipPaths[lang], join(SITE_DIR, rel));
+      lessonAudio[lang] = rel;
+    }
 
     const level = [...new Set(group.map(({ lesson }) => lesson.level))].join("–");
-    const data = { id, title, level, order, lessonAudio: audioRel, sentences };
+    const data = { id, title, level, order, lessonAudio, sentences };
     writeFileSync(join(DATA_DIR, "lessons", `${id}.json`), JSON.stringify(data, null, 2), "utf-8");
 
     return { id, title, level, order, sentenceCount: sentences.length };
@@ -203,7 +252,12 @@ async function main(): Promise<void> {
   // skipping the manifest rewrite below.
   if (!lessonFilter && allLessonsEnriched.length > 0) {
     manifestIndex.push(
-      buildCombinedLesson(ALL_LESSONS_ID, { en: "All Lessons", et: "Kõik tunnid" }, -1, allLessonsEnriched)
+      buildCombinedLesson(
+        ALL_LESSONS_ID,
+        { en: "All Lessons", et: "Kõik tunnid", uk: "Усі уроки" },
+        -1,
+        allLessonsEnriched
+      )
     );
 
     for (let i = 0; i < allLessonsEnriched.length; i += BATCH_SIZE) {
@@ -216,6 +270,7 @@ async function main(): Promise<void> {
       const title = {
         en: `Unit ${batchNumber}: ${firstTitle.en} – ${lastTitle.en}`,
         et: `Osa ${batchNumber}: ${firstTitle.et} – ${lastTitle.et}`,
+        uk: `Частина ${batchNumber}: ${firstTitle.uk} – ${lastTitle.uk}`,
       };
       manifestIndex.push(buildCombinedLesson(`batch-${batchNumber}`, title, -1 + batchNumber * 0.01, group));
     }
@@ -255,36 +310,48 @@ async function main(): Promise<void> {
     for (const chapter of book.chapters) {
       console.log(`  Chapter: ${chapter.id} (${chapter.paragraphs.length} paragraphs)`);
 
-      const chapterClipPaths: string[] = [];
+      const chapterClipPaths: Record<NativeLang, string[]> = { en: [], uk: [] };
       const enrichedParagraphs = [];
 
       for (const paragraph of chapter.paragraphs) {
         const enrichedSentences = [];
         for (const sentence of paragraph.sentences) {
-          const audioEn = await ensureClip("sentences", "en", sentence.en, voices.en, manifest);
           const audioEt = await ensureClip("sentences", "et", sentence.et, voices.et, manifest);
-          chapterClipPaths.push(join(SITE_DIR, audioEn), pauseShortPath, join(SITE_DIR, audioEt), pauseLongPath);
+          const nativeAudio = {} as Record<NativeLang, string>;
+          for (const lang of NATIVE_LANGS) {
+            const audio = await ensureClip("sentences", lang, sentence[lang], voices[lang], manifest);
+            nativeAudio[lang] = audio;
+            chapterClipPaths[lang].push(join(SITE_DIR, audio), pauseShortPath, join(SITE_DIR, audioEt), pauseLongPath);
+          }
 
           const enrichedWords = [];
           for (const word of sentence.words) {
             const wordAudioEt = await ensureClip("words", "et", word.et, voices.et, manifest);
-            const wordAudioEn = await ensureClip("words", "en", word.en, voices.en, manifest);
-            enrichedWords.push({ ...word, audioEt: wordAudioEt, audioEn: wordAudioEn });
+            const wordAudio = {} as Record<NativeLang, string>;
+            for (const lang of NATIVE_LANGS) {
+              wordAudio[lang] = await ensureClip("words", lang, word[lang], voices[lang], manifest);
+            }
+            enrichedWords.push({ ...word, audioEt: wordAudioEt, audioEn: wordAudio.en, audioUk: wordAudio.uk });
           }
 
-          enrichedSentences.push({ ...sentence, audioEn, audioEt, words: enrichedWords });
+          enrichedSentences.push({ ...sentence, audioEn: nativeAudio.en, audioUk: nativeAudio.uk, audioEt, words: enrichedWords });
         }
-        // Swap the trailing sentence pause for a longer paragraph break.
-        chapterClipPaths[chapterClipPaths.length - 1] = pauseParagraphPath;
+        // Swap the trailing sentence pause for a longer paragraph break, in every language's track.
+        for (const lang of NATIVE_LANGS) {
+          chapterClipPaths[lang][chapterClipPaths[lang].length - 1] = pauseParagraphPath;
+        }
         enrichedParagraphs.push({ ...paragraph, sentences: enrichedSentences });
       }
 
-      const chapterAudioRel = `audio/books/${book.id}/${chapter.id}.mp3`;
-      const chapterAudioAbs = join(SITE_DIR, chapterAudioRel);
-      console.log(`    concatenating chapter track -> ${chapterAudioRel}`);
-      concatFiles(chapterClipPaths, chapterAudioAbs);
+      const chapterAudio = {} as Record<NativeLang, string>;
+      for (const lang of NATIVE_LANGS) {
+        const rel = `audio/books/${book.id}/${chapter.id}-${lang}.mp3`;
+        console.log(`    concatenating chapter track [${lang}] -> ${rel}`);
+        concatFiles(chapterClipPaths[lang], join(SITE_DIR, rel));
+        chapterAudio[lang] = rel;
+      }
 
-      enrichedChapters.push({ ...chapter, chapterAudio: chapterAudioRel, paragraphs: enrichedParagraphs });
+      enrichedChapters.push({ ...chapter, chapterAudio, paragraphs: enrichedParagraphs });
     }
 
     const bookData = {

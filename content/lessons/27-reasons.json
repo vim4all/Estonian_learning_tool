@@ -1,18 +1,18 @@
 {
   "id": "reasons",
-  "title": { "en": "Giving Reasons", "et": "Põhjendamine" },
+  "title": { "en": "Giving Reasons", "et": "Põhjendamine", "uk": "Пояснення причин" },
   "level": "B1",
   "order": 27,
   "sentences": [
-    { "id": "reasons-01", "en": "Why are you happy? Because today is Friday.", "et": "Miks sa oled rõõmus? Sest täna on reede.", "words": [{ "et": "sest", "en": "because", "lemma": "sest", "pos": "conjunction", "ipa": "sest" }, { "et": "rõõmus", "en": "happy", "lemma": "rõõmus", "pos": "adjective", "ipa": "ˈrɤːmus" }] },
-    { "id": "reasons-02", "en": "I am tired because I worked a lot.", "et": "Ma olen väsinud, sest ma töötasin palju.", "words": [{ "et": "väsinud", "en": "tired", "lemma": "väsima", "pos": "adjective", "ipa": "ˈvæsinut" }] },
-    { "id": "reasons-03", "en": "I am learning Estonian because I live in Estonia.", "et": "Ma õpin eesti keelt, sest ma elan Eestis.", "words": [{ "et": "Eestis", "en": "in Estonia", "lemma": "Eesti", "pos": "proper noun", "ipa": "ˈeːstis" }] },
-    { "id": "reasons-04", "en": "I did not go out because it was raining.", "et": "Ma ei läinud välja, sest sadas vihma.", "words": [{ "et": "sadas", "en": "rained", "lemma": "sadama", "pos": "verb", "ipa": "ˈsɑdɑs" }] },
-    { "id": "reasons-05", "en": "I like this city because it is beautiful.", "et": "Mulle meeldib see linn, sest see on ilus.", "words": [{ "et": "linn", "en": "city", "lemma": "linn", "pos": "noun", "ipa": "linː" }] },
-    { "id": "reasons-06", "en": "That's why I am here.", "et": "Sellepärast ma olen siin.", "words": [{ "et": "sellepärast", "en": "that's why / therefore", "lemma": "sellepärast", "pos": "adverb", "ipa": "ˈselleˌpærɑst" }] },
-    { "id": "reasons-07", "en": "Why? Because I want to.", "et": "Miks? Sest ma tahan.", "words": [{ "et": "miks", "en": "why", "lemma": "miks", "pos": "adverb", "ipa": "miks" }] },
-    { "id": "reasons-08", "en": "I am happy because I have a good friend.", "et": "Ma olen rõõmus, sest mul on hea sõber.", "words": [{ "et": "rõõmus", "en": "happy", "lemma": "rõõmus", "pos": "adjective", "ipa": "ˈrɤːmus" }] },
-    { "id": "reasons-09", "en": "I am studying a lot because I have an exam.", "et": "Ma õpin palju, sest mul on eksam.", "words": [{ "et": "eksam", "en": "exam", "lemma": "eksam", "pos": "noun", "ipa": "ˈeksɑm" }] },
-    { "id": "reasons-10", "en": "Because of the weather, I am staying home.", "et": "Ilma tõttu jään koju.", "notes": "\"X tõttu\" (\"because of X\") is a postposition taking the genitive: ilm → ilma tõttu.", "words": [{ "et": "tõttu", "en": "because of", "lemma": "tõttu", "pos": "adverb", "ipa": "ˈtɤtːu" }] }
+    { "id": "reasons-01", "en": "Why are you happy? Because today is Friday.", "et": "Miks sa oled rõõmus? Sest täna on reede.", "uk": "Чому ти радієш? Бо сьогодні п'ятниця.", "words": [{ "et": "sest", "en": "because", "uk": "бо / тому що", "lemma": "sest", "pos": "conjunction", "ipa": "sest" }, { "et": "rõõmus", "en": "happy", "uk": "щасливий / радісний", "lemma": "rõõmus", "pos": "adjective", "ipa": "ˈrɤːmus" }] },
+    { "id": "reasons-02", "en": "I am tired because I worked a lot.", "et": "Ma olen väsinud, sest ma töötasin palju.", "uk": "Я втомився, бо багато працював.", "words": [{ "et": "väsinud", "en": "tired", "uk": "втомлений", "lemma": "väsima", "pos": "adjective", "ipa": "ˈvæsinut" }] },
+    { "id": "reasons-03", "en": "I am learning Estonian because I live in Estonia.", "et": "Ma õpin eesti keelt, sest ma elan Eestis.", "uk": "Я вивчаю естонську мову, бо живу в Естонії.", "words": [{ "et": "Eestis", "en": "in Estonia", "uk": "в Естонії", "lemma": "Eesti", "pos": "proper noun", "ipa": "ˈeːstis" }] },
+    { "id": "reasons-04", "en": "I did not go out because it was raining.", "et": "Ma ei läinud välja, sest sadas vihma.", "uk": "Я не вийшов надвір, бо йшов дощ.", "words": [{ "et": "sadas", "en": "rained", "uk": "йшов дощ", "lemma": "sadama", "pos": "verb", "ipa": "ˈsɑdɑs" }] },
+    { "id": "reasons-05", "en": "I like this city because it is beautiful.", "et": "Mulle meeldib see linn, sest see on ilus.", "uk": "Мені подобається це місто, бо воно гарне.", "words": [{ "et": "linn", "en": "city", "uk": "місто", "lemma": "linn", "pos": "noun", "ipa": "linː" }] },
+    { "id": "reasons-06", "en": "That's why I am here.", "et": "Sellepärast ma olen siin.", "uk": "Ось чому я тут.", "words": [{ "et": "sellepärast", "en": "that's why / therefore", "uk": "ось чому / тому", "lemma": "sellepärast", "pos": "adverb", "ipa": "ˈselleˌpærɑst" }] },
+    { "id": "reasons-07", "en": "Why? Because I want to.", "et": "Miks? Sest ma tahan.", "uk": "Чому? Бо я так хочу.", "words": [{ "et": "miks", "en": "why", "uk": "чому", "lemma": "miks", "pos": "adverb", "ipa": "miks" }] },
+    { "id": "reasons-08", "en": "I am happy because I have a good friend.", "et": "Ma olen rõõmus, sest mul on hea sõber.", "uk": "Я радий, бо в мене є хороший друг.", "words": [{ "et": "rõõmus", "en": "happy", "uk": "щасливий / радісний", "lemma": "rõõmus", "pos": "adjective", "ipa": "ˈrɤːmus" }] },
+    { "id": "reasons-09", "en": "I am studying a lot because I have an exam.", "et": "Ma õpin palju, sest mul on eksam.", "uk": "Я багато навчаюся, бо в мене іспит.", "words": [{ "et": "eksam", "en": "exam", "uk": "іспит", "lemma": "eksam", "pos": "noun", "ipa": "ˈeksɑm" }] },
+    { "id": "reasons-10", "en": "Because of the weather, I am staying home.", "et": "Ilma tõttu jään koju.", "uk": "Через погоду я залишаюся вдома.", "notes": "\"X tõttu\" (\"because of X\") is a postposition taking the genitive: ilm → ilma tõttu.", "words": [{ "et": "tõttu", "en": "because of", "uk": "через", "lemma": "tõttu", "pos": "adverb", "ipa": "ˈtɤtːu" }] }
   ]
 }

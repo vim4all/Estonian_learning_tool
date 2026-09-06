@@ -1,18 +1,18 @@
 {
   "id": "shopping",
-  "title": { "en": "Shopping", "et": "Poeskäik" },
+  "title": { "en": "Shopping", "et": "Poeskäik", "uk": "Покупки" },
   "level": "A2",
   "order": 13,
   "sentences": [
-    { "id": "shopping-01", "en": "How much does it cost?", "et": "Kui palju see maksab?", "words": [{ "et": "maksab", "en": "costs", "lemma": "maksma", "pos": "verb", "ipa": "ˈmɑksɑp" }] },
-    { "id": "shopping-02", "en": "It is expensive.", "et": "See on kallis.", "words": [{ "et": "kallis", "en": "expensive", "lemma": "kallis", "pos": "adjective", "ipa": "ˈkɑllis" }] },
-    { "id": "shopping-03", "en": "It is cheap.", "et": "See on odav.", "words": [{ "et": "odav", "en": "cheap", "lemma": "odav", "pos": "adjective", "ipa": "ˈodɑv" }] },
-    { "id": "shopping-04", "en": "I want to buy this.", "et": "Ma tahan seda osta.", "words": [{ "et": "osta", "en": "to buy", "lemma": "ostma", "pos": "verb", "ipa": "ˈostɑ" }] },
-    { "id": "shopping-05", "en": "This is money.", "et": "See on raha.", "words": [{ "et": "raha", "en": "money", "lemma": "raha", "pos": "noun", "ipa": "ˈrɑhɑ" }] },
-    { "id": "shopping-06", "en": "I have money.", "et": "Mul on raha.", "words": [{ "et": "raha", "en": "money", "lemma": "raha", "pos": "noun", "ipa": "ˈrɑhɑ" }] },
-    { "id": "shopping-07", "en": "I have no money.", "et": "Mul ei ole raha.", "words": [{ "et": "ei ole", "en": "is not / don't have", "lemma": "olema", "pos": "verb", "ipa": "ei ˈole" }] },
-    { "id": "shopping-08", "en": "I want to pay.", "et": "Ma tahan maksta.", "words": [{ "et": "maksta", "en": "to pay", "lemma": "maksma", "pos": "verb", "ipa": "ˈmɑkstɑ" }] },
-    { "id": "shopping-09", "en": "I need a bag.", "et": "Mul on kotti vaja.", "words": [{ "et": "kotti", "en": "bag", "lemma": "kott", "pos": "noun", "ipa": "ˈkotːi" }] },
-    { "id": "shopping-10", "en": "Where is the shop?", "et": "Kus on pood?", "words": [{ "et": "pood", "en": "shop", "lemma": "pood", "pos": "noun", "ipa": "poːt" }] }
+    { "id": "shopping-01", "en": "How much does it cost?", "et": "Kui palju see maksab?", "uk": "Скільки це коштує?", "words": [{ "et": "maksab", "en": "costs", "uk": "коштує", "lemma": "maksma", "pos": "verb", "ipa": "ˈmɑksɑp" }] },
+    { "id": "shopping-02", "en": "It is expensive.", "et": "See on kallis.", "uk": "Це дорого.", "words": [{ "et": "kallis", "en": "expensive", "uk": "дорогий", "lemma": "kallis", "pos": "adjective", "ipa": "ˈkɑllis" }] },
+    { "id": "shopping-03", "en": "It is cheap.", "et": "See on odav.", "uk": "Це дешево.", "words": [{ "et": "odav", "en": "cheap", "uk": "дешевий", "lemma": "odav", "pos": "adjective", "ipa": "ˈodɑv" }] },
+    { "id": "shopping-04", "en": "I want to buy this.", "et": "Ma tahan seda osta.", "uk": "Я хочу це купити.", "words": [{ "et": "osta", "en": "to buy", "uk": "купити", "lemma": "ostma", "pos": "verb", "ipa": "ˈostɑ" }] },
+    { "id": "shopping-05", "en": "This is money.", "et": "See on raha.", "uk": "Це гроші.", "words": [{ "et": "raha", "en": "money", "uk": "гроші", "lemma": "raha", "pos": "noun", "ipa": "ˈrɑhɑ" }] },
+    { "id": "shopping-06", "en": "I have money.", "et": "Mul on raha.", "uk": "У мене є гроші.", "words": [{ "et": "raha", "en": "money", "uk": "гроші", "lemma": "raha", "pos": "noun", "ipa": "ˈrɑhɑ" }] },
+    { "id": "shopping-07", "en": "I have no money.", "et": "Mul ei ole raha.", "uk": "У мене немає грошей.", "words": [{ "et": "ei ole", "en": "is not / don't have", "uk": "немає / нема", "lemma": "olema", "pos": "verb", "ipa": "ei ˈole" }] },
+    { "id": "shopping-08", "en": "I want to pay.", "et": "Ma tahan maksta.", "uk": "Я хочу заплатити.", "words": [{ "et": "maksta", "en": "to pay", "uk": "заплатити", "lemma": "maksma", "pos": "verb", "ipa": "ˈmɑkstɑ" }] },
+    { "id": "shopping-09", "en": "I need a bag.", "et": "Mul on kotti vaja.", "uk": "Мені потрібна сумка.", "words": [{ "et": "kotti", "en": "bag", "uk": "сумка", "lemma": "kott", "pos": "noun", "ipa": "ˈkotːi" }] },
+    { "id": "shopping-10", "en": "Where is the shop?", "et": "Kus on pood?", "uk": "Де магазин?", "words": [{ "et": "pood", "en": "shop", "uk": "магазин", "lemma": "pood", "pos": "noun", "ipa": "poːt" }] }
   ]
 }

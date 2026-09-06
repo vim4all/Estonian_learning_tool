@@ -1,18 +1,18 @@
 {
   "id": "numbers",
-  "title": { "en": "Numbers", "et": "Numbrid" },
+  "title": { "en": "Numbers", "et": "Numbrid", "uk": "Числа" },
   "level": "A0",
   "order": 3,
   "sentences": [
-    { "id": "numbers-01", "en": "One", "et": "Üks", "words": [{ "et": "üks", "en": "one", "lemma": "üks", "pos": "numeral", "ipa": "yks" }] },
-    { "id": "numbers-02", "en": "Two", "et": "Kaks", "words": [{ "et": "kaks", "en": "two", "lemma": "kaks", "pos": "numeral", "ipa": "kɑks" }] },
-    { "id": "numbers-03", "en": "Three", "et": "Kolm", "words": [{ "et": "kolm", "en": "three", "lemma": "kolm", "pos": "numeral", "ipa": "kolm" }] },
-    { "id": "numbers-04", "en": "Four", "et": "Neli", "words": [{ "et": "neli", "en": "four", "lemma": "neli", "pos": "numeral", "ipa": "ˈneli" }] },
-    { "id": "numbers-05", "en": "Five", "et": "Viis", "words": [{ "et": "viis", "en": "five", "lemma": "viis", "pos": "numeral", "ipa": "viːs" }] },
-    { "id": "numbers-06", "en": "Six", "et": "Kuus", "words": [{ "et": "kuus", "en": "six", "lemma": "kuus", "pos": "numeral", "ipa": "kuːs" }] },
-    { "id": "numbers-07", "en": "Seven", "et": "Seitse", "words": [{ "et": "seitse", "en": "seven", "lemma": "seitse", "pos": "numeral", "ipa": "ˈseitse" }] },
-    { "id": "numbers-08", "en": "Eight", "et": "Kaheksa", "words": [{ "et": "kaheksa", "en": "eight", "lemma": "kaheksa", "pos": "numeral", "ipa": "ˈkɑheksɑ" }] },
-    { "id": "numbers-09", "en": "Nine", "et": "Üheksa", "words": [{ "et": "üheksa", "en": "nine", "lemma": "üheksa", "pos": "numeral", "ipa": "ˈyheksɑ" }] },
-    { "id": "numbers-10", "en": "Ten", "et": "Kümme", "words": [{ "et": "kümme", "en": "ten", "lemma": "kümme", "pos": "numeral", "ipa": "ˈkymːe" }] }
+    { "id": "numbers-01", "en": "One", "et": "Üks", "uk": "Один", "words": [{ "et": "üks", "en": "one", "uk": "один", "lemma": "üks", "pos": "numeral", "ipa": "yks" }] },
+    { "id": "numbers-02", "en": "Two", "et": "Kaks", "uk": "Два", "words": [{ "et": "kaks", "en": "two", "uk": "два", "lemma": "kaks", "pos": "numeral", "ipa": "kɑks" }] },
+    { "id": "numbers-03", "en": "Three", "et": "Kolm", "uk": "Три", "words": [{ "et": "kolm", "en": "three", "uk": "три", "lemma": "kolm", "pos": "numeral", "ipa": "kolm" }] },
+    { "id": "numbers-04", "en": "Four", "et": "Neli", "uk": "Чотири", "words": [{ "et": "neli", "en": "four", "uk": "чотири", "lemma": "neli", "pos": "numeral", "ipa": "ˈneli" }] },
+    { "id": "numbers-05", "en": "Five", "et": "Viis", "uk": "П'ять", "words": [{ "et": "viis", "en": "five", "uk": "п'ять", "lemma": "viis", "pos": "numeral", "ipa": "viːs" }] },
+    { "id": "numbers-06", "en": "Six", "et": "Kuus", "uk": "Шість", "words": [{ "et": "kuus", "en": "six", "uk": "шість", "lemma": "kuus", "pos": "numeral", "ipa": "kuːs" }] },
+    { "id": "numbers-07", "en": "Seven", "et": "Seitse", "uk": "Сім", "words": [{ "et": "seitse", "en": "seven", "uk": "сім", "lemma": "seitse", "pos": "numeral", "ipa": "ˈseitse" }] },
+    { "id": "numbers-08", "en": "Eight", "et": "Kaheksa", "uk": "Вісім", "words": [{ "et": "kaheksa", "en": "eight", "uk": "вісім", "lemma": "kaheksa", "pos": "numeral", "ipa": "ˈkɑheksɑ" }] },
+    { "id": "numbers-09", "en": "Nine", "et": "Üheksa", "uk": "Дев'ять", "words": [{ "et": "üheksa", "en": "nine", "uk": "дев'ять", "lemma": "üheksa", "pos": "numeral", "ipa": "ˈyheksɑ" }] },
+    { "id": "numbers-10", "en": "Ten", "et": "Kümme", "uk": "Десять", "words": [{ "et": "kümme", "en": "ten", "uk": "десять", "lemma": "kümme", "pos": "numeral", "ipa": "ˈkymːe" }] }
   ]
 }

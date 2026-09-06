@@ -22,6 +22,11 @@
 
 * { box-sizing: border-box; }
 
+/* Without this, elements whose own class sets `display` (e.g. .lesson-picker's flex) win the
+   cascade over the UA stylesheet's `[hidden] { display: none }` at equal specificity, since author
+   rules come after it — so toggling the `hidden` attribute alone silently does nothing. */
+[hidden] { display: none !important; }
+
 body {
   margin: 0;
   background: var(--bg);
@@ -72,6 +77,28 @@ main {
 
 .mode-link.active {
   background: var(--accent);
+  color: var(--accent-contrast);
+}
+
+.lang-toggle {
+  display: flex;
+  justify-content: center;
+  gap: 0.4rem;
+  margin-top: 0.6rem;
+}
+
+.lang-btn {
+  font-size: 0.8rem;
+  padding: 0.25rem 0.7rem;
+  border-radius: 999px;
+  border: 1px solid var(--border);
+  background: var(--card-bg);
+  color: var(--muted);
+}
+
+.lang-btn.active {
+  background: var(--accent);
+  border-color: var(--accent);
   color: var(--accent-contrast);
 }
 

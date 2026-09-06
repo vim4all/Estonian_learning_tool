@@ -1,18 +1,18 @@
 {
   "id": "cases-location",
-  "title": { "en": "Cases in Context: Location", "et": "Kohakäänded" },
+  "title": { "en": "Cases in Context: Location", "et": "Kohakäänded", "uk": "Відмінки в контексті: місце" },
   "level": "B1",
   "order": 26,
   "sentences": [
-    { "id": "cases-location-01", "en": "I am at school.", "et": "Ma olen koolis.", "notes": "Inessive (\"in\"): kool → koolis.", "words": [{ "et": "koolis", "en": "at/in school", "lemma": "kool", "pos": "noun", "ipa": "ˈkoːlis" }] },
-    { "id": "cases-location-02", "en": "I am going to school.", "et": "Ma lähen kooli.", "notes": "Illative (\"into\"): kool → kooli.", "words": [{ "et": "kooli", "en": "to school", "lemma": "kool", "pos": "noun", "ipa": "ˈkoːli" }] },
-    { "id": "cases-location-03", "en": "I am coming from school.", "et": "Ma tulen koolist.", "notes": "Elative (\"out of\"): kool → koolist. Together, koolis/kooli/koolist are the \"internal\" location case set.", "words": [{ "et": "koolist", "en": "from school", "lemma": "kool", "pos": "noun", "ipa": "ˈkoːlist" }] },
-    { "id": "cases-location-04", "en": "The book is on the table.", "et": "Raamat on laual.", "notes": "Adessive (\"on/at\"): laud → laual.", "words": [{ "et": "laual", "en": "on the table", "lemma": "laud", "pos": "noun", "ipa": "ˈlɑuɑl" }] },
-    { "id": "cases-location-05", "en": "I am putting the book on the table.", "et": "Ma panen raamatu lauale.", "notes": "Allative (\"onto\"): laud → lauale.", "words": [{ "et": "lauale", "en": "onto the table", "lemma": "laud", "pos": "noun", "ipa": "ˈlɑuɑle" }] },
-    { "id": "cases-location-06", "en": "The cup fell off the table.", "et": "Tass kukkus laualt maha.", "notes": "Ablative (\"off/from\"): laud → laualt. Together, laual/lauale/laualt are the \"external\" location case set.", "words": [{ "et": "laualt", "en": "off the table", "lemma": "laud", "pos": "noun", "ipa": "ˈlɑuɑlt" }] },
-    { "id": "cases-location-07", "en": "I live in Tallinn.", "et": "Ma elan Tallinnas.", "words": [{ "et": "Tallinnas", "en": "in Tallinn", "lemma": "Tallinn", "pos": "proper noun", "ipa": "ˈtɑllinnɑs" }] },
-    { "id": "cases-location-08", "en": "I am going to Tallinn.", "et": "Ma lähen Tallinna.", "words": [{ "et": "Tallinna", "en": "to Tallinn", "lemma": "Tallinn", "pos": "proper noun", "ipa": "ˈtɑllinnɑ" }] },
-    { "id": "cases-location-09", "en": "I am from Tallinn.", "et": "Ma olen Tallinnast.", "words": [{ "et": "Tallinnast", "en": "from Tallinn", "lemma": "Tallinn", "pos": "proper noun", "ipa": "ˈtɑllinnɑst" }] },
-    { "id": "cases-location-10", "en": "Where are you? In the kitchen.", "et": "Kus sa oled? Köögis.", "words": [{ "et": "köögis", "en": "in the kitchen", "lemma": "köök", "pos": "noun", "ipa": "ˈkøːɡis" }] }
+    { "id": "cases-location-01", "en": "I am at school.", "et": "Ma olen koolis.", "uk": "Я в школі.", "notes": "Inessive (\"in\"): kool → koolis.", "words": [{ "et": "koolis", "en": "at/in school", "uk": "у школі", "lemma": "kool", "pos": "noun", "ipa": "ˈkoːlis" }] },
+    { "id": "cases-location-02", "en": "I am going to school.", "et": "Ma lähen kooli.", "uk": "Я йду до школи.", "notes": "Illative (\"into\"): kool → kooli.", "words": [{ "et": "kooli", "en": "to school", "uk": "до школи", "lemma": "kool", "pos": "noun", "ipa": "ˈkoːli" }] },
+    { "id": "cases-location-03", "en": "I am coming from school.", "et": "Ma tulen koolist.", "uk": "Я йду зі школи.", "notes": "Elative (\"out of\"): kool → koolist. Together, koolis/kooli/koolist are the \"internal\" location case set.", "words": [{ "et": "koolist", "en": "from school", "uk": "зі школи", "lemma": "kool", "pos": "noun", "ipa": "ˈkoːlist" }] },
+    { "id": "cases-location-04", "en": "The book is on the table.", "et": "Raamat on laual.", "uk": "Книга на столі.", "notes": "Adessive (\"on/at\"): laud → laual.", "words": [{ "et": "laual", "en": "on the table", "uk": "на столі", "lemma": "laud", "pos": "noun", "ipa": "ˈlɑuɑl" }] },
+    { "id": "cases-location-05", "en": "I am putting the book on the table.", "et": "Ma panen raamatu lauale.", "uk": "Я кладу книгу на стіл.", "notes": "Allative (\"onto\"): laud → lauale.", "words": [{ "et": "lauale", "en": "onto the table", "uk": "на стіл", "lemma": "laud", "pos": "noun", "ipa": "ˈlɑuɑle" }] },
+    { "id": "cases-location-06", "en": "The cup fell off the table.", "et": "Tass kukkus laualt maha.", "uk": "Чашка впала зі столу.", "notes": "Ablative (\"off/from\"): laud → laualt. Together, laual/lauale/laualt are the \"external\" location case set.", "words": [{ "et": "laualt", "en": "off the table", "uk": "зі столу", "lemma": "laud", "pos": "noun", "ipa": "ˈlɑuɑlt" }] },
+    { "id": "cases-location-07", "en": "I live in Tallinn.", "et": "Ma elan Tallinnas.", "uk": "Я живу в Таллінні.", "words": [{ "et": "Tallinnas", "en": "in Tallinn", "uk": "у Таллінні", "lemma": "Tallinn", "pos": "proper noun", "ipa": "ˈtɑllinnɑs" }] },
+    { "id": "cases-location-08", "en": "I am going to Tallinn.", "et": "Ma lähen Tallinna.", "uk": "Я їду до Таллінна.", "words": [{ "et": "Tallinna", "en": "to Tallinn", "uk": "до Таллінна", "lemma": "Tallinn", "pos": "proper noun", "ipa": "ˈtɑllinnɑ" }] },
+    { "id": "cases-location-09", "en": "I am from Tallinn.", "et": "Ma olen Tallinnast.", "uk": "Я з Таллінна.", "words": [{ "et": "Tallinnast", "en": "from Tallinn", "uk": "з Таллінна", "lemma": "Tallinn", "pos": "proper noun", "ipa": "ˈtɑllinnɑst" }] },
+    { "id": "cases-location-10", "en": "Where are you? In the kitchen.", "et": "Kus sa oled? Köögis.", "uk": "Де ти? На кухні.", "words": [{ "et": "köögis", "en": "in the kitchen", "uk": "на кухні", "lemma": "köök", "pos": "noun", "ipa": "ˈkøːɡis" }] }
   ]
 }

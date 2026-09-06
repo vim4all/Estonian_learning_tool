@@ -1,18 +1,18 @@
 {
   "id": "food",
-  "title": { "en": "Food & Drink", "et": "Toit ja jook" },
+  "title": { "en": "Food & Drink", "et": "Toit ja jook", "uk": "Їжа та напої" },
   "level": "A1",
   "order": 8,
   "sentences": [
-    { "id": "food-01", "en": "I like water.", "et": "Mulle meeldib vesi.", "words": [{ "et": "vesi", "en": "water", "lemma": "vesi", "pos": "noun", "ipa": "ˈvesi" }] },
-    { "id": "food-02", "en": "The bread is delicious.", "et": "Leib on maitsev.", "words": [{ "et": "leib", "en": "bread", "lemma": "leib", "pos": "noun", "ipa": "leip" }, { "et": "maitsev", "en": "delicious", "lemma": "maitsev", "pos": "adjective", "ipa": "ˈmɑitsev" }] },
-    { "id": "food-03", "en": "I like coffee.", "et": "Mulle meeldib kohv.", "words": [{ "et": "kohv", "en": "coffee", "lemma": "kohv", "pos": "noun", "ipa": "kohv" }] },
-    { "id": "food-04", "en": "I like tea.", "et": "Mulle meeldib tee.", "words": [{ "et": "tee", "en": "tea", "lemma": "tee", "pos": "noun", "ipa": "teː" }] },
-    { "id": "food-05", "en": "I like milk.", "et": "Mulle meeldib piim.", "words": [{ "et": "piim", "en": "milk", "lemma": "piim", "pos": "noun", "ipa": "piːm" }] },
-    { "id": "food-06", "en": "The apple is sweet.", "et": "Õun on magus.", "words": [{ "et": "õun", "en": "apple", "lemma": "õun", "pos": "noun", "ipa": "ˈɤun" }, { "et": "magus", "en": "sweet", "lemma": "magus", "pos": "adjective", "ipa": "ˈmɑɡus" }] },
-    { "id": "food-07", "en": "I like cheese.", "et": "Mulle meeldib juust.", "words": [{ "et": "juust", "en": "cheese", "lemma": "juust", "pos": "noun", "ipa": "juːst" }] },
-    { "id": "food-08", "en": "I like meat.", "et": "Mulle meeldib liha.", "words": [{ "et": "liha", "en": "meat", "lemma": "liha", "pos": "noun", "ipa": "ˈlihɑ" }] },
-    { "id": "food-09", "en": "I like fish.", "et": "Mulle meeldib kala.", "words": [{ "et": "kala", "en": "fish", "lemma": "kala", "pos": "noun", "ipa": "ˈkɑlɑ" }] },
-    { "id": "food-10", "en": "I like eggs.", "et": "Mulle meeldivad munad.", "notes": "\"meeldivad\" and \"munad\" are both plural, agreeing with each other.", "words": [{ "et": "munad", "en": "eggs", "lemma": "muna", "pos": "noun", "ipa": "ˈmunɑt" }] }
+    { "id": "food-01", "en": "I like water.", "et": "Mulle meeldib vesi.", "uk": "Мені подобається вода.", "words": [{ "et": "vesi", "en": "water", "uk": "вода", "lemma": "vesi", "pos": "noun", "ipa": "ˈvesi" }] },
+    { "id": "food-02", "en": "The bread is delicious.", "et": "Leib on maitsev.", "uk": "Хліб смачний.", "words": [{ "et": "leib", "en": "bread", "uk": "хліб", "lemma": "leib", "pos": "noun", "ipa": "leip" }, { "et": "maitsev", "en": "delicious", "uk": "смачний", "lemma": "maitsev", "pos": "adjective", "ipa": "ˈmɑitsev" }] },
+    { "id": "food-03", "en": "I like coffee.", "et": "Mulle meeldib kohv.", "uk": "Мені подобається кава.", "words": [{ "et": "kohv", "en": "coffee", "uk": "кава", "lemma": "kohv", "pos": "noun", "ipa": "kohv" }] },
+    { "id": "food-04", "en": "I like tea.", "et": "Mulle meeldib tee.", "uk": "Мені подобається чай.", "words": [{ "et": "tee", "en": "tea", "uk": "чай", "lemma": "tee", "pos": "noun", "ipa": "teː" }] },
+    { "id": "food-05", "en": "I like milk.", "et": "Mulle meeldib piim.", "uk": "Мені подобається молоко.", "words": [{ "et": "piim", "en": "milk", "uk": "молоко", "lemma": "piim", "pos": "noun", "ipa": "piːm" }] },
+    { "id": "food-06", "en": "The apple is sweet.", "et": "Õun on magus.", "uk": "Яблуко солодке.", "words": [{ "et": "õun", "en": "apple", "uk": "яблуко", "lemma": "õun", "pos": "noun", "ipa": "ˈɤun" }, { "et": "magus", "en": "sweet", "uk": "солодкий", "lemma": "magus", "pos": "adjective", "ipa": "ˈmɑɡus" }] },
+    { "id": "food-07", "en": "I like cheese.", "et": "Mulle meeldib juust.", "uk": "Мені подобається сир.", "words": [{ "et": "juust", "en": "cheese", "uk": "сир", "lemma": "juust", "pos": "noun", "ipa": "juːst" }] },
+    { "id": "food-08", "en": "I like meat.", "et": "Mulle meeldib liha.", "uk": "Мені подобається м'ясо.", "words": [{ "et": "liha", "en": "meat", "uk": "м'ясо", "lemma": "liha", "pos": "noun", "ipa": "ˈlihɑ" }] },
+    { "id": "food-09", "en": "I like fish.", "et": "Mulle meeldib kala.", "uk": "Мені подобається риба.", "words": [{ "et": "kala", "en": "fish", "uk": "риба", "lemma": "kala", "pos": "noun", "ipa": "ˈkɑlɑ" }] },
+    { "id": "food-10", "en": "I like eggs.", "et": "Mulle meeldivad munad.", "uk": "Мені подобаються яйця.", "notes": "\"meeldivad\" and \"munad\" are both plural, agreeing with each other.", "words": [{ "et": "munad", "en": "eggs", "uk": "яйця", "lemma": "muna", "pos": "noun", "ipa": "ˈmunɑt" }] }
   ]
 }

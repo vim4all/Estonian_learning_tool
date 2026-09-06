@@ -1,18 +1,18 @@
 {
   "id": "daily-routine",
-  "title": { "en": "Daily Routine", "et": "Igapäevased tegevused" },
+  "title": { "en": "Daily Routine", "et": "Igapäevased tegevused", "uk": "Щоденний розпорядок" },
   "level": "A2",
   "order": 14,
   "sentences": [
-    { "id": "daily-routine-01", "en": "I am eating.", "et": "Ma söön.", "words": [{ "et": "söön", "en": "am eating", "lemma": "sööma", "pos": "verb", "ipa": "søːn" }] },
-    { "id": "daily-routine-02", "en": "I am sleeping.", "et": "Ma magan.", "words": [{ "et": "magan", "en": "am sleeping", "lemma": "magama", "pos": "verb", "ipa": "ˈmɑɡɑn" }] },
-    { "id": "daily-routine-03", "en": "I am reading.", "et": "Ma loen.", "words": [{ "et": "loen", "en": "am reading", "lemma": "lugema", "pos": "verb", "ipa": "ˈloen" }] },
-    { "id": "daily-routine-04", "en": "I am working.", "et": "Ma töötan.", "words": [{ "et": "töötan", "en": "am working", "lemma": "töötama", "pos": "verb", "ipa": "ˈtøːtɑn" }] },
-    { "id": "daily-routine-05", "en": "I am walking.", "et": "Ma kõnnin.", "words": [{ "et": "kõnnin", "en": "am walking", "lemma": "kõndima", "pos": "verb", "ipa": "ˈkɤnːin" }] },
-    { "id": "daily-routine-06", "en": "I am writing.", "et": "Ma kirjutan.", "words": [{ "et": "kirjutan", "en": "am writing", "lemma": "kirjutama", "pos": "verb", "ipa": "ˈkirjutɑn" }] },
-    { "id": "daily-routine-07", "en": "I am studying.", "et": "Ma õpin.", "words": [{ "et": "õpin", "en": "am studying", "lemma": "õppima", "pos": "verb", "ipa": "ˈɤpin" }] },
-    { "id": "daily-routine-08", "en": "I live here.", "et": "Ma elan siin.", "words": [{ "et": "elan", "en": "live", "lemma": "elama", "pos": "verb", "ipa": "ˈelɑn" }] },
-    { "id": "daily-routine-09", "en": "I speak Estonian.", "et": "Ma räägin eesti keelt.", "words": [{ "et": "räägin", "en": "speak", "lemma": "rääkima", "pos": "verb", "ipa": "ˈræːɡin" }] },
-    { "id": "daily-routine-10", "en": "I am learning Estonian.", "et": "Ma õpin eesti keelt.", "words": [{ "et": "õpin", "en": "am learning", "lemma": "õppima", "pos": "verb", "ipa": "ˈɤpin" }] }
+    { "id": "daily-routine-01", "en": "I am eating.", "et": "Ma söön.", "uk": "Я їм.", "words": [{ "et": "söön", "en": "am eating", "uk": "їм", "lemma": "sööma", "pos": "verb", "ipa": "søːn" }] },
+    { "id": "daily-routine-02", "en": "I am sleeping.", "et": "Ma magan.", "uk": "Я сплю.", "words": [{ "et": "magan", "en": "am sleeping", "uk": "сплю", "lemma": "magama", "pos": "verb", "ipa": "ˈmɑɡɑn" }] },
+    { "id": "daily-routine-03", "en": "I am reading.", "et": "Ma loen.", "uk": "Я читаю.", "words": [{ "et": "loen", "en": "am reading", "uk": "читаю", "lemma": "lugema", "pos": "verb", "ipa": "ˈloen" }] },
+    { "id": "daily-routine-04", "en": "I am working.", "et": "Ma töötan.", "uk": "Я працюю.", "words": [{ "et": "töötan", "en": "am working", "uk": "працюю", "lemma": "töötama", "pos": "verb", "ipa": "ˈtøːtɑn" }] },
+    { "id": "daily-routine-05", "en": "I am walking.", "et": "Ma kõnnin.", "uk": "Я йду пішки.", "words": [{ "et": "kõnnin", "en": "am walking", "uk": "йду пішки", "lemma": "kõndima", "pos": "verb", "ipa": "ˈkɤnːin" }] },
+    { "id": "daily-routine-06", "en": "I am writing.", "et": "Ma kirjutan.", "uk": "Я пишу.", "words": [{ "et": "kirjutan", "en": "am writing", "uk": "пишу", "lemma": "kirjutama", "pos": "verb", "ipa": "ˈkirjutɑn" }] },
+    { "id": "daily-routine-07", "en": "I am studying.", "et": "Ma õpin.", "uk": "Я навчаюся.", "words": [{ "et": "õpin", "en": "am studying", "uk": "навчаюся", "lemma": "õppima", "pos": "verb", "ipa": "ˈɤpin" }] },
+    { "id": "daily-routine-08", "en": "I live here.", "et": "Ma elan siin.", "uk": "Я живу тут.", "words": [{ "et": "elan", "en": "live", "uk": "живу", "lemma": "elama", "pos": "verb", "ipa": "ˈelɑn" }] },
+    { "id": "daily-routine-09", "en": "I speak Estonian.", "et": "Ma räägin eesti keelt.", "uk": "Я розмовляю естонською.", "words": [{ "et": "räägin", "en": "speak", "uk": "розмовляю", "lemma": "rääkima", "pos": "verb", "ipa": "ˈræːɡin" }] },
+    { "id": "daily-routine-10", "en": "I am learning Estonian.", "et": "Ma õpin eesti keelt.", "uk": "Я вивчаю естонську мову.", "words": [{ "et": "õpin", "en": "am learning", "uk": "вивчаю", "lemma": "õppima", "pos": "verb", "ipa": "ˈɤpin" }] }
   ]
 }

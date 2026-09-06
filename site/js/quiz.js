@@ -12,6 +12,11 @@
   const clipAudioEl = document.getElementById("clip-audio-el");
 
   const OPTION_COUNT = 4;
+  const nativeLang = EstLrnLang.getNativeLang();
+  const nativeAudioField = EstLrnLang.audioField(nativeLang);
+  const nativeLangLabel = EstLrnLang.nativeLangLabel(nativeLang);
+
+  EstLrnLang.initLangToggle();
 
   let vocab = [];
   let correct = 0;
@@ -72,15 +77,15 @@
     answered = false;
     nextBtn.hidden = true;
 
-    const direction = Math.random() < 0.5 ? "et-en" : "en-et";
+    const direction = Math.random() < 0.5 ? "et-native" : "native-et";
     const pool = shuffle(vocab);
     const answerWord = pool[0];
-    const promptText = direction === "et-en" ? answerWord.et : answerWord.en;
-    const answerText = direction === "et-en" ? answerWord.en : answerWord.et;
+    const promptText = direction === "et-native" ? answerWord.et : answerWord[nativeLang];
+    const answerText = direction === "et-native" ? answerWord[nativeLang] : answerWord.et;
 
     const distractors = [];
     for (const w of pool.slice(1)) {
-      const candidate = direction === "et-en" ? w.en : w.et;
+      const candidate = direction === "et-native" ? w[nativeLang] : w.et;
       if (candidate.toLowerCase() === answerText.toLowerCase()) continue;
       if (distractors.some((d) => d.toLowerCase() === candidate.toLowerCase())) continue;
       distractors.push(candidate);
@@ -95,7 +100,7 @@
     current = {
       direction,
       promptText,
-      promptAudio: direction === "et-en" ? answerWord.audioEt : answerWord.audioEn,
+      promptAudio: direction === "et-native" ? answerWord.audioEt : answerWord[nativeAudioField],
       options,
     };
     render();
@@ -103,7 +108,7 @@
 
   function render() {
     directionEl.textContent =
-      current.direction === "et-en" ? "Estonian → English" : "English → Estonian";
+      current.direction === "et-native" ? `Estonian → ${nativeLangLabel}` : `${nativeLangLabel} → Estonian`;
     promptEl.textContent = current.promptText;
     playBtn.hidden = !current.promptAudio;
 

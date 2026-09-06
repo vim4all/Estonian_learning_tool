@@ -14,10 +14,15 @@
   const chapterAudioEl = document.getElementById("chapter-audio-el");
   const clipAudioEl = document.getElementById("clip-audio-el");
 
+  const nativeLang = EstLrnLang.getNativeLang();
+  const nativeAudioField = EstLrnLang.audioField(nativeLang);
+
   let manifest = [];
   let currentBookData = null;
   let tooltipEl = null;
   let stopped = false;
+
+  EstLrnLang.initLangToggle();
 
   async function fetchJson(path) {
     const res = await fetch(path);
@@ -39,7 +44,7 @@
     for (const book of manifest) {
       const option = document.createElement("option");
       option.value = book.id;
-      option.textContent = book.title.en;
+      option.textContent = book.title[nativeLang];
       bookSelect.appendChild(option);
     }
 
@@ -57,7 +62,7 @@
     for (const chapter of meta.chapters) {
       const option = document.createElement("option");
       option.value = chapter.id;
-      option.textContent = chapter.title.en;
+      option.textContent = chapter.title[nativeLang];
       chapterSelect.appendChild(option);
     }
 
@@ -70,9 +75,9 @@
     const chapter = currentBookData.chapters.find((c) => c.id === chapterId);
     chapterAudioEl.pause();
     clipAudioEl.pause();
-    chapterAudioEl.src = chapter.chapterAudio;
+    chapterAudioEl.src = chapter.chapterAudio[nativeLang];
 
-    chapterTitleEnEl.textContent = chapter.title.en;
+    chapterTitleEnEl.textContent = chapter.title[nativeLang];
     chapterTitleEtEl.textContent = chapter.title.et;
 
     paragraphsEl.innerHTML = "";
@@ -93,7 +98,7 @@
 
     const enEl = document.createElement("p");
     enEl.className = "sentence-pair-en";
-    enEl.textContent = sentence.en;
+    enEl.textContent = sentence[nativeLang];
 
     const etEl = document.createElement("p");
     etEl.className = "sentence-pair-et";
@@ -151,7 +156,7 @@
       tooltipEl.className = "gloss-tooltip";
       document.body.appendChild(tooltipEl);
     }
-    const parts = [gloss.en, gloss.pos];
+    const parts = [gloss[nativeLang], gloss.pos];
     if (gloss.ipa) parts.push(`/${gloss.ipa}/`);
     tooltipEl.textContent = parts.join(" · ");
     const rect = anchorEl.getBoundingClientRect();
@@ -183,7 +188,7 @@
 
   async function playSentencePair(sentence) {
     stopped = false;
-    await playClip(sentence.audioEn);
+    await playClip(sentence[nativeAudioField]);
     if (stopped) return;
     await playClip(sentence.audioEt);
   }

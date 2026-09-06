@@ -1,18 +1,18 @@
 {
   "id": "plans",
-  "title": { "en": "Making Plans", "et": "Plaanide tegemine" },
+  "title": { "en": "Making Plans", "et": "Plaanide tegemine", "uk": "Планування" },
   "level": "A2",
   "order": 21,
   "sentences": [
-    { "id": "plans-01", "en": "Let's meet tomorrow.", "et": "Kohtume homme.", "words": [{ "et": "kohtume", "en": "let's meet", "lemma": "kohtuma", "pos": "verb", "ipa": "ˈkohtume" }] },
-    { "id": "plans-02", "en": "Do you have time tomorrow?", "et": "Kas sul on homme aega?", "words": [{ "et": "homme", "en": "tomorrow", "lemma": "homme", "pos": "adverb", "ipa": "ˈhomme" }] },
-    { "id": "plans-03", "en": "I am free on Friday.", "et": "Ma olen reedel vaba.", "words": [{ "et": "reedel", "en": "on Friday", "lemma": "reede", "pos": "noun", "ipa": "ˈreːdel" }, { "et": "vaba", "en": "free", "lemma": "vaba", "pos": "adjective", "ipa": "ˈvɑbɑ" }] },
-    { "id": "plans-04", "en": "Let's go to the cinema.", "et": "Lähme kinno.", "words": [{ "et": "kinno", "en": "to the cinema", "lemma": "kino", "pos": "noun", "ipa": "ˈkinːo" }] },
-    { "id": "plans-05", "en": "What are you doing today?", "et": "Mida sa täna teed?", "words": [{ "et": "teed", "en": "do", "lemma": "tegema", "pos": "verb", "ipa": "teːt" }] },
-    { "id": "plans-06", "en": "I will call you.", "et": "Ma helistan sulle.", "words": [{ "et": "helistan", "en": "will call", "lemma": "helistama", "pos": "verb", "ipa": "ˈhelistɑn" }] },
-    { "id": "plans-07", "en": "See you tomorrow!", "et": "Näeme homme!", "words": [{ "et": "näeme", "en": "see you (lit. we'll see)", "lemma": "nägema", "pos": "verb", "ipa": "ˈnæeme" }] },
-    { "id": "plans-08", "en": "Let's meet at the café.", "et": "Kohtume kohvikus.", "words": [{ "et": "kohvikus", "en": "at the café", "lemma": "kohvik", "pos": "noun", "ipa": "ˈkohvikus" }] },
-    { "id": "plans-09", "en": "I have no plans.", "et": "Mul ei ole plaane.", "words": [{ "et": "plaane", "en": "plans", "lemma": "plaan", "pos": "noun", "ipa": "ˈplɑːne" }] },
-    { "id": "plans-10", "en": "Good, see you tomorrow.", "et": "Hea, kohtumiseni homme.", "words": [{ "et": "kohtumiseni", "en": "until we meet (see you)", "lemma": "kohtumiseni", "pos": "adverb", "ipa": "ˈkohtumiseni" }] }
+    { "id": "plans-01", "en": "Let's meet tomorrow.", "et": "Kohtume homme.", "uk": "Зустрінемось завтра.", "words": [{ "et": "kohtume", "en": "let's meet", "uk": "зустрінемось", "lemma": "kohtuma", "pos": "verb", "ipa": "ˈkohtume" }] },
+    { "id": "plans-02", "en": "Do you have time tomorrow?", "et": "Kas sul on homme aega?", "uk": "У тебе є завтра час?", "words": [{ "et": "homme", "en": "tomorrow", "uk": "завтра", "lemma": "homme", "pos": "adverb", "ipa": "ˈhomme" }] },
+    { "id": "plans-03", "en": "I am free on Friday.", "et": "Ma olen reedel vaba.", "uk": "Я вільний у п'ятницю.", "words": [{ "et": "reedel", "en": "on Friday", "uk": "у п'ятницю", "lemma": "reede", "pos": "noun", "ipa": "ˈreːdel" }, { "et": "vaba", "en": "free", "uk": "вільний", "lemma": "vaba", "pos": "adjective", "ipa": "ˈvɑbɑ" }] },
+    { "id": "plans-04", "en": "Let's go to the cinema.", "et": "Lähme kinno.", "uk": "Ходімо в кіно.", "words": [{ "et": "kinno", "en": "to the cinema", "uk": "в кіно", "lemma": "kino", "pos": "noun", "ipa": "ˈkinːo" }] },
+    { "id": "plans-05", "en": "What are you doing today?", "et": "Mida sa täna teed?", "uk": "Що ти сьогодні робиш?", "words": [{ "et": "teed", "en": "do", "uk": "робиш", "lemma": "tegema", "pos": "verb", "ipa": "teːt" }] },
+    { "id": "plans-06", "en": "I will call you.", "et": "Ma helistan sulle.", "uk": "Я подзвоню тобі.", "words": [{ "et": "helistan", "en": "will call", "uk": "подзвоню", "lemma": "helistama", "pos": "verb", "ipa": "ˈhelistɑn" }] },
+    { "id": "plans-07", "en": "See you tomorrow!", "et": "Näeme homme!", "uk": "Побачимось завтра!", "words": [{ "et": "näeme", "en": "see you (lit. we'll see)", "uk": "побачимось (буквально «побачимо»)", "lemma": "nägema", "pos": "verb", "ipa": "ˈnæeme" }] },
+    { "id": "plans-08", "en": "Let's meet at the café.", "et": "Kohtume kohvikus.", "uk": "Зустрінемось у кафе.", "words": [{ "et": "kohvikus", "en": "at the café", "uk": "у кафе", "lemma": "kohvik", "pos": "noun", "ipa": "ˈkohvikus" }] },
+    { "id": "plans-09", "en": "I have no plans.", "et": "Mul ei ole plaane.", "uk": "У мене немає планів.", "words": [{ "et": "plaane", "en": "plans", "uk": "плани", "lemma": "plaan", "pos": "noun", "ipa": "ˈplɑːne" }] },
+    { "id": "plans-10", "en": "Good, see you tomorrow.", "et": "Hea, kohtumiseni homme.", "uk": "Добре, до завтра.", "words": [{ "et": "kohtumiseni", "en": "until we meet (see you)", "uk": "до зустрічі (до побачення)", "lemma": "kohtumiseni", "pos": "adverb", "ipa": "ˈkohtumiseni" }] }
   ]
 }

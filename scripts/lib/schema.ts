@@ -3,6 +3,7 @@ import { z } from "zod";
 export const WordSchema = z.object({
   et: z.string().min(1),
   en: z.string().min(1),
+  uk: z.string().min(1),
   lemma: z.string().min(1),
   pos: z.string().min(1),
   ipa: z.string().min(1).optional(),
@@ -12,6 +13,7 @@ export const SentenceSchema = z.object({
   id: z.string().min(1),
   en: z.string().min(1),
   et: z.string().min(1),
+  uk: z.string().min(1),
   notes: z.string().optional(),
   words: z.array(WordSchema).min(1),
 });
@@ -21,6 +23,7 @@ export const LessonSchema = z.object({
   title: z.object({
     en: z.string().min(1),
     et: z.string().min(1),
+    uk: z.string().min(1),
   }),
   level: z.string().min(1),
   order: z.number().int().nonnegative(),
@@ -34,6 +37,7 @@ export const BookSentenceSchema = z.object({
   id: z.string().min(1),
   en: z.string().min(1),
   et: z.string().min(1),
+  uk: z.string().min(1),
   words: z.array(WordSchema).default([]),
 });
 
@@ -47,6 +51,7 @@ export const ChapterSchema = z.object({
   title: z.object({
     en: z.string().min(1),
     et: z.string().min(1),
+    uk: z.string().min(1),
   }),
   order: z.number().int().nonnegative(),
   paragraphs: z.array(ParagraphSchema).min(1),
@@ -57,6 +62,7 @@ export const BookSchema = z.object({
   title: z.object({
     en: z.string().min(1),
     et: z.string().min(1),
+    uk: z.string().min(1),
   }),
   author: z.string().min(1),
   order: z.number().int().nonnegative(),
@@ -95,6 +101,7 @@ export const VoiceConfigSchema = z.discriminatedUnion("engine", [
 export const VoicesFileSchema = z.object({
   en: VoiceConfigSchema,
   et: VoiceConfigSchema,
+  uk: VoiceConfigSchema,
 });
 
 export type Word = z.infer<typeof WordSchema>;
@@ -107,7 +114,9 @@ export type Book = z.infer<typeof BookSchema>;
 export type VoiceConfig = z.infer<typeof VoiceConfigSchema>;
 export type VoicesFile = z.infer<typeof VoicesFileSchema>;
 
-export type Lang = "en" | "et";
+export type Lang = "en" | "et" | "uk";
+export type NativeLang = "en" | "uk";
+export const NATIVE_LANGS: readonly NativeLang[] = ["en", "uk"];
 
 export function voiceId(voice: VoiceConfig): string {
   switch (voice.engine) {

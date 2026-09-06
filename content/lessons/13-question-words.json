@@ -1,18 +1,18 @@
 {
   "id": "question-words",
-  "title": { "en": "Question Words", "et": "Küsisõnad" },
+  "title": { "en": "Question Words", "et": "Küsisõnad", "uk": "Питальні слова" },
   "level": "A0",
   "order": 4,
   "sentences": [
-    { "id": "question-words-01", "en": "Who is this?", "et": "Kes see on?", "words": [{ "et": "kes", "en": "who", "lemma": "kes", "pos": "pronoun", "ipa": "kes" }] },
-    { "id": "question-words-02", "en": "What is this?", "et": "Mis see on?", "words": [{ "et": "mis", "en": "what", "lemma": "mis", "pos": "pronoun", "ipa": "mis" }] },
-    { "id": "question-words-03", "en": "Where is it?", "et": "Kus see on?", "words": [{ "et": "kus", "en": "where", "lemma": "kus", "pos": "adverb", "ipa": "kus" }] },
-    { "id": "question-words-04", "en": "When?", "et": "Millal?", "words": [{ "et": "millal", "en": "when", "lemma": "millal", "pos": "adverb", "ipa": "ˈmillɑl" }] },
-    { "id": "question-words-05", "en": "Why?", "et": "Miks?", "words": [{ "et": "miks", "en": "why", "lemma": "miks", "pos": "adverb", "ipa": "miks" }] },
-    { "id": "question-words-06", "en": "How?", "et": "Kuidas?", "words": [{ "et": "kuidas", "en": "how", "lemma": "kuidas", "pos": "adverb", "ipa": "ˈkuidɑs" }] },
-    { "id": "question-words-07", "en": "How much?", "et": "Kui palju?", "words": [{ "et": "kui palju", "en": "how much", "lemma": "kui palju", "pos": "adverb", "ipa": "kui ˈpɑlju" }] },
-    { "id": "question-words-08", "en": "Where are you from?", "et": "Kust sa pärit oled?", "words": [{ "et": "kust", "en": "from where", "lemma": "kust", "pos": "adverb", "ipa": "kust" }] },
-    { "id": "question-words-09", "en": "How old are you?", "et": "Kui vana sa oled?", "words": [{ "et": "vana", "en": "old", "lemma": "vana", "pos": "adjective", "ipa": "ˈvɑnɑ" }] },
-    { "id": "question-words-10", "en": "Who are you?", "et": "Kes sa oled?", "words": [{ "et": "kes", "en": "who", "lemma": "kes", "pos": "pronoun", "ipa": "kes" }] }
+    { "id": "question-words-01", "en": "Who is this?", "et": "Kes see on?", "uk": "Хто це?", "words": [{ "et": "kes", "en": "who", "uk": "хто", "lemma": "kes", "pos": "pronoun", "ipa": "kes" }] },
+    { "id": "question-words-02", "en": "What is this?", "et": "Mis see on?", "uk": "Що це?", "words": [{ "et": "mis", "en": "what", "uk": "що", "lemma": "mis", "pos": "pronoun", "ipa": "mis" }] },
+    { "id": "question-words-03", "en": "Where is it?", "et": "Kus see on?", "uk": "Де це?", "words": [{ "et": "kus", "en": "where", "uk": "де", "lemma": "kus", "pos": "adverb", "ipa": "kus" }] },
+    { "id": "question-words-04", "en": "When?", "et": "Millal?", "uk": "Коли?", "words": [{ "et": "millal", "en": "when", "uk": "коли", "lemma": "millal", "pos": "adverb", "ipa": "ˈmillɑl" }] },
+    { "id": "question-words-05", "en": "Why?", "et": "Miks?", "uk": "Чому?", "words": [{ "et": "miks", "en": "why", "uk": "чому", "lemma": "miks", "pos": "adverb", "ipa": "miks" }] },
+    { "id": "question-words-06", "en": "How?", "et": "Kuidas?", "uk": "Як?", "words": [{ "et": "kuidas", "en": "how", "uk": "як", "lemma": "kuidas", "pos": "adverb", "ipa": "ˈkuidɑs" }] },
+    { "id": "question-words-07", "en": "How much?", "et": "Kui palju?", "uk": "Скільки?", "words": [{ "et": "kui palju", "en": "how much", "uk": "скільки", "lemma": "kui palju", "pos": "adverb", "ipa": "kui ˈpɑlju" }] },
+    { "id": "question-words-08", "en": "Where are you from?", "et": "Kust sa pärit oled?", "uk": "Звідки ти?", "words": [{ "et": "kust", "en": "from where", "uk": "звідки", "lemma": "kust", "pos": "adverb", "ipa": "kust" }] },
+    { "id": "question-words-09", "en": "How old are you?", "et": "Kui vana sa oled?", "uk": "Скільки тобі років?", "words": [{ "et": "vana", "en": "old", "uk": "старий", "lemma": "vana", "pos": "adjective", "ipa": "ˈvɑnɑ" }] },
+    { "id": "question-words-10", "en": "Who are you?", "et": "Kes sa oled?", "uk": "Хто ти?", "words": [{ "et": "kes", "en": "who", "uk": "хто", "lemma": "kes", "pos": "pronoun", "ipa": "kes" }] }
   ]
 }

@@ -1,18 +1,18 @@
 {
   "id": "time",
-  "title": { "en": "Telling Time", "et": "Kellaaeg" },
+  "title": { "en": "Telling Time", "et": "Kellaaeg", "uk": "Визначення часу" },
   "level": "A2",
   "order": 11,
   "sentences": [
-    { "id": "time-01", "en": "What time is it?", "et": "Mis kell on?", "words": [{ "et": "kell", "en": "clock / o'clock", "lemma": "kell", "pos": "noun", "ipa": "kelː" }] },
-    { "id": "time-02", "en": "It is one o'clock.", "et": "Kell on üks.", "words": [{ "et": "üks", "en": "one", "lemma": "üks", "pos": "numeral", "ipa": "yks" }] },
-    { "id": "time-03", "en": "It is two o'clock.", "et": "Kell on kaks.", "words": [{ "et": "kaks", "en": "two", "lemma": "kaks", "pos": "numeral", "ipa": "kɑks" }] },
-    { "id": "time-04", "en": "It is three o'clock.", "et": "Kell on kolm.", "words": [{ "et": "kolm", "en": "three", "lemma": "kolm", "pos": "numeral", "ipa": "kolm" }] },
-    { "id": "time-05", "en": "It is twelve o'clock.", "et": "Kell on kaksteist.", "words": [{ "et": "kaksteist", "en": "twelve", "lemma": "kaksteist", "pos": "numeral", "ipa": "ˈkɑksteist" }] },
-    { "id": "time-06", "en": "It is morning.", "et": "On hommik.", "words": [{ "et": "hommik", "en": "morning", "lemma": "hommik", "pos": "noun", "ipa": "ˈhommik" }] },
-    { "id": "time-07", "en": "It is evening.", "et": "On õhtu.", "words": [{ "et": "õhtu", "en": "evening", "lemma": "õhtu", "pos": "noun", "ipa": "ˈɤhtu" }] },
-    { "id": "time-08", "en": "It is night.", "et": "On öö.", "words": [{ "et": "öö", "en": "night", "lemma": "öö", "pos": "noun", "ipa": "øː" }] },
-    { "id": "time-09", "en": "I have time.", "et": "Mul on aega.", "words": [{ "et": "aega", "en": "time", "lemma": "aeg", "pos": "noun", "ipa": "ˈɑegɑ" }] },
-    { "id": "time-10", "en": "I have no time.", "et": "Mul ei ole aega.", "words": [{ "et": "ei ole", "en": "is not / don't have", "lemma": "olema", "pos": "verb", "ipa": "ei ˈole" }] }
+    { "id": "time-01", "en": "What time is it?", "et": "Mis kell on?", "uk": "Котра година?", "words": [{ "et": "kell", "en": "clock / o'clock", "uk": "годинник / година", "lemma": "kell", "pos": "noun", "ipa": "kelː" }] },
+    { "id": "time-02", "en": "It is one o'clock.", "et": "Kell on üks.", "uk": "Зараз перша година.", "words": [{ "et": "üks", "en": "one", "uk": "один", "lemma": "üks", "pos": "numeral", "ipa": "yks" }] },
+    { "id": "time-03", "en": "It is two o'clock.", "et": "Kell on kaks.", "uk": "Зараз друга година.", "words": [{ "et": "kaks", "en": "two", "uk": "два", "lemma": "kaks", "pos": "numeral", "ipa": "kɑks" }] },
+    { "id": "time-04", "en": "It is three o'clock.", "et": "Kell on kolm.", "uk": "Зараз третя година.", "words": [{ "et": "kolm", "en": "three", "uk": "три", "lemma": "kolm", "pos": "numeral", "ipa": "kolm" }] },
+    { "id": "time-05", "en": "It is twelve o'clock.", "et": "Kell on kaksteist.", "uk": "Зараз дванадцята година.", "words": [{ "et": "kaksteist", "en": "twelve", "uk": "дванадцять", "lemma": "kaksteist", "pos": "numeral", "ipa": "ˈkɑksteist" }] },
+    { "id": "time-06", "en": "It is morning.", "et": "On hommik.", "uk": "Зараз ранок.", "words": [{ "et": "hommik", "en": "morning", "uk": "ранок", "lemma": "hommik", "pos": "noun", "ipa": "ˈhommik" }] },
+    { "id": "time-07", "en": "It is evening.", "et": "On õhtu.", "uk": "Зараз вечір.", "words": [{ "et": "õhtu", "en": "evening", "uk": "вечір", "lemma": "õhtu", "pos": "noun", "ipa": "ˈɤhtu" }] },
+    { "id": "time-08", "en": "It is night.", "et": "On öö.", "uk": "Зараз ніч.", "words": [{ "et": "öö", "en": "night", "uk": "ніч", "lemma": "öö", "pos": "noun", "ipa": "øː" }] },
+    { "id": "time-09", "en": "I have time.", "et": "Mul on aega.", "uk": "У мене є час.", "words": [{ "et": "aega", "en": "time", "uk": "час", "lemma": "aeg", "pos": "noun", "ipa": "ˈɑegɑ" }] },
+    { "id": "time-10", "en": "I have no time.", "et": "Mul ei ole aega.", "uk": "У мене немає часу.", "words": [{ "et": "ei ole", "en": "is not / don't have", "uk": "немає / нема", "lemma": "olema", "pos": "verb", "ipa": "ei ˈole" }] }
   ]
 }

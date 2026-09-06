@@ -1,18 +1,18 @@
 {
   "id": "alphabet",
-  "title": { "en": "The Alphabet", "et": "Tähestik" },
+  "title": { "en": "The Alphabet", "et": "Tähestik", "uk": "Абетка" },
   "level": "A0",
   "order": 0,
   "sentences": [
-    { "id": "alphabet-01", "en": "A as in car.", "et": "A nagu auto.", "words": [{ "et": "auto", "en": "car", "lemma": "auto", "pos": "noun", "ipa": "ˈɑuto" }] },
-    { "id": "alphabet-02", "en": "Õ as in apple.", "et": "Õ nagu õun.", "notes": "\"Õ\" has no English equivalent — a close-mid back unrounded vowel, distinct from \"o\".", "words": [{ "et": "õun", "en": "apple", "lemma": "õun", "pos": "noun", "ipa": "ˈɤun" }] },
-    { "id": "alphabet-03", "en": "Ä as in bucket.", "et": "Ä nagu ämber.", "words": [{ "et": "ämber", "en": "bucket", "lemma": "ämber", "pos": "noun", "ipa": "ˈæmber" }] },
-    { "id": "alphabet-04", "en": "Ö as in night.", "et": "Ö nagu öö.", "words": [{ "et": "öö", "en": "night", "lemma": "öö", "pos": "noun", "ipa": "øː" }] },
-    { "id": "alphabet-05", "en": "Ü as in one.", "et": "Ü nagu üks.", "words": [{ "et": "üks", "en": "one", "lemma": "üks", "pos": "numeral", "ipa": "yks" }] },
-    { "id": "alphabet-06", "en": "Š as in chocolate.", "et": "Š nagu šokolaad.", "notes": "\"Š\"/\"Ž\" only appear in loanwords.", "words": [{ "et": "šokolaad", "en": "chocolate", "lemma": "šokolaad", "pos": "noun", "ipa": "ˈʃokolɑːt" }] },
-    { "id": "alphabet-07", "en": "Ž as in garage.", "et": "Ž nagu garaaž.", "words": [{ "et": "garaaž", "en": "garage", "lemma": "garaaž", "pos": "noun", "ipa": "ɡɑˈrɑːʒ" }] },
-    { "id": "alphabet-08", "en": "The Estonian alphabet has 32 letters.", "et": "Eesti tähestikus on 32 tähte.", "words": [{ "et": "tähestikus", "en": "in the alphabet", "lemma": "tähestik", "pos": "noun", "ipa": "ˈtæhestikus" }] },
-    { "id": "alphabet-09", "en": "This is the alphabet.", "et": "See on tähestik.", "words": [{ "et": "tähestik", "en": "alphabet", "lemma": "tähestik", "pos": "noun", "ipa": "ˈtæhestik" }] },
-    { "id": "alphabet-10", "en": "I am learning the Estonian alphabet.", "et": "Ma õpin eesti tähestikku.", "words": [{ "et": "tähestikku", "en": "alphabet (partitive)", "lemma": "tähestik", "pos": "noun", "ipa": "ˈtæhestikːu" }] }
+    { "id": "alphabet-01", "en": "A as in car.", "et": "A nagu auto.", "uk": "«A» як у слові «автомобіль».", "words": [{ "et": "auto", "en": "car", "uk": "автомобіль", "lemma": "auto", "pos": "noun", "ipa": "ˈɑuto" }] },
+    { "id": "alphabet-02", "en": "Õ as in apple.", "et": "Õ nagu õun.", "uk": "«Õ» як у слові «яблуко».", "notes": "\"Õ\" has no English equivalent — a close-mid back unrounded vowel, distinct from \"o\".", "words": [{ "et": "õun", "en": "apple", "uk": "яблуко", "lemma": "õun", "pos": "noun", "ipa": "ˈɤun" }] },
+    { "id": "alphabet-03", "en": "Ä as in bucket.", "et": "Ä nagu ämber.", "uk": "«Ä» як у слові «відро».", "words": [{ "et": "ämber", "en": "bucket", "uk": "відро", "lemma": "ämber", "pos": "noun", "ipa": "ˈæmber" }] },
+    { "id": "alphabet-04", "en": "Ö as in night.", "et": "Ö nagu öö.", "uk": "«Ö» як у слові «ніч».", "words": [{ "et": "öö", "en": "night", "uk": "ніч", "lemma": "öö", "pos": "noun", "ipa": "øː" }] },
+    { "id": "alphabet-05", "en": "Ü as in one.", "et": "Ü nagu üks.", "uk": "«Ü» як у слові «один».", "words": [{ "et": "üks", "en": "one", "uk": "один", "lemma": "üks", "pos": "numeral", "ipa": "yks" }] },
+    { "id": "alphabet-06", "en": "Š as in chocolate.", "et": "Š nagu šokolaad.", "uk": "«Š» як у слові «шоколад».", "notes": "\"Š\"/\"Ž\" only appear in loanwords.", "words": [{ "et": "šokolaad", "en": "chocolate", "uk": "шоколад", "lemma": "šokolaad", "pos": "noun", "ipa": "ˈʃokolɑːt" }] },
+    { "id": "alphabet-07", "en": "Ž as in garage.", "et": "Ž nagu garaaž.", "uk": "«Ž» як у слові «гараж».", "words": [{ "et": "garaaž", "en": "garage", "uk": "гараж", "lemma": "garaaž", "pos": "noun", "ipa": "ɡɑˈrɑːʒ" }] },
+    { "id": "alphabet-08", "en": "The Estonian alphabet has 32 letters.", "et": "Eesti tähestikus on 32 tähte.", "uk": "В естонській абетці 32 літери.", "words": [{ "et": "tähestikus", "en": "in the alphabet", "uk": "в абетці", "lemma": "tähestik", "pos": "noun", "ipa": "ˈtæhestikus" }] },
+    { "id": "alphabet-09", "en": "This is the alphabet.", "et": "See on tähestik.", "uk": "Це абетка.", "words": [{ "et": "tähestik", "en": "alphabet", "uk": "абетка", "lemma": "tähestik", "pos": "noun", "ipa": "ˈtæhestik" }] },
+    { "id": "alphabet-10", "en": "I am learning the Estonian alphabet.", "et": "Ma õpin eesti tähestikku.", "uk": "Я вивчаю естонську абетку.", "words": [{ "et": "tähestikku", "en": "alphabet (partitive)", "uk": "абетку (партитив)", "lemma": "tähestik", "pos": "noun", "ipa": "ˈtæhestikːu" }] }
   ]
 }

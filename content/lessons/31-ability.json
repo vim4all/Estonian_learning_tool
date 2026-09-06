@@ -1,18 +1,18 @@
 {
   "id": "ability",
-  "title": { "en": "Permission & Ability", "et": "Luba ja oskus" },
+  "title": { "en": "Permission & Ability", "et": "Luba ja oskus", "uk": "Дозвіл та вміння" },
   "level": "B1",
   "order": 31,
   "sentences": [
-    { "id": "ability-01", "en": "May I ask a question?", "et": "Kas ma võin midagi küsida?", "notes": "Three Estonian \"can\"s: võima (permission), oskama (skill), saama (circumstance/ability).", "words": [{ "et": "võin", "en": "may", "lemma": "võima", "pos": "verb", "ipa": "vɤin" }] },
-    { "id": "ability-02", "en": "You may go.", "et": "Sa võid minna.", "notes": "\"minema\"'s da-infinitive is the irregular \"minna\".", "words": [{ "et": "võid", "en": "may", "lemma": "võima", "pos": "verb", "ipa": "vɤit" }] },
-    { "id": "ability-03", "en": "I know how to swim.", "et": "Ma oskan ujuda.", "words": [{ "et": "oskan", "en": "know how to", "lemma": "oskama", "pos": "verb", "ipa": "ˈoskɑn" }] },
-    { "id": "ability-04", "en": "I know how to cook.", "et": "Ma oskan süüa teha.", "words": [{ "et": "oskan", "en": "know how to", "lemma": "oskama", "pos": "verb", "ipa": "ˈoskɑn" }] },
-    { "id": "ability-05", "en": "I don't know how to dance.", "et": "Ma ei oska tantsida.", "words": [{ "et": "ei oska", "en": "don't know how to", "lemma": "oskama", "pos": "verb", "ipa": "ei ˈoskɑ" }] },
-    { "id": "ability-06", "en": "I can help you today.", "et": "Ma saan sind täna aidata.", "words": [{ "et": "saan", "en": "can / am able to", "lemma": "saama", "pos": "verb", "ipa": "sɑːn" }] },
-    { "id": "ability-07", "en": "I cannot come today.", "et": "Ma ei saa täna tulla.", "words": [{ "et": "ei saa", "en": "cannot", "lemma": "saama", "pos": "verb", "ipa": "ei sɑː" }] },
-    { "id": "ability-08", "en": "Can I open the window?", "et": "Kas ma võin akna avada?", "words": [{ "et": "avada", "en": "to open", "lemma": "avama", "pos": "verb", "ipa": "ˈɑvɑdɑ" }] },
-    { "id": "ability-09", "en": "She can speak Estonian.", "et": "Tema oskab rääkida eesti keelt.", "words": [{ "et": "oskab", "en": "knows how to", "lemma": "oskama", "pos": "verb", "ipa": "ˈoskɑp" }] },
-    { "id": "ability-10", "en": "We may not park here.", "et": "Me ei tohi siin parkida.", "notes": "\"tohtima\" is a separate, stronger prohibition verb — \"ei tohi\" = \"must not / not allowed\".", "words": [{ "et": "ei tohi", "en": "must not / not allowed", "lemma": "tohtima", "pos": "verb", "ipa": "ei ˈtohi" }] }
+    { "id": "ability-01", "en": "May I ask a question?", "et": "Kas ma võin midagi küsida?", "uk": "Чи можу я поставити запитання?", "notes": "Three Estonian \"can\"s: võima (permission), oskama (skill), saama (circumstance/ability).", "words": [{ "et": "võin", "en": "may", "uk": "можу / маю дозвіл", "lemma": "võima", "pos": "verb", "ipa": "vɤin" }] },
+    { "id": "ability-02", "en": "You may go.", "et": "Sa võid minna.", "uk": "Ти можеш іти.", "notes": "\"minema\"'s da-infinitive is the irregular \"minna\".", "words": [{ "et": "võid", "en": "may", "uk": "можеш / маєш дозвіл", "lemma": "võima", "pos": "verb", "ipa": "vɤit" }] },
+    { "id": "ability-03", "en": "I know how to swim.", "et": "Ma oskan ujuda.", "uk": "Я вмію плавати.", "words": [{ "et": "oskan", "en": "know how to", "uk": "вмію", "lemma": "oskama", "pos": "verb", "ipa": "ˈoskɑn" }] },
+    { "id": "ability-04", "en": "I know how to cook.", "et": "Ma oskan süüa teha.", "uk": "Я вмію готувати.", "words": [{ "et": "oskan", "en": "know how to", "uk": "вмію", "lemma": "oskama", "pos": "verb", "ipa": "ˈoskɑn" }] },
+    { "id": "ability-05", "en": "I don't know how to dance.", "et": "Ma ei oska tantsida.", "uk": "Я не вмію танцювати.", "words": [{ "et": "ei oska", "en": "don't know how to", "uk": "не вмію", "lemma": "oskama", "pos": "verb", "ipa": "ei ˈoskɑ" }] },
+    { "id": "ability-06", "en": "I can help you today.", "et": "Ma saan sind täna aidata.", "uk": "Я можу тобі сьогодні допомогти.", "words": [{ "et": "saan", "en": "can / am able to", "uk": "можу / здатний", "lemma": "saama", "pos": "verb", "ipa": "sɑːn" }] },
+    { "id": "ability-07", "en": "I cannot come today.", "et": "Ma ei saa täna tulla.", "uk": "Я не можу сьогодні прийти.", "words": [{ "et": "ei saa", "en": "cannot", "uk": "не можу", "lemma": "saama", "pos": "verb", "ipa": "ei sɑː" }] },
+    { "id": "ability-08", "en": "Can I open the window?", "et": "Kas ma võin akna avada?", "uk": "Чи можу я відчинити вікно?", "words": [{ "et": "avada", "en": "to open", "uk": "відчинити", "lemma": "avama", "pos": "verb", "ipa": "ˈɑvɑdɑ" }] },
+    { "id": "ability-09", "en": "She can speak Estonian.", "et": "Tema oskab rääkida eesti keelt.", "uk": "Вона вміє розмовляти естонською.", "words": [{ "et": "oskab", "en": "knows how to", "uk": "вміє", "lemma": "oskama", "pos": "verb", "ipa": "ˈoskɑp" }] },
+    { "id": "ability-10", "en": "We may not park here.", "et": "Me ei tohi siin parkida.", "uk": "Нам не можна тут паркуватися.", "notes": "\"tohtima\" is a separate, stronger prohibition verb — \"ei tohi\" = \"must not / not allowed\".", "words": [{ "et": "ei tohi", "en": "must not / not allowed", "uk": "не можна / заборонено", "lemma": "tohtima", "pos": "verb", "ipa": "ei ˈtohi" }] }
   ]
 }

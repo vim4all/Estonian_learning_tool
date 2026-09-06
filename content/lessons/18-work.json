@@ -1,18 +1,18 @@
 {
   "id": "work",
-  "title": { "en": "Work & Professions", "et": "Töö ja ametid" },
+  "title": { "en": "Work & Professions", "et": "Töö ja ametid", "uk": "Робота та професії" },
   "level": "A2",
   "order": 18,
   "sentences": [
-    { "id": "work-01", "en": "I am a teacher.", "et": "Ma olen õpetaja.", "words": [{ "et": "õpetaja", "en": "teacher", "lemma": "õpetaja", "pos": "noun", "ipa": "ˈɤpetɑjɑ" }] },
-    { "id": "work-02", "en": "I am a doctor.", "et": "Ma olen arst.", "words": [{ "et": "arst", "en": "doctor", "lemma": "arst", "pos": "noun", "ipa": "ɑrst" }] },
-    { "id": "work-03", "en": "I am an engineer.", "et": "Ma olen insener.", "words": [{ "et": "insener", "en": "engineer", "lemma": "insener", "pos": "noun", "ipa": "ˈinsener" }] },
-    { "id": "work-04", "en": "I am a cook.", "et": "Ma olen kokk.", "words": [{ "et": "kokk", "en": "cook", "lemma": "kokk", "pos": "noun", "ipa": "kokː" }] },
-    { "id": "work-05", "en": "I am a salesperson.", "et": "Ma olen müüja.", "words": [{ "et": "müüja", "en": "salesperson", "lemma": "müüja", "pos": "noun", "ipa": "ˈmyːjɑ" }] },
-    { "id": "work-06", "en": "I am a hairdresser.", "et": "Ma olen juuksur.", "words": [{ "et": "juuksur", "en": "hairdresser", "lemma": "juuksur", "pos": "noun", "ipa": "ˈjuːksur" }] },
-    { "id": "work-07", "en": "I am a lawyer.", "et": "Ma olen advokaat.", "words": [{ "et": "advokaat", "en": "lawyer", "lemma": "advokaat", "pos": "noun", "ipa": "ˈɑdvokɑːt" }] },
-    { "id": "work-08", "en": "I am a programmer.", "et": "Ma olen programmeerija.", "words": [{ "et": "programmeerija", "en": "programmer", "lemma": "programmeerija", "pos": "noun", "ipa": "proɡrɑmˈmeːrijɑ" }] },
-    { "id": "work-09", "en": "Where do you work?", "et": "Kus sa töötad?", "words": [{ "et": "töötad", "en": "work", "lemma": "töötama", "pos": "verb", "ipa": "ˈtøːtɑt" }] },
-    { "id": "work-10", "en": "I work in an office.", "et": "Ma töötan kontoris.", "words": [{ "et": "kontoris", "en": "in an office", "lemma": "kontor", "pos": "noun", "ipa": "ˈkontoris" }] }
+    { "id": "work-01", "en": "I am a teacher.", "et": "Ma olen õpetaja.", "uk": "Я вчитель.", "words": [{ "et": "õpetaja", "en": "teacher", "uk": "вчитель", "lemma": "õpetaja", "pos": "noun", "ipa": "ˈɤpetɑjɑ" }] },
+    { "id": "work-02", "en": "I am a doctor.", "et": "Ma olen arst.", "uk": "Я лікар.", "words": [{ "et": "arst", "en": "doctor", "uk": "лікар", "lemma": "arst", "pos": "noun", "ipa": "ɑrst" }] },
+    { "id": "work-03", "en": "I am an engineer.", "et": "Ma olen insener.", "uk": "Я інженер.", "words": [{ "et": "insener", "en": "engineer", "uk": "інженер", "lemma": "insener", "pos": "noun", "ipa": "ˈinsener" }] },
+    { "id": "work-04", "en": "I am a cook.", "et": "Ma olen kokk.", "uk": "Я кухар.", "words": [{ "et": "kokk", "en": "cook", "uk": "кухар", "lemma": "kokk", "pos": "noun", "ipa": "kokː" }] },
+    { "id": "work-05", "en": "I am a salesperson.", "et": "Ma olen müüja.", "uk": "Я продавець.", "words": [{ "et": "müüja", "en": "salesperson", "uk": "продавець", "lemma": "müüja", "pos": "noun", "ipa": "ˈmyːjɑ" }] },
+    { "id": "work-06", "en": "I am a hairdresser.", "et": "Ma olen juuksur.", "uk": "Я перукар.", "words": [{ "et": "juuksur", "en": "hairdresser", "uk": "перукар", "lemma": "juuksur", "pos": "noun", "ipa": "ˈjuːksur" }] },
+    { "id": "work-07", "en": "I am a lawyer.", "et": "Ma olen advokaat.", "uk": "Я юрист.", "words": [{ "et": "advokaat", "en": "lawyer", "uk": "юрист", "lemma": "advokaat", "pos": "noun", "ipa": "ˈɑdvokɑːt" }] },
+    { "id": "work-08", "en": "I am a programmer.", "et": "Ma olen programmeerija.", "uk": "Я програміст.", "words": [{ "et": "programmeerija", "en": "programmer", "uk": "програміст", "lemma": "programmeerija", "pos": "noun", "ipa": "proɡrɑmˈmeːrijɑ" }] },
+    { "id": "work-09", "en": "Where do you work?", "et": "Kus sa töötad?", "uk": "Де ти працюєш?", "words": [{ "et": "töötad", "en": "work", "uk": "працюєш", "lemma": "töötama", "pos": "verb", "ipa": "ˈtøːtɑt" }] },
+    { "id": "work-10", "en": "I work in an office.", "et": "Ma töötan kontoris.", "uk": "Я працюю в офісі.", "words": [{ "et": "kontoris", "en": "in an office", "uk": "в офісі", "lemma": "kontor", "pos": "noun", "ipa": "ˈkontoris" }] }
   ]
 }

@@ -1,18 +1,18 @@
 {
   "id": "time-sequencing",
-  "title": { "en": "Time & Sequencing", "et": "Aeg ja järjekord" },
+  "title": { "en": "Time & Sequencing", "et": "Aeg ja järjekord", "uk": "Час і послідовність" },
   "level": "B1",
   "order": 34,
   "sentences": [
-    { "id": "time-sequencing-01", "en": "Before I go to sleep, I read a book.", "et": "Enne kui ma lähen magama, loen ma raamatut.", "words": [{ "et": "enne kui", "en": "before", "lemma": "enne kui", "pos": "conjunction", "ipa": "ˈenne kui" }] },
-    { "id": "time-sequencing-02", "en": "After work, I go home.", "et": "Pärast tööd lähen ma koju.", "words": [{ "et": "pärast", "en": "after", "lemma": "pärast", "pos": "adposition", "ipa": "ˈpærɑst" }] },
-    { "id": "time-sequencing-03", "en": "When I came home, it was already dark.", "et": "Kui ma tulin koju, oli juba pime.", "words": [{ "et": "juba", "en": "already", "lemma": "juba", "pos": "adverb", "ipa": "ˈjubɑ" }, { "et": "pime", "en": "dark", "lemma": "pime", "pos": "adjective", "ipa": "ˈpime" }] },
-    { "id": "time-sequencing-04", "en": "At the same time, I am reading and listening to music.", "et": "Samal ajal ma loen ja kuulan muusikat.", "words": [{ "et": "samal ajal", "en": "at the same time", "lemma": "samal ajal", "pos": "adverb", "ipa": "ˈsɑmɑl ˈɑjɑl" }] },
-    { "id": "time-sequencing-05", "en": "First, then, and finally.", "et": "Kõigepealt, siis ja lõpuks.", "words": [{ "et": "lõpuks", "en": "finally", "lemma": "lõpuks", "pos": "adverb", "ipa": "ˈlɤpuks" }] },
-    { "id": "time-sequencing-06", "en": "Yesterday, today, and tomorrow.", "et": "Eile, täna ja homme.", "words": [{ "et": "eile", "en": "yesterday", "lemma": "eile", "pos": "adverb", "ipa": "ˈeile" }] },
-    { "id": "time-sequencing-07", "en": "Every day I wake up early.", "et": "Iga päev ma ärkan varakult.", "words": [{ "et": "iga päev", "en": "every day", "lemma": "iga päev", "pos": "adverb", "ipa": "ˈiɡɑ pæev" }, { "et": "ärkan", "en": "wake up", "lemma": "ärkama", "pos": "verb", "ipa": "ˈærkɑn" }] },
-    { "id": "time-sequencing-08", "en": "Sometimes I work, sometimes I rest.", "et": "Vahel ma töötan, vahel ma puhkan.", "words": [{ "et": "vahel", "en": "sometimes", "lemma": "vahel", "pos": "adverb", "ipa": "ˈvɑhel" }] },
-    { "id": "time-sequencing-09", "en": "Soon I will finish.", "et": "Varsti ma lõpetan.", "words": [{ "et": "varsti", "en": "soon", "lemma": "varsti", "pos": "adverb", "ipa": "ˈvɑrsti" }, { "et": "lõpetan", "en": "will finish", "lemma": "lõpetama", "pos": "verb", "ipa": "ˈlɤpetɑn" }] },
-    { "id": "time-sequencing-10", "en": "Finally, I am done.", "et": "Lõpuks olen ma valmis.", "words": [{ "et": "valmis", "en": "ready / done", "lemma": "valmis", "pos": "adjective", "ipa": "ˈvɑlmis" }] }
+    { "id": "time-sequencing-01", "en": "Before I go to sleep, I read a book.", "et": "Enne kui ma lähen magama, loen ma raamatut.", "uk": "Перед тим як лягти спати, я читаю книгу.", "words": [{ "et": "enne kui", "en": "before", "uk": "перед тим як / до того як", "lemma": "enne kui", "pos": "conjunction", "ipa": "ˈenne kui" }] },
+    { "id": "time-sequencing-02", "en": "After work, I go home.", "et": "Pärast tööd lähen ma koju.", "uk": "Після роботи я йду додому.", "words": [{ "et": "pärast", "en": "after", "uk": "після", "lemma": "pärast", "pos": "adposition", "ipa": "ˈpærɑst" }] },
+    { "id": "time-sequencing-03", "en": "When I came home, it was already dark.", "et": "Kui ma tulin koju, oli juba pime.", "uk": "Коли я прийшов додому, вже було темно.", "words": [{ "et": "juba", "en": "already", "uk": "вже", "lemma": "juba", "pos": "adverb", "ipa": "ˈjubɑ" }, { "et": "pime", "en": "dark", "uk": "темний", "lemma": "pime", "pos": "adjective", "ipa": "ˈpime" }] },
+    { "id": "time-sequencing-04", "en": "At the same time, I am reading and listening to music.", "et": "Samal ajal ma loen ja kuulan muusikat.", "uk": "Водночас я читаю і слухаю музику.", "words": [{ "et": "samal ajal", "en": "at the same time", "uk": "водночас / в той самий час", "lemma": "samal ajal", "pos": "adverb", "ipa": "ˈsɑmɑl ˈɑjɑl" }] },
+    { "id": "time-sequencing-05", "en": "First, then, and finally.", "et": "Kõigepealt, siis ja lõpuks.", "uk": "Спочатку, потім і нарешті.", "words": [{ "et": "lõpuks", "en": "finally", "uk": "нарешті", "lemma": "lõpuks", "pos": "adverb", "ipa": "ˈlɤpuks" }] },
+    { "id": "time-sequencing-06", "en": "Yesterday, today, and tomorrow.", "et": "Eile, täna ja homme.", "uk": "Вчора, сьогодні і завтра.", "words": [{ "et": "eile", "en": "yesterday", "uk": "вчора", "lemma": "eile", "pos": "adverb", "ipa": "ˈeile" }] },
+    { "id": "time-sequencing-07", "en": "Every day I wake up early.", "et": "Iga päev ma ärkan varakult.", "uk": "Щодня я прокидаюся рано.", "words": [{ "et": "iga päev", "en": "every day", "uk": "щодня", "lemma": "iga päev", "pos": "adverb", "ipa": "ˈiɡɑ pæev" }, { "et": "ärkan", "en": "wake up", "uk": "прокидаюся", "lemma": "ärkama", "pos": "verb", "ipa": "ˈærkɑn" }] },
+    { "id": "time-sequencing-08", "en": "Sometimes I work, sometimes I rest.", "et": "Vahel ma töötan, vahel ma puhkan.", "uk": "Іноді я працюю, іноді відпочиваю.", "words": [{ "et": "vahel", "en": "sometimes", "uk": "іноді", "lemma": "vahel", "pos": "adverb", "ipa": "ˈvɑhel" }] },
+    { "id": "time-sequencing-09", "en": "Soon I will finish.", "et": "Varsti ma lõpetan.", "uk": "Скоро я закінчу.", "words": [{ "et": "varsti", "en": "soon", "uk": "скоро", "lemma": "varsti", "pos": "adverb", "ipa": "ˈvɑrsti" }, { "et": "lõpetan", "en": "will finish", "uk": "закінчу", "lemma": "lõpetama", "pos": "verb", "ipa": "ˈlɤpetɑn" }] },
+    { "id": "time-sequencing-10", "en": "Finally, I am done.", "et": "Lõpuks olen ma valmis.", "uk": "Нарешті я закінчив.", "words": [{ "et": "valmis", "en": "ready / done", "uk": "готовий / закінчено", "lemma": "valmis", "pos": "adjective", "ipa": "ˈvɑlmis" }] }
   ]
 }

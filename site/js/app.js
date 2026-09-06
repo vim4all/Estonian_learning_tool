@@ -19,9 +19,14 @@
   const clipAudioEl = document.getElementById("clip-audio-el");
   const lessonAudioEl = document.getElementById("lesson-audio-el");
 
+  const nativeLang = EstLrnLang.getNativeLang();
+  const nativeAudioField = EstLrnLang.audioField(nativeLang);
+
   let currentLesson = null;
   let currentIndex = 0;
   let stopped = false;
+
+  EstLrnLang.initLangToggle();
 
   async function fetchJson(path) {
     const res = await fetch(path);
@@ -44,7 +49,7 @@
     for (const lesson of manifest) {
       const option = document.createElement("option");
       option.value = lesson.id;
-      option.textContent = `${lesson.title.en} (${lesson.level})`;
+      option.textContent = `${lesson.title[nativeLang]} (${lesson.level})`;
       lessonSelect.appendChild(option);
     }
 
@@ -56,7 +61,7 @@
     lessonAudioEl.pause();
     clipAudioEl.pause();
     currentLesson = await fetchJson(`data/lessons/${lessonId}.json`);
-    lessonAudioEl.src = currentLesson.lessonAudio;
+    lessonAudioEl.src = currentLesson.lessonAudio[nativeLang];
     currentIndex = 0;
     carousel.hidden = false;
     render();
@@ -66,8 +71,8 @@
     const sentence = currentLesson.sentences[currentIndex];
     progressEl.textContent = `${currentIndex + 1} / ${currentLesson.sentences.length}`;
     topicTagEl.hidden = !sentence.lessonTitle;
-    if (sentence.lessonTitle) topicTagEl.textContent = sentence.lessonTitle.en;
-    sentenceEnEl.textContent = sentence.en;
+    if (sentence.lessonTitle) topicTagEl.textContent = sentence.lessonTitle[nativeLang];
+    sentenceEnEl.textContent = sentence[nativeLang];
     sentenceEtEl.textContent = sentence.et;
     notesEl.textContent = sentence.notes || "";
     notesEl.hidden = !sentence.notes;
@@ -78,7 +83,7 @@
       chip.type = "button";
       chip.className = "word-chip";
       chip.innerHTML = `${word.et}<span class="ipa">${word.ipa ? "/" + word.ipa + "/" : ""}</span>`;
-      chip.title = `${word.en} (${word.pos}${word.lemma !== word.et ? `, lemma: ${word.lemma}` : ""})`;
+      chip.title = `${word[nativeLang]} (${word.pos}${word.lemma !== word.et ? `, lemma: ${word.lemma}` : ""})`;
       chip.addEventListener("click", () => playClip(word.audioEt));
       wordsEl.appendChild(chip);
     }
@@ -109,7 +114,7 @@
     const sentence = currentLesson.sentences[currentIndex];
     playSentenceBtn.disabled = true;
     try {
-      await playClip(sentence.audioEn);
+      await playClip(sentence[nativeAudioField]);
       if (stopped) return;
       await playClip(sentence.audioEt);
     } finally {
@@ -130,7 +135,7 @@
   function sentenceIndexAtTime(time) {
     let index = 0;
     for (let i = 0; i < currentLesson.sentences.length; i++) {
-      if (currentLesson.sentences[i].audioStart <= time) index = i;
+      if (currentLesson.sentences[i].audioStart[nativeLang] <= time) index = i;
       else break;
     }
     return index;

@@ -1,18 +1,18 @@
 {
   "id": "restaurant",
-  "title": { "en": "Restaurant & Ordering", "et": "Restoranis" },
+  "title": { "en": "Restaurant & Ordering", "et": "Restoranis", "uk": "Ресторан і замовлення" },
   "level": "A2",
   "order": 24,
   "sentences": [
-    { "id": "restaurant-01", "en": "I would like to order.", "et": "Ma tahan tellida.", "words": [{ "et": "tellida", "en": "to order", "lemma": "tellima", "pos": "verb", "ipa": "ˈtellidɑ" }] },
-    { "id": "restaurant-02", "en": "I will have coffee.", "et": "Ma võtan kohvi.", "words": [{ "et": "võtan", "en": "will take / have", "lemma": "võtma", "pos": "verb", "ipa": "ˈvɤtɑn" }] },
-    { "id": "restaurant-03", "en": "I will have tea.", "et": "Ma võtan teed.", "words": [{ "et": "teed", "en": "tea (partitive)", "lemma": "tee", "pos": "noun", "ipa": "teːt" }] },
-    { "id": "restaurant-04", "en": "I will have water.", "et": "Ma võtan vett.", "words": [{ "et": "vett", "en": "water (partitive)", "lemma": "vesi", "pos": "noun", "ipa": "vetː" }] },
-    { "id": "restaurant-05", "en": "I will have soup.", "et": "Ma võtan suppi.", "words": [{ "et": "suppi", "en": "soup (partitive)", "lemma": "supp", "pos": "noun", "ipa": "ˈsupːi" }] },
-    { "id": "restaurant-06", "en": "The bill, please.", "et": "Arve, palun.", "words": [{ "et": "arve", "en": "bill / invoice", "lemma": "arve", "pos": "noun", "ipa": "ˈɑrve" }] },
-    { "id": "restaurant-07", "en": "It was delicious.", "et": "See oli maitsev.", "words": [{ "et": "maitsev", "en": "delicious", "lemma": "maitsev", "pos": "adjective", "ipa": "ˈmɑitsev" }] },
-    { "id": "restaurant-08", "en": "Thank you for the food.", "et": "Aitäh toidu eest.", "words": [{ "et": "toidu", "en": "food (genitive)", "lemma": "toit", "pos": "noun", "ipa": "ˈtoidu" }] },
-    { "id": "restaurant-09", "en": "Cheers!", "et": "Terviseks!", "words": [{ "et": "terviseks", "en": "cheers", "lemma": "tervis", "pos": "noun", "ipa": "ˈterviseks" }] },
-    { "id": "restaurant-10", "en": "Enjoy your meal!", "et": "Head isu!", "words": [{ "et": "isu", "en": "appetite", "lemma": "isu", "pos": "noun", "ipa": "ˈisu" }] }
+    { "id": "restaurant-01", "en": "I would like to order.", "et": "Ma tahan tellida.", "uk": "Я хочу замовити.", "words": [{ "et": "tellida", "en": "to order", "uk": "замовити", "lemma": "tellima", "pos": "verb", "ipa": "ˈtellidɑ" }] },
+    { "id": "restaurant-02", "en": "I will have coffee.", "et": "Ma võtan kohvi.", "uk": "Я візьму каву.", "words": [{ "et": "võtan", "en": "will take / have", "uk": "візьму / матиму", "lemma": "võtma", "pos": "verb", "ipa": "ˈvɤtɑn" }] },
+    { "id": "restaurant-03", "en": "I will have tea.", "et": "Ma võtan teed.", "uk": "Я візьму чай.", "words": [{ "et": "teed", "en": "tea (partitive)", "uk": "чай (партитив)", "lemma": "tee", "pos": "noun", "ipa": "teːt" }] },
+    { "id": "restaurant-04", "en": "I will have water.", "et": "Ma võtan vett.", "uk": "Я візьму воду.", "words": [{ "et": "vett", "en": "water (partitive)", "uk": "вода (партитив)", "lemma": "vesi", "pos": "noun", "ipa": "vetː" }] },
+    { "id": "restaurant-05", "en": "I will have soup.", "et": "Ma võtan suppi.", "uk": "Я візьму суп.", "words": [{ "et": "suppi", "en": "soup (partitive)", "uk": "суп (партитив)", "lemma": "supp", "pos": "noun", "ipa": "ˈsupːi" }] },
+    { "id": "restaurant-06", "en": "The bill, please.", "et": "Arve, palun.", "uk": "Рахунок, будь ласка.", "words": [{ "et": "arve", "en": "bill / invoice", "uk": "рахунок / чек", "lemma": "arve", "pos": "noun", "ipa": "ˈɑrve" }] },
+    { "id": "restaurant-07", "en": "It was delicious.", "et": "See oli maitsev.", "uk": "Це було смачно.", "words": [{ "et": "maitsev", "en": "delicious", "uk": "смачний", "lemma": "maitsev", "pos": "adjective", "ipa": "ˈmɑitsev" }] },
+    { "id": "restaurant-08", "en": "Thank you for the food.", "et": "Aitäh toidu eest.", "uk": "Дякую за їжу.", "words": [{ "et": "toidu", "en": "food (genitive)", "uk": "їжа (родовий відмінок)", "lemma": "toit", "pos": "noun", "ipa": "ˈtoidu" }] },
+    { "id": "restaurant-09", "en": "Cheers!", "et": "Terviseks!", "uk": "Будьмо!", "words": [{ "et": "terviseks", "en": "cheers", "uk": "будьмо", "lemma": "tervis", "pos": "noun", "ipa": "ˈterviseks" }] },
+    { "id": "restaurant-10", "en": "Enjoy your meal!", "et": "Head isu!", "uk": "Смачного!", "words": [{ "et": "isu", "en": "appetite", "uk": "апетит", "lemma": "isu", "pos": "noun", "ipa": "ˈisu" }] }
   ]
 }

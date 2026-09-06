@@ -1,6 +1,6 @@
 {
   "id": "greetings",
-  "title": { "en": "Greetings", "et": "Tervitused" },
+  "title": { "en": "Greetings", "et": "Tervitused", "uk": "Привітання" },
   "level": "A0",
   "order": 1,
   "sentences": [
@@ -8,99 +8,109 @@
       "id": "greetings-01",
       "en": "Hello!",
       "et": "Tere!",
+      "uk": "Привіт!",
       "notes": "The all-purpose Estonian greeting, used at any time of day.",
       "words": [
-        { "et": "Tere", "en": "hello", "lemma": "tere", "pos": "interjection", "ipa": "ˈtere" }
+        { "et": "Tere", "en": "hello", "uk": "привіт", "lemma": "tere", "pos": "interjection", "ipa": "ˈtere" }
       ]
     },
     {
       "id": "greetings-02",
       "en": "Good morning!",
       "et": "Tere hommikust!",
+      "uk": "Доброго ранку!",
       "words": [
-        { "et": "Tere", "en": "good", "lemma": "tere", "pos": "interjection", "ipa": "ˈtere" },
-        { "et": "hommikust", "en": "morning", "lemma": "hommik", "pos": "noun", "ipa": "ˈhommikust" }
+        { "et": "Tere", "en": "good", "uk": "добрий", "lemma": "tere", "pos": "interjection", "ipa": "ˈtere" },
+        { "et": "hommikust", "en": "morning", "uk": "ранок", "lemma": "hommik", "pos": "noun", "ipa": "ˈhommikust" }
       ]
     },
     {
       "id": "greetings-03",
       "en": "Good evening!",
       "et": "Tere õhtust!",
+      "uk": "Доброго вечора!",
       "words": [
-        { "et": "Tere", "en": "good", "lemma": "tere", "pos": "interjection", "ipa": "ˈtere" },
-        { "et": "õhtust", "en": "evening", "lemma": "õhtu", "pos": "noun", "ipa": "ˈɤhtust" }
+        { "et": "Tere", "en": "good", "uk": "добрий", "lemma": "tere", "pos": "interjection", "ipa": "ˈtere" },
+        { "et": "õhtust", "en": "evening", "uk": "вечір", "lemma": "õhtu", "pos": "noun", "ipa": "ˈɤhtust" }
       ]
     },
     {
       "id": "greetings-04",
       "en": "How's it going?",
       "et": "Kuidas läheb?",
+      "uk": "Як справи?",
       "notes": "Informal, common spoken greeting.",
       "words": [
-        { "et": "Kuidas", "en": "how", "lemma": "kuidas", "pos": "adverb", "ipa": "ˈkuidɑs" },
-        { "et": "läheb", "en": "goes / is going", "lemma": "minema", "pos": "verb", "ipa": "ˈlæhep" }
+        { "et": "Kuidas", "en": "how", "uk": "як", "lemma": "kuidas", "pos": "adverb", "ipa": "ˈkuidɑs" },
+        { "et": "läheb", "en": "goes / is going", "uk": "йде / йдеться", "lemma": "minema", "pos": "verb", "ipa": "ˈlæhep" }
       ]
     },
     {
       "id": "greetings-05",
       "en": "I'm doing well, thanks.",
       "et": "Mul läheb hästi, aitäh.",
+      "uk": "У мене все добре, дякую.",
       "words": [
-        { "et": "Mul", "en": "for me / I", "lemma": "mina", "pos": "pronoun", "ipa": "mul" },
-        { "et": "läheb", "en": "goes", "lemma": "minema", "pos": "verb", "ipa": "ˈlæhep" },
-        { "et": "hästi", "en": "well", "lemma": "hästi", "pos": "adverb", "ipa": "ˈhæsti" },
-        { "et": "aitäh", "en": "thanks", "lemma": "aitäh", "pos": "interjection", "ipa": "ˈɑitæh" }
+        { "et": "Mul", "en": "for me / I", "uk": "у мене / я", "lemma": "mina", "pos": "pronoun", "ipa": "mul" },
+        { "et": "läheb", "en": "goes", "uk": "йде", "lemma": "minema", "pos": "verb", "ipa": "ˈlæhep" },
+        { "et": "hästi", "en": "well", "uk": "добре", "lemma": "hästi", "pos": "adverb", "ipa": "ˈhæsti" },
+        { "et": "aitäh", "en": "thanks", "uk": "дякую", "lemma": "aitäh", "pos": "interjection", "ipa": "ˈɑitæh" }
       ]
     },
     {
       "id": "greetings-06",
       "en": "What is your name?",
       "et": "Mis su nimi on?",
+      "uk": "Як тебе звати?",
       "words": [
-        { "et": "Mis", "en": "what", "lemma": "mis", "pos": "pronoun", "ipa": "mis" },
-        { "et": "su", "en": "your", "lemma": "sina", "pos": "pronoun", "ipa": "su" },
-        { "et": "nimi", "en": "name", "lemma": "nimi", "pos": "noun", "ipa": "ˈnimi" },
-        { "et": "on", "en": "is", "lemma": "olema", "pos": "verb", "ipa": "on" }
+        { "et": "Mis", "en": "what", "uk": "що", "lemma": "mis", "pos": "pronoun", "ipa": "mis" },
+        { "et": "su", "en": "your", "uk": "твій", "lemma": "sina", "pos": "pronoun", "ipa": "su" },
+        { "et": "nimi", "en": "name", "uk": "ім'я", "lemma": "nimi", "pos": "noun", "ipa": "ˈnimi" },
+        { "et": "on", "en": "is", "uk": "є", "lemma": "olema", "pos": "verb", "ipa": "on" }
       ]
     },
     {
       "id": "greetings-07",
       "en": "My name is Anna.",
       "et": "Minu nimi on Anna.",
+      "uk": "Мене звати Анна.",
       "words": [
-        { "et": "Minu", "en": "my", "lemma": "mina", "pos": "pronoun", "ipa": "ˈminu" },
-        { "et": "nimi", "en": "name", "lemma": "nimi", "pos": "noun", "ipa": "ˈnimi" },
-        { "et": "on", "en": "is", "lemma": "olema", "pos": "verb", "ipa": "on" },
-        { "et": "Anna", "en": "Anna", "lemma": "Anna", "pos": "proper noun", "ipa": "ˈɑnːɑ" }
+        { "et": "Minu", "en": "my", "uk": "мій", "lemma": "mina", "pos": "pronoun", "ipa": "ˈminu" },
+        { "et": "nimi", "en": "name", "uk": "ім'я", "lemma": "nimi", "pos": "noun", "ipa": "ˈnimi" },
+        { "et": "on", "en": "is", "uk": "є", "lemma": "olema", "pos": "verb", "ipa": "on" },
+        { "et": "Anna", "en": "Anna", "uk": "Анна", "lemma": "Anna", "pos": "proper noun", "ipa": "ˈɑnːɑ" }
       ]
     },
     {
       "id": "greetings-08",
       "en": "Nice to meet you.",
       "et": "Meeldiv tutvuda.",
+      "uk": "Приємно познайомитися.",
       "notes": "Literally \"pleasant to get acquainted\".",
       "words": [
-        { "et": "Meeldiv", "en": "pleasant", "lemma": "meeldiv", "pos": "adjective", "ipa": "ˈmeːldiv" },
-        { "et": "tutvuda", "en": "to get acquainted", "lemma": "tutvuma", "pos": "verb", "ipa": "ˈtutvudɑ" }
+        { "et": "Meeldiv", "en": "pleasant", "uk": "приємний", "lemma": "meeldiv", "pos": "adjective", "ipa": "ˈmeːldiv" },
+        { "et": "tutvuda", "en": "to get acquainted", "uk": "познайомитися", "lemma": "tutvuma", "pos": "verb", "ipa": "ˈtutvudɑ" }
       ]
     },
     {
       "id": "greetings-09",
       "en": "Goodbye!",
       "et": "Head aega!",
+      "uk": "До побачення!",
       "notes": "Literally \"good time\"; the standard way to say goodbye.",
       "words": [
-        { "et": "Head", "en": "good", "lemma": "hea", "pos": "adjective", "ipa": "heɑt" },
-        { "et": "aega", "en": "time", "lemma": "aeg", "pos": "noun", "ipa": "ˈɑegɑ" }
+        { "et": "Head", "en": "good", "uk": "добрий", "lemma": "hea", "pos": "adjective", "ipa": "heɑt" },
+        { "et": "aega", "en": "time", "uk": "час", "lemma": "aeg", "pos": "noun", "ipa": "ˈɑegɑ" }
       ]
     },
     {
       "id": "greetings-10",
       "en": "Good night!",
       "et": "Head ööd!",
+      "uk": "Добраніч!",
       "words": [
-        { "et": "Head", "en": "good", "lemma": "hea", "pos": "adjective", "ipa": "heɑt" },
-        { "et": "ööd", "en": "night", "lemma": "öö", "pos": "noun", "ipa": "øːt" }
+        { "et": "Head", "en": "good", "uk": "добрий", "lemma": "hea", "pos": "adjective", "ipa": "heɑt" },
+        { "et": "ööd", "en": "night", "uk": "ніч", "lemma": "öö", "pos": "noun", "ipa": "øːt" }
       ]
     }
   ]

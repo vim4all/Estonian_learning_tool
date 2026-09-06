@@ -1,12 +1,12 @@
 {
   "id": "little-prince",
-  "title": { "en": "Inspired by The Little Prince", "et": "Väikese printsi ainetel" },
+  "title": { "en": "Inspired by The Little Prince", "et": "Väikese printsi ainetel", "uk": "За мотивами «Маленького принца»" },
   "author": "Original EN/ET rendering by Claude, inspired by Antoine de Saint-Exupéry's public-domain original — not a reproduction of any published translation.",
   "order": 0,
   "chapters": [
     {
       "id": "chapter-1",
-      "title": { "en": "The Drawing", "et": "Joonistus" },
+      "title": { "en": "The Drawing", "et": "Joonistus", "uk": "Малюнок" },
       "order": 0,
       "paragraphs": [
         {
@@ -16,27 +16,30 @@
               "id": "chapter-1-p1-s1",
               "en": "When I was a small child, I once saw a wonderful picture in a book about the jungle.",
               "et": "Kui ma olin väike laps, nägin kord ühes džunglist rääkivas raamatus imelist pilti.",
+              "uk": "Коли я був маленькою дитиною, я одного разу побачив чудову картинку в книжці про джунглі.",
               "words": [
-                { "et": "väike", "en": "small", "lemma": "väike", "pos": "adjective", "ipa": "ˈvæike" },
-                { "et": "džunglist", "en": "about the jungle", "lemma": "džungel", "pos": "noun", "ipa": "ˈdʒuŋglist" }
+                { "et": "väike", "en": "small", "uk": "маленький", "lemma": "väike", "pos": "adjective", "ipa": "ˈvæike" },
+                { "et": "džunglist", "en": "about the jungle", "uk": "про джунглі", "lemma": "džungel", "pos": "noun", "ipa": "ˈdʒuŋglist" }
               ]
             },
             {
               "id": "chapter-1-p1-s2",
               "en": "It showed a huge snake called a boa swallowing a wild animal whole.",
               "et": "Selles oli tohutu suur madu nimega boa, kes neelas ühe metslooma tervelt alla.",
+              "uk": "На ньому був величезний змій на ім'я боа, який ковтав дику тварину цілком.",
               "words": [
-                { "et": "madu", "en": "snake", "lemma": "madu", "pos": "noun", "ipa": "ˈmɑdu" },
-                { "et": "neelas", "en": "swallowed", "lemma": "neelama", "pos": "verb", "ipa": "ˈneːlɑs" }
+                { "et": "madu", "en": "snake", "uk": "змій", "lemma": "madu", "pos": "noun", "ipa": "ˈmɑdu" },
+                { "et": "neelas", "en": "swallowed", "uk": "проковтнув", "lemma": "neelama", "pos": "verb", "ipa": "ˈneːlɑs" }
               ]
             },
             {
               "id": "chapter-1-p1-s3",
               "en": "Full of excitement, I picked up my pencil and made my very first drawing.",
               "et": "Elevil haarasin pliiatsi ja tegin oma esimese joonistuse.",
+              "uk": "Схвильований, я взяв олівець і зробив свій перший малюнок.",
               "words": [
-                { "et": "elevil", "en": "excited", "lemma": "elevil", "pos": "adjective", "ipa": "ˈelevil" },
-                { "et": "pliiatsi", "en": "pencil", "lemma": "pliiats", "pos": "noun", "ipa": "ˈpliːɑtsi" }
+                { "et": "elevil", "en": "excited", "uk": "схвильований", "lemma": "elevil", "pos": "adjective", "ipa": "ˈelevil" },
+                { "et": "pliiatsi", "en": "pencil", "uk": "олівець", "lemma": "pliiats", "pos": "noun", "ipa": "ˈpliːɑtsi" }
               ]
             }
           ]
@@ -48,27 +51,30 @@
               "id": "chapter-1-p2-s1",
               "en": "I showed my masterpiece to the grown-ups and asked if it frightened them.",
               "et": "Näitasin oma meistritööd täiskasvanutele ja küsisin, kas see hirmutab neid.",
+              "uk": "Я показав свій шедевр дорослим і запитав, чи лякає це їх.",
               "words": [
-                { "et": "meistritööd", "en": "masterpiece", "lemma": "meistritöö", "pos": "noun", "ipa": "ˈmeistriˌtøːt" },
-                { "et": "hirmutab", "en": "frightens", "lemma": "hirmutama", "pos": "verb", "ipa": "ˈhirmutɑp" }
+                { "et": "meistritööd", "en": "masterpiece", "uk": "шедевр", "lemma": "meistritöö", "pos": "noun", "ipa": "ˈmeistriˌtøːt" },
+                { "et": "hirmutab", "en": "frightens", "uk": "лякає", "lemma": "hirmutama", "pos": "verb", "ipa": "ˈhirmutɑp" }
               ]
             },
             {
               "id": "chapter-1-p2-s2",
               "en": "They only smiled kindly and said, \"Why would a hat be frightening?\"",
               "et": "Nad muigasid lahkelt ja ütlesid: \"Miks peaks kübar hirmutav olema?\"",
+              "uk": "Вони лише добродушно посміхнулися і сказали: «Чому капелюх має бути страшним?»",
               "words": [
-                { "et": "muigasid", "en": "smiled", "lemma": "muigama", "pos": "verb", "ipa": "ˈmuigɑsit" },
-                { "et": "kübar", "en": "hat", "lemma": "kübar", "pos": "noun", "ipa": "ˈkybɑr" }
+                { "et": "muigasid", "en": "smiled", "uk": "посміхнулися", "lemma": "muigama", "pos": "verb", "ipa": "ˈmuigɑsit" },
+                { "et": "kübar", "en": "hat", "uk": "капелюх", "lemma": "kübar", "pos": "noun", "ipa": "ˈkybɑr" }
               ]
             },
             {
               "id": "chapter-1-p2-s3",
               "en": "But I had not drawn a hat at all — I had drawn a boa digesting an elephant.",
               "et": "Aga ma ei olnud üldse kübarat joonistanud — ma olin joonistanud boa, kes seedib elevanti.",
+              "uk": "Але я взагалі не малював капелюха — я намалював боа, який перетравлює слона.",
               "words": [
-                { "et": "seedib", "en": "digests", "lemma": "seedima", "pos": "verb", "ipa": "ˈseːdip" },
-                { "et": "elevanti", "en": "elephant", "lemma": "elevant", "pos": "noun", "ipa": "ˈelevɑnti" }
+                { "et": "seedib", "en": "digests", "uk": "перетравлює", "lemma": "seedima", "pos": "verb", "ipa": "ˈseːdip" },
+                { "et": "elevanti", "en": "elephant", "uk": "слона", "lemma": "elevant", "pos": "noun", "ipa": "ˈelevɑnti" }
               ]
             }
           ]
@@ -80,18 +86,20 @@
               "id": "chapter-1-p3-s1",
               "en": "So I drew a second picture, this time showing the inside of the snake, so the grown-ups could understand.",
               "et": "Seepärast joonistasin teise pildi, mis näitas mao sisemust, et täiskasvanud sellest aru saaksid.",
+              "uk": "Тому я намалював другу картинку, яка показувала нутрощі змія, щоб дорослі могли це зрозуміти.",
               "words": [
-                { "et": "sisemust", "en": "the inside", "lemma": "sisemus", "pos": "noun", "ipa": "ˈsisemust" }
+                { "et": "sisemust", "en": "the inside", "uk": "нутрощі", "lemma": "sisemus", "pos": "noun", "ipa": "ˈsisemust" }
               ]
             },
             {
               "id": "chapter-1-p3-s2",
               "en": "The grown-ups always need everything explained to them, so I gave up my dream of becoming a painter.",
               "et": "Täiskasvanutele peab alati kõike seletama, nii et ma loobusin unistusest saada kunstnikuks.",
+              "uk": "Дорослим завжди треба все пояснювати, тому я відмовився від мрії стати художником.",
               "words": [
-                { "et": "seletama", "en": "to explain", "lemma": "seletama", "pos": "verb", "ipa": "ˈseletɑmɑ" },
-                { "et": "loobusin", "en": "I gave up", "lemma": "loobuma", "pos": "verb", "ipa": "ˈloːbusin" },
-                { "et": "kunstnikuks", "en": "(to become) a painter", "lemma": "kunstnik", "pos": "noun", "ipa": "ˈkunstnikuks" }
+                { "et": "seletama", "en": "to explain", "uk": "пояснювати", "lemma": "seletama", "pos": "verb", "ipa": "ˈseletɑmɑ" },
+                { "et": "loobusin", "en": "I gave up", "uk": "я відмовився", "lemma": "loobuma", "pos": "verb", "ipa": "ˈloːbusin" },
+                { "et": "kunstnikuks", "en": "(to become) a painter", "uk": "(стати) художником", "lemma": "kunstnik", "pos": "noun", "ipa": "ˈkunstnikuks" }
               ]
             }
           ]

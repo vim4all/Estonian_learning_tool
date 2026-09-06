@@ -1,18 +1,18 @@
 {
   "id": "nationalities",
-  "title": { "en": "Nationalities & Countries", "et": "Rahvused ja riigid" },
+  "title": { "en": "Nationalities & Countries", "et": "Rahvused ja riigid", "uk": "Національності та країни" },
   "level": "A2",
   "order": 19,
   "sentences": [
-    { "id": "nationalities-01", "en": "I am from Estonia.", "et": "Ma olen Eestist.", "words": [{ "et": "Eestist", "en": "from Estonia", "lemma": "Eesti", "pos": "proper noun", "ipa": "ˈeːstist" }] },
-    { "id": "nationalities-02", "en": "I am from Ukraine.", "et": "Ma olen Ukrainast.", "words": [{ "et": "Ukrainast", "en": "from Ukraine", "lemma": "Ukraina", "pos": "proper noun", "ipa": "ˈukrɑinɑst" }] },
-    { "id": "nationalities-03", "en": "This is Estonia.", "et": "See on Eesti.", "words": [{ "et": "Eesti", "en": "Estonia", "lemma": "Eesti", "pos": "proper noun", "ipa": "ˈeːsti" }] },
-    { "id": "nationalities-04", "en": "This is Ukraine.", "et": "See on Ukraina.", "words": [{ "et": "Ukraina", "en": "Ukraine", "lemma": "Ukraina", "pos": "proper noun", "ipa": "ˈukrɑinɑ" }] },
-    { "id": "nationalities-05", "en": "I am Estonian.", "et": "Ma olen eestlane.", "words": [{ "et": "eestlane", "en": "Estonian (person)", "lemma": "eestlane", "pos": "noun", "ipa": "ˈeːstlɑne" }] },
-    { "id": "nationalities-06", "en": "I am Ukrainian.", "et": "Ma olen ukrainlane.", "words": [{ "et": "ukrainlane", "en": "Ukrainian (person)", "lemma": "ukrainlane", "pos": "noun", "ipa": "ˈukrɑinlɑne" }] },
-    { "id": "nationalities-07", "en": "This is America.", "et": "See on Ameerika.", "words": [{ "et": "Ameerika", "en": "America", "lemma": "Ameerika", "pos": "proper noun", "ipa": "ɑˈmeːrikɑ" }] },
-    { "id": "nationalities-08", "en": "This is Germany.", "et": "See on Saksamaa.", "words": [{ "et": "Saksamaa", "en": "Germany", "lemma": "Saksamaa", "pos": "proper noun", "ipa": "ˈsɑksɑˌmɑː" }] },
-    { "id": "nationalities-09", "en": "This is England.", "et": "See on Inglismaa.", "words": [{ "et": "Inglismaa", "en": "England", "lemma": "Inglismaa", "pos": "proper noun", "ipa": "ˈiŋɡlisˌmɑː" }] },
-    { "id": "nationalities-10", "en": "I speak a little Estonian.", "et": "Ma räägin natuke eesti keelt.", "words": [{ "et": "natuke", "en": "a little", "lemma": "natuke", "pos": "adverb", "ipa": "ˈnɑtuke" }] }
+    { "id": "nationalities-01", "en": "I am from Estonia.", "et": "Ma olen Eestist.", "uk": "Я з Естонії.", "words": [{ "et": "Eestist", "en": "from Estonia", "uk": "з Естонії", "lemma": "Eesti", "pos": "proper noun", "ipa": "ˈeːstist" }] },
+    { "id": "nationalities-02", "en": "I am from Ukraine.", "et": "Ma olen Ukrainast.", "uk": "Я з України.", "words": [{ "et": "Ukrainast", "en": "from Ukraine", "uk": "з України", "lemma": "Ukraina", "pos": "proper noun", "ipa": "ˈukrɑinɑst" }] },
+    { "id": "nationalities-03", "en": "This is Estonia.", "et": "See on Eesti.", "uk": "Це Естонія.", "words": [{ "et": "Eesti", "en": "Estonia", "uk": "Естонія", "lemma": "Eesti", "pos": "proper noun", "ipa": "ˈeːsti" }] },
+    { "id": "nationalities-04", "en": "This is Ukraine.", "et": "See on Ukraina.", "uk": "Це Україна.", "words": [{ "et": "Ukraina", "en": "Ukraine", "uk": "Україна", "lemma": "Ukraina", "pos": "proper noun", "ipa": "ˈukrɑinɑ" }] },
+    { "id": "nationalities-05", "en": "I am Estonian.", "et": "Ma olen eestlane.", "uk": "Я естонець.", "words": [{ "et": "eestlane", "en": "Estonian (person)", "uk": "естонець (людина)", "lemma": "eestlane", "pos": "noun", "ipa": "ˈeːstlɑne" }] },
+    { "id": "nationalities-06", "en": "I am Ukrainian.", "et": "Ma olen ukrainlane.", "uk": "Я українець.", "words": [{ "et": "ukrainlane", "en": "Ukrainian (person)", "uk": "українець (людина)", "lemma": "ukrainlane", "pos": "noun", "ipa": "ˈukrɑinlɑne" }] },
+    { "id": "nationalities-07", "en": "This is America.", "et": "See on Ameerika.", "uk": "Це Америка.", "words": [{ "et": "Ameerika", "en": "America", "uk": "Америка", "lemma": "Ameerika", "pos": "proper noun", "ipa": "ɑˈmeːrikɑ" }] },
+    { "id": "nationalities-08", "en": "This is Germany.", "et": "See on Saksamaa.", "uk": "Це Німеччина.", "words": [{ "et": "Saksamaa", "en": "Germany", "uk": "Німеччина", "lemma": "Saksamaa", "pos": "proper noun", "ipa": "ˈsɑksɑˌmɑː" }] },
+    { "id": "nationalities-09", "en": "This is England.", "et": "See on Inglismaa.", "uk": "Це Англія.", "words": [{ "et": "Inglismaa", "en": "England", "uk": "Англія", "lemma": "Inglismaa", "pos": "proper noun", "ipa": "ˈiŋɡlisˌmɑː" }] },
+    { "id": "nationalities-10", "en": "I speak a little Estonian.", "et": "Ma räägin natuke eesti keelt.", "uk": "Я трохи розмовляю естонською.", "words": [{ "et": "natuke", "en": "a little", "uk": "трохи", "lemma": "natuke", "pos": "adverb", "ipa": "ˈnɑtuke" }] }
   ]
 }

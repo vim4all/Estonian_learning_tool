@@ -1,18 +1,18 @@
 {
   "id": "weather",
-  "title": { "en": "Weather", "et": "Ilm" },
+  "title": { "en": "Weather", "et": "Ilm", "uk": "Погода" },
   "level": "A1",
   "order": 10,
   "sentences": [
-    { "id": "weather-01", "en": "It is raining.", "et": "Sajab vihma.", "words": [{ "et": "vihma", "en": "rain", "lemma": "vihm", "pos": "noun", "ipa": "ˈvihmɑ" }] },
-    { "id": "weather-02", "en": "It is snowing.", "et": "Sajab lund.", "words": [{ "et": "lund", "en": "snow", "lemma": "lumi", "pos": "noun", "ipa": "lunt" }] },
-    { "id": "weather-03", "en": "The sun is shining.", "et": "Päike paistab.", "words": [{ "et": "paistab", "en": "shines", "lemma": "paistma", "pos": "verb", "ipa": "ˈpɑistɑp" }] },
-    { "id": "weather-04", "en": "It is cold today.", "et": "Täna on külm.", "words": [{ "et": "külm", "en": "cold", "lemma": "külm", "pos": "adjective", "ipa": "kylm" }] },
-    { "id": "weather-05", "en": "It is warm today.", "et": "Täna on soe.", "words": [{ "et": "soe", "en": "warm", "lemma": "soe", "pos": "adjective", "ipa": "soe" }] },
-    { "id": "weather-06", "en": "The wind is blowing.", "et": "Tuul puhub.", "words": [{ "et": "tuul", "en": "wind", "lemma": "tuul", "pos": "noun", "ipa": "tuːl" }, { "et": "puhub", "en": "blows", "lemma": "puhuma", "pos": "verb", "ipa": "ˈpuhup" }] },
-    { "id": "weather-07", "en": "It is windy today.", "et": "Täna on tuuline.", "words": [{ "et": "tuuline", "en": "windy", "lemma": "tuuline", "pos": "adjective", "ipa": "ˈtuːline" }] },
-    { "id": "weather-08", "en": "The weather is nice today.", "et": "Täna on ilus ilm.", "words": [{ "et": "ilm", "en": "weather", "lemma": "ilm", "pos": "noun", "ipa": "ilm" }, { "et": "ilus", "en": "nice / beautiful", "lemma": "ilus", "pos": "adjective", "ipa": "ˈilus" }] },
-    { "id": "weather-09", "en": "I like rain.", "et": "Mulle meeldib vihm.", "words": [{ "et": "vihm", "en": "rain", "lemma": "vihm", "pos": "noun", "ipa": "vihm" }] },
-    { "id": "weather-10", "en": "I like snow.", "et": "Mulle meeldib lumi.", "words": [{ "et": "lumi", "en": "snow", "lemma": "lumi", "pos": "noun", "ipa": "ˈlumi" }] }
+    { "id": "weather-01", "en": "It is raining.", "et": "Sajab vihma.", "uk": "Йде дощ.", "words": [{ "et": "vihma", "en": "rain", "uk": "дощ", "lemma": "vihm", "pos": "noun", "ipa": "ˈvihmɑ" }] },
+    { "id": "weather-02", "en": "It is snowing.", "et": "Sajab lund.", "uk": "Йде сніг.", "words": [{ "et": "lund", "en": "snow", "uk": "сніг", "lemma": "lumi", "pos": "noun", "ipa": "lunt" }] },
+    { "id": "weather-03", "en": "The sun is shining.", "et": "Päike paistab.", "uk": "Сонце світить.", "words": [{ "et": "paistab", "en": "shines", "uk": "світить", "lemma": "paistma", "pos": "verb", "ipa": "ˈpɑistɑp" }] },
+    { "id": "weather-04", "en": "It is cold today.", "et": "Täna on külm.", "uk": "Сьогодні холодно.", "words": [{ "et": "külm", "en": "cold", "uk": "холодний", "lemma": "külm", "pos": "adjective", "ipa": "kylm" }] },
+    { "id": "weather-05", "en": "It is warm today.", "et": "Täna on soe.", "uk": "Сьогодні тепло.", "words": [{ "et": "soe", "en": "warm", "uk": "теплий", "lemma": "soe", "pos": "adjective", "ipa": "soe" }] },
+    { "id": "weather-06", "en": "The wind is blowing.", "et": "Tuul puhub.", "uk": "Дме вітер.", "words": [{ "et": "tuul", "en": "wind", "uk": "вітер", "lemma": "tuul", "pos": "noun", "ipa": "tuːl" }, { "et": "puhub", "en": "blows", "uk": "дме", "lemma": "puhuma", "pos": "verb", "ipa": "ˈpuhup" }] },
+    { "id": "weather-07", "en": "It is windy today.", "et": "Täna on tuuline.", "uk": "Сьогодні вітряно.", "words": [{ "et": "tuuline", "en": "windy", "uk": "вітряний", "lemma": "tuuline", "pos": "adjective", "ipa": "ˈtuːline" }] },
+    { "id": "weather-08", "en": "The weather is nice today.", "et": "Täna on ilus ilm.", "uk": "Сьогодні гарна погода.", "words": [{ "et": "ilm", "en": "weather", "uk": "погода", "lemma": "ilm", "pos": "noun", "ipa": "ilm" }, { "et": "ilus", "en": "nice / beautiful", "uk": "гарний / красивий", "lemma": "ilus", "pos": "adjective", "ipa": "ˈilus" }] },
+    { "id": "weather-09", "en": "I like rain.", "et": "Mulle meeldib vihm.", "uk": "Мені подобається дощ.", "words": [{ "et": "vihm", "en": "rain", "uk": "дощ", "lemma": "vihm", "pos": "noun", "ipa": "vihm" }] },
+    { "id": "weather-10", "en": "I like snow.", "et": "Mulle meeldib lumi.", "uk": "Мені подобається сніг.", "words": [{ "et": "lumi", "en": "snow", "uk": "сніг", "lemma": "lumi", "pos": "noun", "ipa": "ˈlumi" }] }
   ]
 }

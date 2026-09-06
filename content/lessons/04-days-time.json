@@ -1,23 +1,24 @@
 {
   "id": "days-time",
-  "title": { "en": "Days of the Week", "et": "Nädalapäevad" },
+  "title": { "en": "Days of the Week", "et": "Nädalapäevad", "uk": "Дні тижня" },
   "level": "A2",
   "order": 7,
   "sentences": [
-    { "id": "days-time-01", "en": "Today is Monday.", "et": "Täna on esmaspäev.", "words": [{ "et": "esmaspäev", "en": "Monday", "lemma": "esmaspäev", "pos": "noun", "ipa": "ˈesmɑsˌpæev" }] },
-    { "id": "days-time-02", "en": "Today is Tuesday.", "et": "Täna on teisipäev.", "words": [{ "et": "teisipäev", "en": "Tuesday", "lemma": "teisipäev", "pos": "noun", "ipa": "ˈteisiˌpæev" }] },
-    { "id": "days-time-03", "en": "Today is Wednesday.", "et": "Täna on kolmapäev.", "words": [{ "et": "kolmapäev", "en": "Wednesday", "lemma": "kolmapäev", "pos": "noun", "ipa": "ˈkolmɑˌpæev" }] },
-    { "id": "days-time-04", "en": "Today is Thursday.", "et": "Täna on neljapäev.", "words": [{ "et": "neljapäev", "en": "Thursday", "lemma": "neljapäev", "pos": "noun", "ipa": "ˈneljɑˌpæev" }] },
+    { "id": "days-time-01", "en": "Today is Monday.", "et": "Täna on esmaspäev.", "uk": "Сьогодні понеділок.", "words": [{ "et": "esmaspäev", "en": "Monday", "uk": "понеділок", "lemma": "esmaspäev", "pos": "noun", "ipa": "ˈesmɑsˌpæev" }] },
+    { "id": "days-time-02", "en": "Today is Tuesday.", "et": "Täna on teisipäev.", "uk": "Сьогодні вівторок.", "words": [{ "et": "teisipäev", "en": "Tuesday", "uk": "вівторок", "lemma": "teisipäev", "pos": "noun", "ipa": "ˈteisiˌpæev" }] },
+    { "id": "days-time-03", "en": "Today is Wednesday.", "et": "Täna on kolmapäev.", "uk": "Сьогодні середа.", "words": [{ "et": "kolmapäev", "en": "Wednesday", "uk": "середа", "lemma": "kolmapäev", "pos": "noun", "ipa": "ˈkolmɑˌpæev" }] },
+    { "id": "days-time-04", "en": "Today is Thursday.", "et": "Täna on neljapäev.", "uk": "Сьогодні четвер.", "words": [{ "et": "neljapäev", "en": "Thursday", "uk": "четвер", "lemma": "neljapäev", "pos": "noun", "ipa": "ˈneljɑˌpæev" }] },
     {
       "id": "days-time-05",
       "en": "Today is Friday.",
       "et": "Täna on reede.",
+      "uk": "Сьогодні п'ятниця.",
       "notes": "\"reede\" is irregular — it doesn't end in \"-päev\" like the other weekdays.",
-      "words": [{ "et": "reede", "en": "Friday", "lemma": "reede", "pos": "noun", "ipa": "ˈreːde" }]
+      "words": [{ "et": "reede", "en": "Friday", "uk": "п'ятниця", "lemma": "reede", "pos": "noun", "ipa": "ˈreːde" }]
     },
-    { "id": "days-time-06", "en": "Today is Saturday.", "et": "Täna on laupäev.", "words": [{ "et": "laupäev", "en": "Saturday", "lemma": "laupäev", "pos": "noun", "ipa": "ˈlɑuˌpæev" }] },
-    { "id": "days-time-07", "en": "Today is Sunday.", "et": "Täna on pühapäev.", "words": [{ "et": "pühapäev", "en": "Sunday", "lemma": "pühapäev", "pos": "noun", "ipa": "ˈpyhɑˌpæev" }] },
-    { "id": "days-time-08", "en": "What day is it today?", "et": "Mis päev täna on?", "words": [{ "et": "päev", "en": "day", "lemma": "päev", "pos": "noun", "ipa": "pæev" }] },
-    { "id": "days-time-09", "en": "I like Friday best.", "et": "Mulle kõige rohkem meeldib reede.", "words": [{ "et": "kõige rohkem", "en": "the most", "lemma": "kõige rohkem", "pos": "adverb", "ipa": "ˈkɤige ˈrohkem" }] }
+    { "id": "days-time-06", "en": "Today is Saturday.", "et": "Täna on laupäev.", "uk": "Сьогодні субота.", "words": [{ "et": "laupäev", "en": "Saturday", "uk": "субота", "lemma": "laupäev", "pos": "noun", "ipa": "ˈlɑuˌpæev" }] },
+    { "id": "days-time-07", "en": "Today is Sunday.", "et": "Täna on pühapäev.", "uk": "Сьогодні неділя.", "words": [{ "et": "pühapäev", "en": "Sunday", "uk": "неділя", "lemma": "pühapäev", "pos": "noun", "ipa": "ˈpyhɑˌpæev" }] },
+    { "id": "days-time-08", "en": "What day is it today?", "et": "Mis päev täna on?", "uk": "Який сьогодні день?", "words": [{ "et": "päev", "en": "day", "uk": "день", "lemma": "päev", "pos": "noun", "ipa": "pæev" }] },
+    { "id": "days-time-09", "en": "I like Friday best.", "et": "Mulle kõige rohkem meeldib reede.", "uk": "Мені найбільше подобається п'ятниця.", "words": [{ "et": "kõige rohkem", "en": "the most", "uk": "найбільше", "lemma": "kõige rohkem", "pos": "adverb", "ipa": "ˈkɤige ˈrohkem" }] }
   ]
 }

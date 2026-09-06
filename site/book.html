@@ -9,12 +9,16 @@
 <body>
   <header class="app-header">
     <h1>EstLrn</h1>
-    <p class="subtitle">Parallel-text reading, English ↔ Estonian</p>
+    <p class="subtitle">Parallel-text reading, Estonian in English or Ukrainian</p>
     <nav class="mode-nav">
       <a class="mode-link" href="index.html">Lessons</a>
       <a class="mode-link active" href="book.html">Book</a>
       <a class="mode-link" href="quiz.html">Quiz</a>
     </nav>
+    <div class="lang-toggle" role="group" aria-label="Native language">
+      <button type="button" class="lang-btn" data-lang="en">EN</button>
+      <button type="button" class="lang-btn" data-lang="uk">UK</button>
+    </div>
   </header>
 
   <main class="book-main">
@@ -37,7 +41,7 @@
         <button id="stop-btn" aria-label="Stop playback">■ Stop</button>
         <label class="toggle">
           <input type="checkbox" id="hide-en-toggle" />
-          Hide English (immersion mode)
+          Hide translation (immersion mode)
         </label>
         <audio id="chapter-audio-el"></audio>
       </div>
@@ -48,6 +52,7 @@
 
   <audio id="clip-audio-el"></audio>
 
+  <script src="js/lang.js"></script>
   <script src="js/book.js"></script>
 </body>
 </html>
