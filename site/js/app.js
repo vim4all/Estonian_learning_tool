@@ -18,13 +18,25 @@
   const loopToggle = document.getElementById("loop-toggle");
   const clipAudioEl = document.getElementById("clip-audio-el");
   const lessonAudioEl = document.getElementById("lesson-audio-el");
+  const viewButtons = document.querySelectorAll(".view-btn");
+  const vocabView = document.getElementById("vocab-view");
+  const vocabGridEl = document.getElementById("vocab-grid");
+  const vocabPaginationEl = document.getElementById("vocab-pagination");
+  const vocabPageLabelEl = document.getElementById("vocab-page-label");
+  const vocabPrevBtn = document.getElementById("vocab-prev-btn");
+  const vocabNextBtn = document.getElementById("vocab-next-btn");
 
   const nativeLang = EstLrnLang.getNativeLang();
   const nativeAudioField = EstLrnLang.audioField(nativeLang);
 
+  const VOCAB_PAGE_SIZE = 12;
+
   let currentLesson = null;
   let currentIndex = 0;
   let stopped = false;
+  let viewMode = "sentences";
+  let vocabWords = [];
+  let vocabPage = 0;
 
   EstLrnLang.initLangToggle();
 
@@ -63,8 +75,7 @@
     currentLesson = await fetchJson(`data/lessons/${lessonId}.json`);
     lessonAudioEl.src = currentLesson.lessonAudio[nativeLang];
     currentIndex = 0;
-    carousel.hidden = false;
-    render();
+    setViewMode(viewMode);
   }
 
   function render() {
@@ -92,6 +103,61 @@
     nextBtn.disabled = currentIndex === currentLesson.sentences.length - 1;
   }
 
+  // One card per unique Estonian word in the current lesson, first occurrence wins — lets a learner
+  // see a whole lesson's vocabulary (e.g. all the family-member words) at once instead of one
+  // sentence at a time.
+  function buildLessonVocab(lesson) {
+    const seen = new Map();
+    for (const sentence of lesson.sentences) {
+      for (const word of sentence.words) {
+        const key = word.et.toLowerCase();
+        if (!seen.has(key)) seen.set(key, word);
+      }
+    }
+    return [...seen.values()];
+  }
+
+  function renderVocab() {
+    const totalPages = Math.max(1, Math.ceil(vocabWords.length / VOCAB_PAGE_SIZE));
+    vocabPage = Math.min(vocabPage, totalPages - 1);
+    const start = vocabPage * VOCAB_PAGE_SIZE;
+
+    vocabGridEl.innerHTML = "";
+    for (const word of vocabWords.slice(start, start + VOCAB_PAGE_SIZE)) {
+      const card = document.createElement("button");
+      card.type = "button";
+      card.className = "vocab-card";
+      card.innerHTML = `
+        <div class="vocab-et">${word.et}</div>
+        ${word.ipa ? `<div class="vocab-ipa">/${word.ipa}/</div>` : ""}
+        <div class="vocab-native">${word[nativeLang]}</div>
+      `;
+      card.addEventListener("click", () => playClip(word.audioEt));
+      vocabGridEl.appendChild(card);
+    }
+
+    vocabPaginationEl.hidden = totalPages <= 1;
+    vocabPageLabelEl.textContent = `${vocabPage + 1} / ${totalPages}`;
+    vocabPrevBtn.disabled = vocabPage === 0;
+    vocabNextBtn.disabled = vocabPage >= totalPages - 1;
+  }
+
+  function setViewMode(mode) {
+    viewMode = mode;
+    carousel.hidden = mode !== "sentences";
+    vocabView.hidden = mode !== "vocab";
+    viewButtons.forEach((btn) => btn.classList.toggle("active", btn.dataset.view === mode));
+
+    if (mode === "sentences") {
+      render();
+    } else {
+      lessonAudioEl.pause();
+      vocabWords = buildLessonVocab(currentLesson);
+      vocabPage = 0;
+      renderVocab();
+    }
+  }
+
   function playClip(src) {
     lessonAudioEl.pause(); // a manually-triggered clip always wins over the synced full-lesson track
     return new Promise((resolve) => {
@@ -114,9 +180,9 @@
     const sentence = currentLesson.sentences[currentIndex];
     playSentenceBtn.disabled = true;
     try {
-      await playClip(sentence[nativeAudioField]);
-      if (stopped) return;
       await playClip(sentence.audioEt);
+      if (stopped) return;
+      await playClip(sentence[nativeAudioField]);
     } finally {
       playSentenceBtn.disabled = false;
     }
@@ -192,6 +258,16 @@
     lessonAudioEl.play();
   });
   stopBtn.addEventListener("click", stopPlayback);
+
+  viewButtons.forEach((btn) => btn.addEventListener("click", () => setViewMode(btn.dataset.view)));
+  vocabPrevBtn.addEventListener("click", () => {
+    vocabPage--;
+    renderVocab();
+  });
+  vocabNextBtn.addEventListener("click", () => {
+    vocabPage++;
+    renderVocab();
+  });
 
   init();
 })();

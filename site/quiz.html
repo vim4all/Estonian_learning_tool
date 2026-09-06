@@ -19,6 +19,10 @@
       <button type="button" class="lang-btn" data-lang="en">EN</button>
       <button type="button" class="lang-btn" data-lang="uk">UK</button>
     </div>
+    <div class="view-toggle" role="group" aria-label="Quiz mode">
+      <button type="button" class="view-btn" data-mode="choice">Multiple choice</button>
+      <button type="button" class="view-btn" data-mode="type">Type the translation</button>
+    </div>
   </header>
 
   <main>
@@ -35,6 +39,12 @@
         <button id="quiz-play-btn" aria-label="Play pronunciation" hidden>🔊 Listen</button>
 
         <div class="quiz-options" id="quiz-options"></div>
+
+        <form id="quiz-type-form" class="quiz-type-form" hidden>
+          <input type="text" id="quiz-type-input" autocomplete="off" autocapitalize="off" spellcheck="false" placeholder="Type the translation…" />
+          <button type="submit">Check</button>
+        </form>
+        <p class="quiz-feedback" id="quiz-feedback" hidden></p>
       </div>
 
       <div class="controls">

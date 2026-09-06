@@ -19,6 +19,7 @@
 
   let manifest = [];
   let currentBookData = null;
+  let currentChapter = null;
   let tooltipEl = null;
   let stopped = false;
 
@@ -73,6 +74,7 @@
 
   function renderChapter(chapterId) {
     const chapter = currentBookData.chapters.find((c) => c.id === chapterId);
+    currentChapter = chapter;
     chapterAudioEl.pause();
     clipAudioEl.pause();
     chapterAudioEl.src = chapter.chapterAudio[nativeLang];
@@ -104,8 +106,9 @@
     etEl.className = "sentence-pair-et";
     etEl.appendChild(renderGlossedText(sentence.et, sentence.words));
 
-    wrapper.appendChild(enEl);
+    // Estonian first — read/hear it, then check the translation below.
     wrapper.appendChild(etEl);
+    wrapper.appendChild(enEl);
 
     wrapper.addEventListener("click", (event) => {
       if (event.target.closest(".gloss-word")) return;
@@ -188,9 +191,10 @@
 
   async function playSentencePair(sentence) {
     stopped = false;
-    await playClip(sentence[nativeAudioField]);
-    if (stopped) return;
     await playClip(sentence.audioEt);
+    // Immersion mode: Estonian only, in both reading and listening — skip the translation clip.
+    if (stopped || hideEnToggle.checked) return;
+    await playClip(sentence[nativeAudioField]);
   }
 
   function stopPlayback() {
@@ -201,11 +205,40 @@
     clipAudioEl.currentTime = 0;
   }
 
+  const IMMERSION_SENTENCE_PAUSE_MS = 500;
+  const IMMERSION_PARAGRAPH_PAUSE_MS = 900;
+
+  function wait(ms) {
+    return new Promise((resolve) => setTimeout(resolve, ms));
+  }
+
+  // Immersion mode has no pre-built "Estonian only" chapter track, so it plays each sentence's
+  // Estonian clip back to back client-side instead, with the same short/paragraph pause pattern
+  // the pipeline bakes into the combined tracks.
+  async function playChapterImmersion() {
+    for (const paragraph of currentChapter.paragraphs) {
+      for (const sentence of paragraph.sentences) {
+        if (stopped) return;
+        await playClip(sentence.audioEt);
+        if (stopped) return;
+        await wait(IMMERSION_SENTENCE_PAUSE_MS);
+      }
+      if (stopped) return;
+      await wait(IMMERSION_PARAGRAPH_PAUSE_MS);
+    }
+  }
+
   playChapterBtn.addEventListener("click", () => {
-    stopped = true; // cut short any in-flight sentence/word clip sequence
+    stopped = true; // cut short any in-flight sentence/word clip sequence or immersion playthrough
     clipAudioEl.pause();
-    chapterAudioEl.currentTime = 0;
-    chapterAudioEl.play();
+    chapterAudioEl.pause();
+    if (hideEnToggle.checked) {
+      stopped = false; // start our own sequence
+      playChapterImmersion();
+    } else {
+      chapterAudioEl.currentTime = 0;
+      chapterAudioEl.play();
+    }
   });
   stopBtn.addEventListener("click", stopPlayback);
 

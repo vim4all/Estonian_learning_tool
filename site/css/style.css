@@ -111,6 +111,71 @@ main {
   flex-wrap: wrap;
 }
 
+.view-toggle {
+  display: flex;
+  gap: 0.4rem;
+}
+
+.view-btn {
+  font-size: 0.85rem;
+  padding: 0.35rem 0.7rem;
+  border-radius: 999px;
+  border: 1px solid var(--border);
+  background: var(--card-bg);
+  color: var(--muted);
+}
+
+.view-btn.active {
+  background: var(--accent);
+  border-color: var(--accent);
+  color: var(--accent-contrast);
+}
+
+.vocab-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(140px, 1fr));
+  gap: 0.75rem;
+}
+
+.vocab-card {
+  background: var(--card-bg);
+  border: 1px solid var(--border);
+  border-radius: 0.75rem;
+  padding: 1rem 0.75rem;
+  text-align: center;
+  cursor: pointer;
+}
+
+.vocab-card:hover {
+  border-color: var(--accent);
+}
+
+.vocab-et {
+  font-weight: 700;
+  color: var(--accent);
+  font-size: 1.1rem;
+}
+
+.vocab-ipa {
+  color: var(--muted);
+  font-size: 0.8rem;
+  margin-top: 0.15rem;
+}
+
+.vocab-native {
+  margin-top: 0.4rem;
+  font-size: 0.95rem;
+}
+
+.vocab-pagination {
+  align-items: center;
+}
+
+#vocab-page-label {
+  color: var(--muted);
+  font-size: 0.9rem;
+}
+
 .lesson-picker select {
   font-size: 1rem;
   padding: 0.4rem 0.6rem;
@@ -309,6 +374,40 @@ button:disabled {
   .quiz-options {
     grid-template-columns: 1fr;
   }
+}
+
+.quiz-type-form {
+  display: flex;
+  gap: 0.5rem;
+  width: 100%;
+  margin-top: 1.5rem;
+}
+
+.quiz-type-form input {
+  flex: 1;
+  font-size: 1rem;
+  padding: 0.6rem 0.9rem;
+  border-radius: 0.6rem;
+  border: 1px solid var(--border);
+  background: var(--bg);
+  color: var(--fg);
+}
+
+.quiz-type-form input:disabled {
+  opacity: 0.7;
+}
+
+.quiz-feedback {
+  margin-top: 1rem;
+  font-weight: 600;
+}
+
+.quiz-feedback.correct {
+  color: #1c8a5f;
+}
+
+.quiz-feedback.incorrect {
+  color: #b3413a;
 }
 
 /* Book reader */

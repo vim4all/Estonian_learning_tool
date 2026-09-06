@@ -25,6 +25,10 @@
     <section id="lesson-picker" class="lesson-picker">
       <label for="lesson-select">Lesson</label>
       <select id="lesson-select"></select>
+      <div class="view-toggle" role="group" aria-label="View mode">
+        <button type="button" class="view-btn" data-view="sentences">📖 Sentences</button>
+        <button type="button" class="view-btn" data-view="vocab">🔤 Vocabulary</button>
+      </div>
     </section>
 
     <section id="carousel" class="carousel" hidden>
@@ -32,8 +36,8 @@
 
       <div class="sentence-card">
         <p class="topic-tag" id="topic-tag" hidden></p>
-        <p class="sentence sentence-en" id="sentence-en"></p>
         <p class="sentence sentence-et" id="sentence-et"></p>
+        <p class="sentence sentence-en" id="sentence-en"></p>
         <p class="notes" id="notes"></p>
         <div class="words" id="words"></div>
       </div>
@@ -53,6 +57,15 @@
           Loop
         </label>
         <audio id="lesson-audio-el"></audio>
+      </div>
+    </section>
+
+    <section id="vocab-view" class="vocab-view" hidden>
+      <div class="vocab-grid" id="vocab-grid"></div>
+      <div class="controls vocab-pagination" id="vocab-pagination">
+        <button id="vocab-prev-btn" aria-label="Previous page">&larr; Prev</button>
+        <span id="vocab-page-label"></span>
+        <button id="vocab-next-btn" aria-label="Next page">Next &rarr;</button>
       </div>
     </section>
   </main>

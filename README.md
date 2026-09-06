@@ -2,7 +2,7 @@
 
 An Estonian learning tool for English or Ukrainian speakers, served as a plain static site with three modes. Every sentence and word gloss exists in English *and* Ukrainian; an **EN/UK** toggle in the header (persisted in the browser, applies across all three modes) switches which one pairs with Estonian everywhere on the site.
 
-- **Lessons** (`index.html`) — short vocab-drilling sentence carousel, one pair at a time, word chips with IPA, plus a 🔀 **Random** button to jump to an arbitrary sentence in the current lesson. A 35-lesson A0→B1 course ships by default, in 7 units of 5:
+- **Lessons** (`index.html`) — short vocab-drilling sentence carousel, Estonian first then the native-language translation (both in text and in audio order), word chips with IPA, plus a 🔀 **Random** button to jump to an arbitrary sentence in the current lesson. A **Vocabulary** view toggle swaps the carousel for a paginated grid of every unique word in the current lesson — see a whole lesson's vocabulary (e.g. all the family-member words) at a glance instead of one sentence at a time. A 35-lesson A0→B1 course ships by default, in 7 units of 5:
   1. **A0 Foundations** — Alphabet, Greetings, Personal Pronouns, Numbers, Question Words
   2. **A1 Everyday Life** — Family, Colors, Days of the Week, Food & Drink, Places in Town
   3. **A1/A2 Practical Life** — Weather, Telling Time, Clothing, Shopping, Daily Routine
@@ -14,8 +14,8 @@ An Estonian learning tool for English or Ukrainian speakers, served as a plain s
   The B1 units are grammar-in-use rather than vocab lists (comparatives, the full internal/external location-case sets, conditional mood, three different "can"s, reported speech...) and are a genuine step up in how much can go grammatically wrong in LLM-generated Estonian — worth a native-speaker skim more than the earlier units.
 
   The picker also auto-generates combined playthroughs: **All Lessons** (all 35, back to back) and **Unit 1–7** entries that batch every `BATCH_SIZE` (5) consecutive lessons together (a lesson `order` doesn't have to match its filename's `NN-` prefix — a leftover that doesn't fill a full batch of `BATCH_SIZE` wouldn't get its own redundant one-lesson "unit", though with exactly 35 lessons that doesn't currently happen). All combined tracks reuse the same carousel, word chips, and "Play full lesson" card-sync as a single lesson — they're really just lessons made of other lessons, with a topic tag showing which original lesson each sentence came from and a longer pause at each lesson boundary. A **Loop** checkbox next to "Play full lesson" makes whichever one is loaded repeat indefinitely once it reaches the end, for passive-listening practice. A **Stop** button next to it stops and resets whatever's currently playing (full track or an individual clip).
-- **Book** (`book.html`) — parallel-text reading: chapters of paragraphs, native language above/Estonian below each sentence, click-to-play per sentence or per word, a continuous "Play chapter" bilingual audio track, and an "immersion mode" toggle that hides the translation.
-- **Quiz** (`quiz.html`) — a 4-choice vocabulary test built from every word already glossed across the lessons (~240 unique Estonian words), asking either direction (Estonian → your language or the reverse) at random each question, with a 🔊 button to hear the prompt and a running score.
+- **Book** (`book.html`) — parallel-text reading: chapters of paragraphs, Estonian above/native language below each sentence, click-to-play per sentence or per word (Estonian first, then translation), a continuous "Play chapter" bilingual audio track, and an "immersion mode" toggle that hides the translation *and* switches playback to Estonian-only (per-sentence click and "Play chapter" alike).
+- **Quiz** (`quiz.html`) — vocabulary practice built from every word already glossed across the lessons (~240 unique Estonian words), always prompting with the Estonian word (recognizing the translation is the first step; the reverse direction is a later-stage skill). Two modes: **multiple choice** (4 options) or **type the translation** (free recall, tolerant of gloss alternates like "goes / is going"). A 🔊 button hears the prompt; score is tracked across both modes.
 
 All audio is generated once, ahead of time, 100% free — no accounts, no API keys, no billing.
 
@@ -27,8 +27,10 @@ Everything below is built, generated, and verified working end-to-end (headless-
 - [x] Fully free TTS pipeline — TartuNLP (Estonian neural voices) + edge-tts-universal (English and Ukrainian neural voices), no accounts/keys/billing anywhere; `espeak`/`text2wav` wired up as an offline fallback engine
 - [x] Full 35-lesson A0→B1 course, 349 sentences, in 7 units of 5 (see the syllabus above) — every sentence and word gloss exists in both English and Ukrainian
 - [x] EN/UK native-language toggle, applies across all three modes and persists across reloads
+- [x] Estonian-first ordering throughout (text and audio) — read/hear Estonian, then check the translation
 - [x] Word-chip vocabulary glosses with IPA on every lesson sentence
-- [x] 🔀 Random button (Lessons) and 4-choice vocabulary Quiz built from the full glossed-word set
+- [x] 🔀 Random button and a paginated Vocabulary-grid view (Lessons); immersion mode now also makes Book playback Estonian-only, not just the text
+- [x] Quiz: multiple-choice and type-the-translation modes, both Estonian-prompted, built from the full glossed-word set
 - [x] Auto-generated combined playthroughs: **All Lessons** and **Unit 1–7**, built from the same per-lesson audio with longer pauses at lesson/unit boundaries
 - [x] "Play full lesson" with live carousel sync — the card follows whichever sentence is currently sounding, not just plays audio alongside a static card
 - [x] **Loop** toggle for continuous/passive-listening playback, works on any lesson or combined track

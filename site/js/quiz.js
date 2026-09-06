@@ -8,7 +8,11 @@
   const promptEl = document.getElementById("quiz-prompt");
   const playBtn = document.getElementById("quiz-play-btn");
   const optionsEl = document.getElementById("quiz-options");
+  const typeFormEl = document.getElementById("quiz-type-form");
+  const typeInputEl = document.getElementById("quiz-type-input");
+  const feedbackEl = document.getElementById("quiz-feedback");
   const nextBtn = document.getElementById("quiz-next-btn");
+  const modeButtons = document.querySelectorAll(".view-btn[data-mode]");
   const clipAudioEl = document.getElementById("clip-audio-el");
 
   const OPTION_COUNT = 4;
@@ -17,11 +21,13 @@
   const nativeLangLabel = EstLrnLang.nativeLangLabel(nativeLang);
 
   EstLrnLang.initLangToggle();
+  modeButtons.forEach((btn) => btn.classList.toggle("active", btn.dataset.mode === "choice"));
 
   let vocab = [];
   let correct = 0;
   let total = 0;
-  let current = null; // { prompt, promptAudio, answerText, options: [{text, isCorrect}] }
+  let quizMode = "choice"; // "choice" | "type"
+  let current = null; // { promptText, promptAudio, answerText, options? }
   let answered = false;
 
   async function fetchJson(path) {
@@ -73,53 +79,66 @@
     return copy;
   }
 
+  function setMode(mode) {
+    quizMode = mode;
+    modeButtons.forEach((btn) => btn.classList.toggle("active", btn.dataset.mode === mode));
+    nextQuestion();
+  }
+
   function nextQuestion() {
     answered = false;
     nextBtn.hidden = true;
+    feedbackEl.hidden = true;
+    typeInputEl.value = "";
 
-    const direction = Math.random() < 0.5 ? "et-native" : "native-et";
+    // Estonian is always the prompt — recognizing/recalling the translation is the first step in
+    // learning a word; going the other direction (native word -> Estonian) is a later-stage skill.
     const pool = shuffle(vocab);
     const answerWord = pool[0];
-    const promptText = direction === "et-native" ? answerWord.et : answerWord[nativeLang];
-    const answerText = direction === "et-native" ? answerWord[nativeLang] : answerWord.et;
+    const promptText = answerWord.et;
+    const answerText = answerWord[nativeLang];
 
-    const distractors = [];
-    for (const w of pool.slice(1)) {
-      const candidate = direction === "et-native" ? w[nativeLang] : w.et;
-      if (candidate.toLowerCase() === answerText.toLowerCase()) continue;
-      if (distractors.some((d) => d.toLowerCase() === candidate.toLowerCase())) continue;
-      distractors.push(candidate);
-      if (distractors.length === OPTION_COUNT - 1) break;
+    let options;
+    if (quizMode === "choice") {
+      const distractors = [];
+      for (const w of pool.slice(1)) {
+        const candidate = w[nativeLang];
+        if (candidate.toLowerCase() === answerText.toLowerCase()) continue;
+        if (distractors.some((d) => d.toLowerCase() === candidate.toLowerCase())) continue;
+        distractors.push(candidate);
+        if (distractors.length === OPTION_COUNT - 1) break;
+      }
+      options = shuffle([
+        { text: answerText, isCorrect: true },
+        ...distractors.map((text) => ({ text, isCorrect: false })),
+      ]);
     }
 
-    const options = shuffle([
-      { text: answerText, isCorrect: true },
-      ...distractors.map((text) => ({ text, isCorrect: false })),
-    ]);
-
-    current = {
-      direction,
-      promptText,
-      promptAudio: direction === "et-native" ? answerWord.audioEt : answerWord[nativeAudioField],
-      options,
-    };
+    current = { promptText, promptAudio: answerWord.audioEt, answerText, options };
     render();
   }
 
   function render() {
-    directionEl.textContent =
-      current.direction === "et-native" ? `Estonian → ${nativeLangLabel}` : `${nativeLangLabel} → Estonian`;
+    directionEl.textContent = `Estonian → ${nativeLangLabel}`;
     promptEl.textContent = current.promptText;
     playBtn.hidden = !current.promptAudio;
 
-    optionsEl.innerHTML = "";
-    for (const option of current.options) {
-      const btn = document.createElement("button");
-      btn.type = "button";
-      btn.className = "quiz-option";
-      btn.textContent = option.text;
-      btn.addEventListener("click", () => selectOption(option, btn));
-      optionsEl.appendChild(btn);
+    optionsEl.hidden = quizMode !== "choice";
+    typeFormEl.hidden = quizMode !== "type";
+
+    if (quizMode === "choice") {
+      optionsEl.innerHTML = "";
+      for (const option of current.options) {
+        const btn = document.createElement("button");
+        btn.type = "button";
+        btn.className = "quiz-option";
+        btn.textContent = option.text;
+        btn.addEventListener("click", () => selectOption(option, btn));
+        optionsEl.appendChild(btn);
+      }
+    } else {
+      typeInputEl.disabled = false;
+      typeInputEl.focus();
     }
   }
 
@@ -134,7 +153,7 @@
     }
     btn.classList.add(option.isCorrect ? "correct" : "incorrect");
     if (!option.isCorrect) {
-      const correctBtn = [...optionsEl.children].find((c) => c.textContent === correctText());
+      const correctBtn = [...optionsEl.children].find((c) => c.textContent === current.answerText);
       if (correctBtn) correctBtn.classList.add("correct");
     }
 
@@ -142,8 +161,44 @@
     nextBtn.hidden = false;
   }
 
-  function correctText() {
-    return current.options.find((o) => o.isCorrect).text;
+  // The stored translation is a gloss, sometimes with alternates ("goes / is going") or a
+  // parenthetical clarifier ("(to become) a painter") — accept a typed answer that matches any one
+  // of those alternates, ignoring the clarifier, case, and trailing punctuation.
+  function normalize(text) {
+    return text
+      .toLowerCase()
+      .trim()
+      .replace(/[.!?]+$/, "")
+      .replace(/\s+/g, " ");
+  }
+
+  function acceptableAnswers(text) {
+    const alts = new Set();
+    for (const alt of text.split("/")) {
+      alts.add(normalize(alt.replace(/\([^)]*\)/g, ""))); // "(to become) a painter" -> "a painter"
+      alts.add(normalize(alt.replace(/[()]/g, ""))); // "(to become) a painter" -> "to become a painter"
+    }
+    alts.delete("");
+    return [...alts];
+  }
+
+  function submitTypedAnswer() {
+    if (answered) return;
+    const typed = normalize(typeInputEl.value);
+    if (!typed) return;
+
+    answered = true;
+    total++;
+    const isCorrect = acceptableAnswers(current.answerText).includes(typed);
+    if (isCorrect) correct++;
+
+    typeInputEl.disabled = true;
+    feedbackEl.hidden = false;
+    feedbackEl.textContent = isCorrect ? "Correct!" : `Not quite — correct answer: ${current.answerText}`;
+    feedbackEl.className = `quiz-feedback ${isCorrect ? "correct" : "incorrect"}`;
+
+    scoreEl.textContent = `Score: ${correct} / ${total}`;
+    nextBtn.hidden = false;
   }
 
   function playPrompt() {
@@ -154,6 +209,11 @@
 
   playBtn.addEventListener("click", playPrompt);
   nextBtn.addEventListener("click", nextQuestion);
+  typeFormEl.addEventListener("submit", (event) => {
+    event.preventDefault();
+    submitTypedAnswer();
+  });
+  modeButtons.forEach((btn) => btn.addEventListener("click", () => setMode(btn.dataset.mode)));
 
   init();
 })();

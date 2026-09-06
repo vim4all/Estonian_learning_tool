@@ -136,13 +136,15 @@ async function main(): Promise<void> {
       const audioStart = {} as Record<NativeLang, number>;
       const nativeAudio = {} as Record<NativeLang, string>;
 
+      // Estonian plays first in every track — the learner hears/reads it before the native-language
+      // translation, matching the "read/listen to Estonian, then check the translation" flow.
       for (const lang of NATIVE_LANGS) {
         const audio = await ensureClip("sentences", lang, sentence[lang], voices[lang], manifest);
         nativeAudio[lang] = audio;
         audioStart[lang] = cumulativeSeconds[lang];
-        cumulativeSeconds[lang] += getDurationSeconds(join(SITE_DIR, audio)) + pauseShortDur;
-        cumulativeSeconds[lang] += getDurationSeconds(join(SITE_DIR, audioEt)) + pauseLongDur;
-        lessonClipPaths[lang].push(join(SITE_DIR, audio), pauseShortPath, join(SITE_DIR, audioEt), pauseLongPath);
+        cumulativeSeconds[lang] += getDurationSeconds(join(SITE_DIR, audioEt)) + pauseShortDur;
+        cumulativeSeconds[lang] += getDurationSeconds(join(SITE_DIR, audio)) + pauseLongDur;
+        lessonClipPaths[lang].push(join(SITE_DIR, audioEt), pauseShortPath, join(SITE_DIR, audio), pauseLongPath);
       }
 
       const enrichedWords = [];
@@ -218,12 +220,12 @@ async function main(): Promise<void> {
         const audioStart = {} as Record<NativeLang, number>;
         for (const lang of NATIVE_LANGS) {
           audioStart[lang] = cumulativeSeconds[lang];
-          cumulativeSeconds[lang] += getDurationSeconds(join(SITE_DIR, sentence[audioField(lang)])) + pauseShortDur;
-          cumulativeSeconds[lang] += getDurationSeconds(join(SITE_DIR, sentence.audioEt)) + trailingPauseDur;
+          cumulativeSeconds[lang] += getDurationSeconds(join(SITE_DIR, sentence.audioEt)) + pauseShortDur;
+          cumulativeSeconds[lang] += getDurationSeconds(join(SITE_DIR, sentence[audioField(lang)])) + trailingPauseDur;
           clipPaths[lang].push(
-            join(SITE_DIR, sentence[audioField(lang)]),
-            pauseShortPath,
             join(SITE_DIR, sentence.audioEt),
+            pauseShortPath,
+            join(SITE_DIR, sentence[audioField(lang)]),
             trailingPausePath
           );
         }
@@ -321,7 +323,7 @@ async function main(): Promise<void> {
           for (const lang of NATIVE_LANGS) {
             const audio = await ensureClip("sentences", lang, sentence[lang], voices[lang], manifest);
             nativeAudio[lang] = audio;
-            chapterClipPaths[lang].push(join(SITE_DIR, audio), pauseShortPath, join(SITE_DIR, audioEt), pauseLongPath);
+            chapterClipPaths[lang].push(join(SITE_DIR, audioEt), pauseShortPath, join(SITE_DIR, audio), pauseLongPath);
           }
 
           const enrichedWords = [];
