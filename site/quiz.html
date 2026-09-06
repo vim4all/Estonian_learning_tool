@@ -1,0 +1,46 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>EstLrn — Vocabulary Quiz</title>
+  <link rel="stylesheet" href="css/style.css" />
+</head>
+<body>
+  <header class="app-header">
+    <h1>EstLrn</h1>
+    <p class="subtitle">Vocabulary quiz, 4 choices at a time</p>
+    <nav class="mode-nav">
+      <a class="mode-link" href="index.html">Lessons</a>
+      <a class="mode-link" href="book.html">Book</a>
+      <a class="mode-link active" href="quiz.html">Quiz</a>
+    </nav>
+  </header>
+
+  <main>
+    <section id="quiz-loading" class="lesson-picker">
+      <p>Loading vocabulary…</p>
+    </section>
+
+    <section id="quiz" class="quiz" hidden>
+      <div class="quiz-score" id="quiz-score">Score: 0 / 0</div>
+
+      <div class="sentence-card quiz-card">
+        <p class="quiz-direction" id="quiz-direction"></p>
+        <p class="sentence quiz-prompt" id="quiz-prompt"></p>
+        <button id="quiz-play-btn" aria-label="Play pronunciation" hidden>🔊 Listen</button>
+
+        <div class="quiz-options" id="quiz-options"></div>
+      </div>
+
+      <div class="controls">
+        <button id="quiz-next-btn">Next question &rarr;</button>
+      </div>
+    </section>
+  </main>
+
+  <audio id="clip-audio-el"></audio>
+
+  <script src="js/quiz.js"></script>
+</body>
+</html>

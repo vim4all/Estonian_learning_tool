@@ -11,6 +11,7 @@
   const wordsEl = document.getElementById("words");
   const prevBtn = document.getElementById("prev-btn");
   const nextBtn = document.getElementById("next-btn");
+  const randomBtn = document.getElementById("random-btn");
   const playSentenceBtn = document.getElementById("play-sentence-btn");
   const playLessonBtn = document.getElementById("play-lesson-btn");
   const stopBtn = document.getElementById("stop-btn");
@@ -158,6 +159,18 @@
       currentIndex++;
       render();
     }
+  });
+
+  randomBtn.addEventListener("click", () => {
+    lessonAudioEl.pause(); // manual navigation always wins over the synced full-lesson track
+    const count = currentLesson.sentences.length;
+    if (count < 2) return;
+    let index;
+    do {
+      index = Math.floor(Math.random() * count);
+    } while (index === currentIndex);
+    currentIndex = index;
+    render();
   });
 
   loopToggle.addEventListener("change", () => {
