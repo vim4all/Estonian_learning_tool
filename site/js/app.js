@@ -39,6 +39,7 @@
   let vocabPage = 0;
 
   EstLrnLang.initLangToggle();
+  EstLrnSpeed.initSpeedToggle([lessonAudioEl, clipAudioEl]);
 
   async function fetchJson(path) {
     const res = await fetch(path);
@@ -74,6 +75,7 @@
     clipAudioEl.pause();
     currentLesson = await fetchJson(`data/lessons/${lessonId}.json`);
     lessonAudioEl.src = currentLesson.lessonAudio[nativeLang];
+    EstLrnSpeed.applyTo(lessonAudioEl);
     currentIndex = 0;
     setViewMode(viewMode);
   }
@@ -162,6 +164,7 @@
     lessonAudioEl.pause(); // a manually-triggered clip always wins over the synced full-lesson track
     return new Promise((resolve) => {
       clipAudioEl.src = src;
+      EstLrnSpeed.applyTo(clipAudioEl);
       // Resolve on "ended" (finished naturally) or "pause" (stopped early, e.g. the Stop button) —
       // without the "pause" path, stopping mid-clip would leave an awaiting sequence hung forever.
       const onDone = () => {

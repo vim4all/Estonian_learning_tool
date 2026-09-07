@@ -87,6 +87,10 @@ main {
   margin-top: 0.6rem;
 }
 
+.app-header .view-toggle {
+  margin-top: 0.6rem;
+}
+
 .lang-btn {
   font-size: 0.8rem;
   padding: 0.25rem 0.7rem;
@@ -94,6 +98,26 @@ main {
   border: 1px solid var(--border);
   background: var(--card-bg);
   color: var(--muted);
+}
+
+.speed-toggle {
+  display: flex;
+  gap: 0.3rem;
+}
+
+.speed-btn {
+  font-size: 0.8rem;
+  padding: 0.3rem 0.6rem;
+  border-radius: 999px;
+  border: 1px solid var(--border);
+  background: var(--card-bg);
+  color: var(--muted);
+}
+
+.speed-btn.active {
+  background: var(--accent);
+  border-color: var(--accent);
+  color: var(--accent-contrast);
 }
 
 .lang-btn.active {
@@ -114,6 +138,8 @@ main {
 .view-toggle {
   display: flex;
   gap: 0.4rem;
+  flex-wrap: wrap;
+  justify-content: center;
 }
 
 .view-btn {
@@ -302,11 +328,35 @@ button:disabled {
 
 /* Quiz */
 
+.quiz-score-row {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 1.25rem;
+  flex-wrap: wrap;
+  margin-bottom: 0.5rem;
+}
+
 .quiz-score {
+  color: var(--muted);
+  font-weight: 600;
+}
+
+.due-note {
   text-align: center;
   color: var(--muted);
-  margin-bottom: 0.75rem;
+  font-size: 0.85rem;
+  font-style: italic;
+  margin: 0 0 0.75rem;
+}
+
+.streak-badge {
+  text-align: center;
+  color: var(--accent);
   font-weight: 600;
+  font-size: 0.9rem;
+  margin: 0.5rem 0 0;
+  min-height: 1.2em;
 }
 
 .quiz-card {
@@ -408,6 +458,76 @@ button:disabled {
 
 .quiz-feedback.incorrect {
   color: #b3413a;
+}
+
+/* Sentence practice: cloze + word order */
+
+.cloze-sentence {
+  color: var(--accent);
+  font-weight: 700;
+}
+
+#cloze-hint-btn {
+  background: var(--card-bg);
+  color: var(--fg);
+  border: 1px solid var(--border);
+  margin-top: 0.5rem;
+}
+
+.cloze-hint {
+  color: var(--muted);
+  font-style: italic;
+  margin-top: 0.75rem;
+}
+
+.order-native {
+  color: var(--muted);
+  font-size: 1.1rem;
+  margin-bottom: 1rem;
+}
+
+.order-answer {
+  min-height: 3rem;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+  align-items: center;
+  padding: 0.75rem;
+  border: 1px dashed var(--border);
+  border-radius: 0.6rem;
+  margin-bottom: 1rem;
+}
+
+.order-placeholder {
+  color: var(--muted);
+  font-size: 0.9rem;
+  font-style: italic;
+}
+
+.order-bank {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+  justify-content: center;
+}
+
+.order-tile {
+  background: var(--bg);
+  color: var(--fg);
+  border: 1px solid var(--border);
+  border-radius: 0.5rem;
+  padding: 0.5rem 0.9rem;
+  font-size: 1rem;
+}
+
+.order-tile:hover {
+  border-color: var(--accent);
+}
+
+.order-solution {
+  color: var(--accent);
+  font-weight: 600;
+  margin-top: 0.75rem;
 }
 
 /* Book reader */

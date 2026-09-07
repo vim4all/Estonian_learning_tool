@@ -14,6 +14,7 @@
       <a class="mode-link" href="index.html">Lessons</a>
       <a class="mode-link" href="book.html">Book</a>
       <a class="mode-link active" href="quiz.html">Quiz</a>
+      <a class="mode-link" href="practice.html">Practice</a>
     </nav>
     <div class="lang-toggle" role="group" aria-label="Native language">
       <button type="button" class="lang-btn" data-lang="en">EN</button>
@@ -22,7 +23,10 @@
     <div class="view-toggle" role="group" aria-label="Quiz mode">
       <button type="button" class="view-btn" data-mode="choice">Multiple choice</button>
       <button type="button" class="view-btn" data-mode="type">Type the translation</button>
+      <button type="button" class="view-btn" data-mode="dictation">Listening dictation</button>
+      <button type="button" class="view-btn" data-mode="distinguish">Listen &amp; distinguish</button>
     </div>
+    <p class="streak-badge" id="streak-badge"></p>
   </header>
 
   <main>
@@ -31,7 +35,14 @@
     </section>
 
     <section id="quiz" class="quiz" hidden>
-      <div class="quiz-score" id="quiz-score">Score: 0 / 0</div>
+      <div class="quiz-score-row">
+        <span class="quiz-score" id="quiz-score">Score: 0 / 0</span>
+        <label class="toggle">
+          <input type="checkbox" id="due-only-toggle" />
+          Only due for review
+        </label>
+      </div>
+      <p class="due-note" id="due-note" hidden></p>
 
       <div class="sentence-card quiz-card">
         <p class="quiz-direction" id="quiz-direction"></p>
@@ -41,7 +52,7 @@
         <div class="quiz-options" id="quiz-options"></div>
 
         <form id="quiz-type-form" class="quiz-type-form" hidden>
-          <input type="text" id="quiz-type-input" autocomplete="off" autocapitalize="off" spellcheck="false" placeholder="Type the translation…" />
+          <input type="text" id="quiz-type-input" autocomplete="off" autocapitalize="off" spellcheck="false" />
           <button type="submit">Check</button>
         </form>
         <p class="quiz-feedback" id="quiz-feedback" hidden></p>
@@ -56,6 +67,7 @@
   <audio id="clip-audio-el"></audio>
 
   <script src="js/lang.js"></script>
+  <script src="js/progress.js"></script>
   <script src="js/quiz.js"></script>
 </body>
 </html>

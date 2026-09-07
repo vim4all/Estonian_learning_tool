@@ -24,6 +24,7 @@
   let stopped = false;
 
   EstLrnLang.initLangToggle();
+  EstLrnSpeed.initSpeedToggle([chapterAudioEl, clipAudioEl]);
 
   async function fetchJson(path) {
     const res = await fetch(path);
@@ -78,6 +79,7 @@
     chapterAudioEl.pause();
     clipAudioEl.pause();
     chapterAudioEl.src = chapter.chapterAudio[nativeLang];
+    EstLrnSpeed.applyTo(chapterAudioEl);
 
     chapterTitleEnEl.textContent = chapter.title[nativeLang];
     chapterTitleEtEl.textContent = chapter.title.et;
@@ -176,6 +178,7 @@
     chapterAudioEl.pause(); // a manually-triggered clip always wins over the playing chapter track
     return new Promise((resolve) => {
       clipAudioEl.src = src;
+      EstLrnSpeed.applyTo(clipAudioEl);
       // Resolve on "ended" (finished naturally) or "pause" (stopped early, e.g. the Stop button) —
       // without the "pause" path, stopping mid-clip would leave an awaiting sequence hung forever.
       const onDone = () => {

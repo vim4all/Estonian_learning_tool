@@ -14,6 +14,7 @@
       <a class="mode-link active" href="index.html">Lessons</a>
       <a class="mode-link" href="book.html">Book</a>
       <a class="mode-link" href="quiz.html">Quiz</a>
+      <a class="mode-link" href="practice.html">Practice</a>
     </nav>
     <div class="lang-toggle" role="group" aria-label="Native language">
       <button type="button" class="lang-btn" data-lang="en">EN</button>
@@ -56,6 +57,12 @@
           <input type="checkbox" id="loop-toggle" />
           Loop
         </label>
+        <div class="speed-toggle" role="group" aria-label="Playback speed">
+          <button type="button" class="speed-btn" data-speed="0.75">0.75x</button>
+          <button type="button" class="speed-btn" data-speed="1">1x</button>
+          <button type="button" class="speed-btn" data-speed="1.25">1.25x</button>
+          <button type="button" class="speed-btn" data-speed="1.5">1.5x</button>
+        </div>
         <audio id="lesson-audio-el"></audio>
       </div>
     </section>
@@ -73,6 +80,7 @@
   <audio id="clip-audio-el"></audio>
 
   <script src="js/lang.js"></script>
+  <script src="js/speed.js"></script>
   <script src="js/app.js"></script>
 </body>
 </html>

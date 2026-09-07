@@ -1,0 +1,67 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>EstLrn — Sentence Practice</title>
+  <link rel="stylesheet" href="css/style.css" />
+</head>
+<body>
+  <header class="app-header">
+    <h1>EstLrn</h1>
+    <p class="subtitle">Sentence practice: fill in the blank, or rebuild the word order</p>
+    <nav class="mode-nav">
+      <a class="mode-link" href="index.html">Lessons</a>
+      <a class="mode-link" href="book.html">Book</a>
+      <a class="mode-link" href="quiz.html">Quiz</a>
+      <a class="mode-link active" href="practice.html">Practice</a>
+    </nav>
+    <div class="lang-toggle" role="group" aria-label="Native language">
+      <button type="button" class="lang-btn" data-lang="en">EN</button>
+      <button type="button" class="lang-btn" data-lang="uk">UK</button>
+    </div>
+    <div class="view-toggle" role="group" aria-label="Practice mode">
+      <button type="button" class="view-btn" data-mode="cloze">Fill in the blank</button>
+      <button type="button" class="view-btn" data-mode="order">Word order</button>
+    </div>
+    <p class="streak-badge" id="streak-badge"></p>
+  </header>
+
+  <main>
+    <section id="practice-loading" class="lesson-picker">
+      <p>Loading sentences…</p>
+    </section>
+
+    <section id="practice" class="quiz" hidden>
+      <div class="quiz-score" id="practice-score">Score: 0 / 0</div>
+
+      <div class="sentence-card quiz-card" id="cloze-card">
+        <p class="sentence cloze-sentence" id="cloze-sentence"></p>
+        <button type="button" id="cloze-hint-btn">Show translation hint</button>
+        <p class="cloze-hint" id="cloze-hint" hidden></p>
+        <div class="quiz-options" id="cloze-options"></div>
+      </div>
+
+      <div class="sentence-card quiz-card" id="order-card" hidden>
+        <p class="order-native" id="order-native"></p>
+        <div class="order-answer" id="order-answer"></div>
+        <div class="order-bank" id="order-bank"></div>
+        <div class="controls">
+          <button type="button" id="order-check-btn">Check</button>
+          <button type="button" id="order-clear-btn">Clear</button>
+        </div>
+        <p class="quiz-feedback" id="order-feedback" hidden></p>
+        <p class="sentence order-solution" id="order-solution" hidden></p>
+      </div>
+
+      <div class="controls">
+        <button id="practice-next-btn">Next &rarr;</button>
+      </div>
+    </section>
+  </main>
+
+  <script src="js/lang.js"></script>
+  <script src="js/progress.js"></script>
+  <script src="js/practice.js"></script>
+</body>
+</html>
