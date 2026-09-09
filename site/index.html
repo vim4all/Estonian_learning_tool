@@ -20,6 +20,7 @@
       <button type="button" class="lang-btn" data-lang="en">EN</button>
       <button type="button" class="lang-btn" data-lang="uk">UK</button>
     </div>
+    <a class="review-banner" id="review-banner" href="quiz.html?due=1" hidden></a>
   </header>
 
   <main>
@@ -31,6 +32,11 @@
         <button type="button" class="view-btn" data-view="vocab">🔤 Vocabulary</button>
       </div>
     </section>
+
+    <div class="mastery-bar" id="mastery-bar" hidden>
+      <div class="mastery-bar-track"><div class="mastery-bar-fill" id="mastery-bar-fill"></div></div>
+      <span class="mastery-bar-label" id="mastery-bar-label"></span>
+    </div>
 
     <section id="carousel" class="carousel" hidden>
       <div class="progress" id="progress"></div>
@@ -81,6 +87,7 @@
 
   <script src="js/lang.js"></script>
   <script src="js/speed.js"></script>
+  <script src="js/progress.js"></script>
   <script src="js/app.js"></script>
 </body>
 </html>

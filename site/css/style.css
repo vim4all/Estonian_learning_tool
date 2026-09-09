@@ -4,8 +4,16 @@
   --muted: #6b6660;
   --accent: #0f6e5e;
   --accent-contrast: #ffffff;
+  /* Tint used for "this is the active tab/toggle" state — deliberately not the solid --accent fill,
+     which is reserved for primary action buttons (Play, Check, Next…) so the two read as visually
+     distinct affordances instead of every pill on the page looking equally "pressable". */
+  --accent-soft: #e3f3ee;
   --card-bg: #ffffff;
   --border: #e4e0da;
+  --success: #106647;
+  --success-contrast: #ffffff;
+  --danger: #a8392f;
+  --danger-contrast: #ffffff;
 }
 
 @media (prefers-color-scheme: dark) {
@@ -15,8 +23,13 @@
     --muted: #a8a29a;
     --accent: #3ecfa8;
     --accent-contrast: #0b1512;
+    --accent-soft: #16332c;
     --card-bg: #202225;
     --border: #33343a;
+    --success: #2fae7c;
+    --success-contrast: #0b1512;
+    --danger: #e0685c;
+    --danger-contrast: #1a0a08;
   }
 }
 
@@ -36,18 +49,28 @@ body {
 }
 
 .app-header {
-  padding: 1.5rem 1rem 1rem;
+  padding: 1rem 1rem 0.75rem;
   text-align: center;
 }
 
 .app-header h1 {
   margin: 0;
-  font-size: 1.75rem;
+  font-size: 1.3rem;
 }
 
 .subtitle {
-  margin: 0.25rem 0 0;
+  margin: 0.2rem 0 0;
   color: var(--muted);
+  font-size: 0.85rem;
+}
+
+/* On a phone-width screen the header (title + subtitle + nav + toggles) already costs a lot of the
+   viewport before any lesson/question content appears — the subtitle repeats what the active nav
+   tab already says, so it's the one row that's safe to drop rather than shrink further. */
+@media (max-width: 480px) {
+  .subtitle {
+    display: none;
+  }
 }
 
 main {
@@ -60,7 +83,7 @@ main {
   display: flex;
   justify-content: center;
   gap: 0.5rem;
-  margin-top: 0.75rem;
+  margin-top: 0.5rem;
 }
 
 .mode-link {
@@ -68,6 +91,7 @@ main {
   text-decoration: none;
   padding: 0.3rem 0.8rem;
   border-radius: 999px;
+  border: 1px solid transparent;
   font-size: 0.9rem;
 }
 
@@ -75,20 +99,24 @@ main {
   color: var(--fg);
 }
 
+/* Active-tab tint, not a solid fill: a solid --accent is reserved for primary action buttons
+   (Play, Check, Next…) so "this is where you are" and "click this to do something" look different. */
 .mode-link.active {
-  background: var(--accent);
-  color: var(--accent-contrast);
+  background: var(--accent-soft);
+  border-color: var(--accent);
+  color: var(--accent);
+  font-weight: 600;
 }
 
 .lang-toggle {
   display: flex;
   justify-content: center;
   gap: 0.4rem;
-  margin-top: 0.6rem;
+  margin-top: 0.4rem;
 }
 
 .app-header .view-toggle {
-  margin-top: 0.6rem;
+  margin-top: 0.4rem;
 }
 
 .lang-btn {
@@ -98,6 +126,18 @@ main {
   border: 1px solid var(--border);
   background: var(--card-bg);
   color: var(--muted);
+}
+
+.review-banner {
+  display: inline-block;
+  margin-top: 0.4rem;
+  padding: 0.35rem 0.9rem;
+  border-radius: 999px;
+  background: var(--accent);
+  color: var(--accent-contrast);
+  text-decoration: none;
+  font-weight: 600;
+  font-size: 0.85rem;
 }
 
 .speed-toggle {
@@ -115,15 +155,17 @@ main {
 }
 
 .speed-btn.active {
-  background: var(--accent);
+  background: var(--accent-soft);
   border-color: var(--accent);
-  color: var(--accent-contrast);
+  color: var(--accent);
+  font-weight: 600;
 }
 
 .lang-btn.active {
-  background: var(--accent);
+  background: var(--accent-soft);
   border-color: var(--accent);
-  color: var(--accent-contrast);
+  color: var(--accent);
+  font-weight: 600;
 }
 
 .lesson-picker {
@@ -131,7 +173,7 @@ main {
   align-items: center;
   gap: 0.5rem;
   justify-content: center;
-  margin-bottom: 1.5rem;
+  margin-bottom: 1rem;
   flex-wrap: wrap;
 }
 
@@ -152,9 +194,10 @@ main {
 }
 
 .view-btn.active {
-  background: var(--accent);
+  background: var(--accent-soft);
   border-color: var(--accent);
-  color: var(--accent-contrast);
+  color: var(--accent);
+  font-weight: 600;
 }
 
 .vocab-grid {
@@ -215,6 +258,35 @@ main {
   text-align: center;
   color: var(--muted);
   margin-bottom: 0.75rem;
+}
+
+.mastery-bar {
+  display: flex;
+  align-items: center;
+  gap: 0.6rem;
+  max-width: 320px;
+  margin: 0 auto 1.25rem;
+}
+
+.mastery-bar-track {
+  flex: 1;
+  height: 6px;
+  border-radius: 999px;
+  background: var(--border);
+  overflow: hidden;
+}
+
+.mastery-bar-fill {
+  height: 100%;
+  border-radius: inherit;
+  background: var(--accent);
+  transition: width 0.3s ease;
+}
+
+.mastery-bar-label {
+  color: var(--muted);
+  font-size: 0.8rem;
+  white-space: nowrap;
 }
 
 .sentence-card {
@@ -355,7 +427,7 @@ button:disabled {
   color: var(--accent);
   font-weight: 600;
   font-size: 0.9rem;
-  margin: 0.5rem 0 0;
+  margin: 0.35rem 0 0;
   min-height: 1.2em;
 }
 
@@ -407,16 +479,16 @@ button:disabled {
 }
 
 .quiz-option.correct {
-  background: #1c8a5f;
-  border-color: #1c8a5f;
-  color: #ffffff;
+  background: var(--success);
+  border-color: var(--success);
+  color: var(--success-contrast);
   opacity: 1;
 }
 
 .quiz-option.incorrect {
-  background: #b3413a;
-  border-color: #b3413a;
-  color: #ffffff;
+  background: var(--danger);
+  border-color: var(--danger);
+  color: var(--danger-contrast);
   opacity: 1;
 }
 
@@ -453,11 +525,11 @@ button:disabled {
 }
 
 .quiz-feedback.correct {
-  color: #1c8a5f;
+  color: var(--success);
 }
 
 .quiz-feedback.incorrect {
-  color: #b3413a;
+  color: var(--danger);
 }
 
 /* Sentence practice: cloze + word order */

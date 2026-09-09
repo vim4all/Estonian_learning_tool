@@ -11,14 +11,27 @@
   // enough for a single-learner offline tool, and easy to reason about.
   const BOX_INTERVAL_DAYS = [1, 2, 4, 8, 16, 32];
 
+  // Local-calendar-day arithmetic throughout, deliberately never touching toISOString()/UTC: a
+  // learner's "today" is their local midnight-to-midnight, and mixing a local-time parse with a
+  // UTC-formatted read (as an earlier version did) silently shifts every date by a day for anyone
+  // east of UTC — which is most of this app's Estonia/Ukraine audience.
+  function pad2(n) {
+    return String(n).padStart(2, "0");
+  }
+
+  function formatLocalDate(d) {
+    return `${d.getFullYear()}-${pad2(d.getMonth() + 1)}-${pad2(d.getDate())}`;
+  }
+
   function todayStr() {
-    return new Date().toISOString().slice(0, 10);
+    return formatLocalDate(new Date());
   }
 
   function addDays(dateStr, days) {
-    const d = new Date(`${dateStr}T00:00:00`);
+    const [y, m, day] = dateStr.split("-").map(Number);
+    const d = new Date(y, m - 1, day);
     d.setDate(d.getDate() + days);
-    return d.toISOString().slice(0, 10);
+    return formatLocalDate(d);
   }
 
   function loadJson(key, fallback) {
@@ -63,6 +76,22 @@
     return words.filter((w) => isDue(w.et));
   }
 
+  // A word counts as "mastered" once it's survived 3 correct reviews in a row (box >= 3, an 8-day-or-
+  // longer interval) — a deliberately coarse bar for a per-lesson progress indicator, not a claim of
+  // long-term retention. Unseen and recently-failed words (both sit at box 0) count the same: neither
+  // is mastered yet.
+  const MASTERED_BOX = 3;
+
+  function getMasteryFraction(words) {
+    if (words.length === 0) return 0;
+    const history = loadHistory();
+    const masteredCount = words.filter((w) => {
+      const entry = history[w.et.toLowerCase()];
+      return entry && entry.box >= MASTERED_BOX;
+    }).length;
+    return masteredCount / words.length;
+  }
+
   function loadStreak() {
     return loadJson(STREAK_KEY, { lastDate: null, current: 0, longest: 0 });
   }
@@ -92,5 +121,5 @@
     return streak;
   }
 
-  global.EstLrnProgress = { recordAnswer, isDue, getDueWords, getStreak };
+  global.EstLrnProgress = { recordAnswer, isDue, getDueWords, getMasteryFraction, getStreak };
 })(window);

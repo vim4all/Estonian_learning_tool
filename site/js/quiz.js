@@ -61,6 +61,8 @@
 
     loadingEl.hidden = true;
     quizEl.hidden = false;
+    // "Review now" link from the home page's due-words banner arrives as quiz.html?due=1.
+    if (new URLSearchParams(location.search).get("due") === "1") dueOnlyToggle.checked = true;
     renderStreak();
     nextQuestion();
   }

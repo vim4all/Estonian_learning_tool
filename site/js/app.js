@@ -25,6 +25,10 @@
   const vocabPageLabelEl = document.getElementById("vocab-page-label");
   const vocabPrevBtn = document.getElementById("vocab-prev-btn");
   const vocabNextBtn = document.getElementById("vocab-next-btn");
+  const reviewBannerEl = document.getElementById("review-banner");
+  const masteryBarEl = document.getElementById("mastery-bar");
+  const masteryBarFillEl = document.getElementById("mastery-bar-fill");
+  const masteryBarLabelEl = document.getElementById("mastery-bar-label");
 
   const nativeLang = EstLrnLang.getNativeLang();
   const nativeAudioField = EstLrnLang.audioField(nativeLang);
@@ -37,6 +41,7 @@
   let viewMode = "sentences";
   let vocabWords = [];
   let vocabPage = 0;
+  let vocabByLesson = new Map(); // lessonId -> unique word[] in that lesson, from _all.json — for the mastery bar
 
   EstLrnLang.initLangToggle();
   EstLrnSpeed.initSpeedToggle([lessonAudioEl, clipAudioEl]);
@@ -58,6 +63,18 @@
       return;
     }
 
+    // Pulls in the combined "_all" lesson (same file quiz.js uses) to compute a per-lesson mastery %
+    // and a site-wide due-word count without fetching every lesson individually. _all.json only
+    // exists after a full (non --lesson-scoped) generate-audio run, so a 404 here is expected
+    // mid-iteration — the picker and banner both just fall back to skipping those extras.
+    let vocab = { perLesson: new Map(), global: [] };
+    try {
+      vocab = buildVocabMaps(await fetchJson("data/lessons/_all.json"));
+    } catch {
+      // scoped local build — no combined manifest yet.
+    }
+    vocabByLesson = vocab.perLesson;
+
     manifest.sort((a, b) => a.order - b.order);
     for (const lesson of manifest) {
       const option = document.createElement("option");
@@ -68,6 +85,55 @@
 
     lessonSelect.addEventListener("change", () => loadLesson(lessonSelect.value));
     if (manifest.length > 0) await loadLesson(manifest[0].id);
+    renderReviewBanner(vocab.global);
+  }
+
+  // Visible per-lesson progress, shown next to the lesson the learner actually has open — a % buried
+  // in a closed <select>'s option text isn't something a returning learner would ever notice.
+  function renderMasteryBar(lessonId) {
+    const words = vocabByLesson.get(lessonId) || [];
+    if (words.length === 0) {
+      masteryBarEl.hidden = true;
+      return;
+    }
+    const pct = Math.round(EstLrnProgress.getMasteryFraction(words) * 100);
+    masteryBarFillEl.style.width = `${pct}%`;
+    masteryBarLabelEl.textContent = `${pct}% mastered`;
+    masteryBarEl.hidden = false;
+  }
+
+  // One dedup pass over the combined "_all" lesson's sentences, grouped two ways: per-lesson (first
+  // occurrence within that lesson wins — for the picker's mastery %) and globally across every lesson
+  // (for the home banner's due-word count, which shouldn't double-count a word shared by two lessons).
+  function buildVocabMaps(allLesson) {
+    const perLessonSeen = new Map(); // lessonId -> Map(et -> word)
+    const globalSeen = new Map(); // et -> word
+    for (const sentence of allLesson.sentences) {
+      let bucket = perLessonSeen.get(sentence.lessonId);
+      if (!bucket) {
+        bucket = new Map();
+        perLessonSeen.set(sentence.lessonId, bucket);
+      }
+      for (const word of sentence.words || []) {
+        const key = word.et.toLowerCase();
+        if (!bucket.has(key)) bucket.set(key, word);
+        if (!globalSeen.has(key)) globalSeen.set(key, word);
+      }
+    }
+    const perLesson = new Map();
+    for (const [lessonId, bucket] of perLessonSeen) perLesson.set(lessonId, [...bucket.values()]);
+    return { perLesson, global: [...globalSeen.values()] };
+  }
+
+  function renderReviewBanner(globalVocab) {
+    const streak = EstLrnProgress.getStreak();
+    const dueCount = EstLrnProgress.getDueWords(globalVocab).length;
+
+    const parts = [];
+    if (streak.current > 0) parts.push(`🔥 ${streak.current}-day streak`);
+    if (dueCount > 0) parts.push(`${dueCount} word${dueCount === 1 ? "" : "s"} due for review`);
+    reviewBannerEl.hidden = parts.length === 0;
+    reviewBannerEl.textContent = parts.length > 0 ? `${parts.join(" · ")} →` : "";
   }
 
   async function loadLesson(lessonId) {
@@ -78,6 +144,7 @@
     EstLrnSpeed.applyTo(lessonAudioEl);
     currentIndex = 0;
     setViewMode(viewMode);
+    renderMasteryBar(lessonId);
   }
 
   function render() {
