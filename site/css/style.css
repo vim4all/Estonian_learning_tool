@@ -81,6 +81,7 @@ main {
 
 .mode-nav {
   display: flex;
+  flex-wrap: wrap;
   justify-content: center;
   gap: 0.5rem;
   margin-top: 0.5rem;
@@ -93,6 +94,17 @@ main {
   border-radius: 999px;
   border: 1px solid transparent;
   font-size: 0.9rem;
+}
+
+@media (max-width: 480px) {
+  .mode-nav {
+    gap: 0.15rem;
+  }
+
+  .mode-link {
+    padding: 0.3rem 0.45rem;
+    font-size: 0.85rem;
+  }
 }
 
 .mode-link:hover {
@@ -246,6 +258,7 @@ main {
 }
 
 .lesson-picker select {
+  max-width: 100%;
   font-size: 1rem;
   padding: 0.4rem 0.6rem;
   border-radius: 0.5rem;
@@ -348,6 +361,37 @@ main {
   justify-content: center;
   margin-top: 1.5rem;
   flex-wrap: wrap;
+}
+
+/* Shadowing: record yourself saying the sentence, then hear the original and yours back to back */
+
+.shadow-controls {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: center;
+  gap: 0.5rem;
+  margin-top: 0.75rem;
+}
+
+.shadow-controls button {
+  background: var(--card-bg);
+  color: var(--fg);
+  border: 1px solid var(--border);
+}
+
+.shadow-controls button.recording {
+  background: var(--danger);
+  border-color: var(--danger);
+  color: var(--danger-contrast);
+}
+
+.shadow-status {
+  flex-basis: 100%;
+  text-align: center;
+  color: var(--muted);
+  font-size: 0.85rem;
+  min-height: 1.2em;
 }
 
 .lesson-audio-controls {
@@ -712,4 +756,14 @@ button:disabled {
   pointer-events: none;
   z-index: 10;
   max-width: 16rem;
+}
+
+/* Daily review: end-of-session summary */
+
+.review-done {
+  text-align: center;
+}
+
+.review-done h2 {
+  margin-top: 0;
 }

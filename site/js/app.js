@@ -29,11 +29,21 @@
   const masteryBarEl = document.getElementById("mastery-bar");
   const masteryBarFillEl = document.getElementById("mastery-bar-fill");
   const masteryBarLabelEl = document.getElementById("mastery-bar-label");
+  const shadowControlsEl = document.getElementById("shadow-controls");
+  const shadowRecordBtn = document.getElementById("shadow-record-btn");
+  const shadowCompareBtn = document.getElementById("shadow-compare-btn");
+  const shadowStatusEl = document.getElementById("shadow-status");
+  const shadowAudioEl = document.getElementById("shadow-audio-el");
 
   const nativeLang = EstLrnLang.getNativeLang();
   const nativeAudioField = EstLrnLang.audioField(nativeLang);
 
   const VOCAB_PAGE_SIZE = 12;
+  // Long enough for any lesson sentence said slowly; just a guard against a forgotten recording.
+  const MAX_RECORDING_MS = 15000;
+  // Needs a secure context (https or localhost) as well as browser support — hide the feature
+  // entirely rather than show buttons that can only fail.
+  const shadowSupported = !!(navigator.mediaDevices && navigator.mediaDevices.getUserMedia && window.MediaRecorder);
 
   let currentLesson = null;
   let currentIndex = 0;
@@ -42,6 +52,11 @@
   let vocabWords = [];
   let vocabPage = 0;
   let vocabByLesson = new Map(); // lessonId -> unique word[] in that lesson, from _all.json — for the mastery bar
+  // Shadowing state: one recording at a time, tied to the sentence it was made for.
+  let recorder = null;
+  let recordingTimer = null;
+  let recordingUrl = null;
+  let recordingKey = null; // `${lessonId}:${index}` the current recording belongs to
 
   EstLrnLang.initLangToggle();
   EstLrnSpeed.initSpeedToggle([lessonAudioEl, clipAudioEl]);
@@ -127,11 +142,15 @@
 
   function renderReviewBanner(globalVocab) {
     const streak = EstLrnProgress.getStreak();
-    const dueCount = EstLrnProgress.getDueWords(globalVocab).length;
+    // Only words already answered at least once — getDueWords() also counts every never-seen word,
+    // which would make the banner claim the whole curriculum is "due" on day one.
+    const dueCount = EstLrnProgress.getDueWords(globalVocab).filter((w) => EstLrnProgress.getBox(w.et) !== null).length;
+    const hasNew = globalVocab.some((w) => EstLrnProgress.getBox(w.et) === null);
 
     const parts = [];
     if (streak.current > 0) parts.push(`🔥 ${streak.current}-day streak`);
     if (dueCount > 0) parts.push(`${dueCount} word${dueCount === 1 ? "" : "s"} due for review`);
+    else if (hasNew) parts.push("Start today's review");
     reviewBannerEl.hidden = parts.length === 0;
     reviewBannerEl.textContent = parts.length > 0 ? `${parts.join(" · ")} →` : "";
   }
@@ -170,6 +189,7 @@
 
     prevBtn.disabled = currentIndex === 0;
     nextBtn.disabled = currentIndex === currentLesson.sentences.length - 1;
+    renderShadow();
   }
 
   // One card per unique Estonian word in the current lesson, first occurrence wins — lets a learner
@@ -221,6 +241,7 @@
       render();
     } else {
       lessonAudioEl.pause();
+      discardRecording();
       vocabWords = buildLessonVocab(currentLesson);
       vocabPage = 0;
       renderVocab();
@@ -229,6 +250,7 @@
 
   function playClip(src) {
     lessonAudioEl.pause(); // a manually-triggered clip always wins over the synced full-lesson track
+    shadowAudioEl.pause();
     return new Promise((resolve) => {
       clipAudioEl.src = src;
       EstLrnSpeed.applyTo(clipAudioEl);
@@ -241,7 +263,7 @@
       };
       clipAudioEl.addEventListener("ended", onDone);
       clipAudioEl.addEventListener("pause", onDone);
-      clipAudioEl.play();
+      clipAudioEl.play().catch(onDone); // a failed play() fires neither event
     });
   }
 
@@ -260,6 +282,7 @@
 
   function stopPlayback() {
     stopped = true;
+    shadowAudioEl.pause();
     lessonAudioEl.pause();
     lessonAudioEl.currentTime = 0;
     clipAudioEl.pause();
@@ -328,6 +351,113 @@
     lessonAudioEl.play();
   });
   stopBtn.addEventListener("click", stopPlayback);
+
+  // --- Shadowing: record yourself, then hear the original and your attempt back to back ---------
+
+  function sentenceKey() {
+    return `${currentLesson.id}:${currentIndex}`;
+  }
+
+  function discardRecording() {
+    if (recorder && recorder.state === "recording") {
+      recorder.onstop = null; // a recording for a sentence that's no longer shown — throw it away
+      recorder.stop();
+      recorder.stream.getTracks().forEach((t) => t.stop());
+    }
+    recorder = null;
+    clearTimeout(recordingTimer);
+    shadowAudioEl.pause();
+    if (recordingUrl) URL.revokeObjectURL(recordingUrl);
+    recordingUrl = null;
+    recordingKey = null;
+  }
+
+  // Called from every render(): during "Play full lesson" render() fires as the track moves between
+  // sentences, so only a real sentence change discards the recording.
+  function renderShadow() {
+    shadowControlsEl.hidden = !shadowSupported;
+    if (!shadowSupported) return;
+    if (recordingKey !== null && recordingKey !== sentenceKey()) discardRecording();
+    const isRecording = !!recorder && recorder.state === "recording";
+    shadowRecordBtn.textContent = isRecording ? "■ Stop recording" : recordingUrl ? "🎙 Record again" : "🎙 Record yourself";
+    shadowRecordBtn.classList.toggle("recording", isRecording);
+    shadowCompareBtn.disabled = !recordingUrl || isRecording;
+    if (!isRecording && !recordingUrl) shadowStatusEl.textContent = "Listen first, then record yourself saying the Estonian sentence.";
+  }
+
+  async function startRecording() {
+    stopPlayback(); // don't record the app's own audio
+    let stream;
+    try {
+      stream = await navigator.mediaDevices.getUserMedia({ audio: true });
+    } catch (err) {
+      shadowStatusEl.textContent = "Microphone access was blocked — allow it in your browser to record.";
+      console.error(err);
+      return;
+    }
+    discardRecording();
+    const key = sentenceKey();
+    const chunks = [];
+    recorder = new MediaRecorder(stream);
+    recorder.addEventListener("dataavailable", (event) => chunks.push(event.data));
+    recorder.onstop = () => {
+      clearTimeout(recordingTimer);
+      stream.getTracks().forEach((t) => t.stop()); // release the mic (and the browser's "recording" indicator)
+      recordingUrl = URL.createObjectURL(new Blob(chunks, { type: recorder.mimeType }));
+      recordingKey = key;
+      recorder = null;
+      shadowStatusEl.textContent = "Recorded. Compare it with the original — listen for vowel length and stress.";
+      renderShadow();
+    };
+    recorder.start();
+    recordingKey = key;
+    recordingTimer = setTimeout(stopRecording, MAX_RECORDING_MS);
+    shadowStatusEl.textContent = "Recording… say the sentence, then press Stop.";
+    renderShadow();
+  }
+
+  function stopRecording() {
+    if (recorder && recorder.state === "recording") recorder.stop();
+  }
+
+  function playRecording() {
+    return new Promise((resolve) => {
+      shadowAudioEl.src = recordingUrl;
+      const onDone = () => {
+        shadowAudioEl.removeEventListener("ended", onDone);
+        shadowAudioEl.removeEventListener("pause", onDone);
+        resolve();
+      };
+      shadowAudioEl.addEventListener("ended", onDone);
+      shadowAudioEl.addEventListener("pause", onDone);
+      // A failed play() fires neither event — resolve anyway so Compare isn't left disabled.
+      shadowAudioEl.play().catch(onDone);
+    });
+  }
+
+  // Original first, then yours — same stop-flag pattern as playCurrentSentence().
+  async function compareRecording() {
+    if (!recordingUrl) return;
+    stopped = false;
+    const sentence = currentLesson.sentences[currentIndex];
+    shadowCompareBtn.disabled = true;
+    try {
+      shadowStatusEl.textContent = "Original…";
+      await playClip(sentence.audioEt);
+      if (stopped) return;
+      shadowStatusEl.textContent = "You…";
+      await playRecording();
+    } finally {
+      shadowStatusEl.textContent = "Record again until the two sound alike.";
+      renderShadow();
+    }
+  }
+
+  shadowRecordBtn.addEventListener("click", () => {
+    if (recorder && recorder.state === "recording") stopRecording();
+    else startRecording();
+  });
+  shadowCompareBtn.addEventListener("click", compareRecording);
 
   viewButtons.forEach((btn) => btn.addEventListener("click", () => setViewMode(btn.dataset.view)));
   vocabPrevBtn.addEventListener("click", () => {

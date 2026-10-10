@@ -1,0 +1,74 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>EstLrn — Daily Review</title>
+  <link rel="stylesheet" href="css/style.css" />
+</head>
+<body>
+  <header class="app-header">
+    <h1>EstLrn</h1>
+    <p class="subtitle">Today's review: due words from every lesson, mixed together</p>
+    <nav class="mode-nav">
+      <a class="mode-link" href="index.html">Lessons</a>
+      <a class="mode-link" href="book.html">Book</a>
+      <a class="mode-link active" href="review.html">Review</a>
+      <a class="mode-link" href="quiz.html">Quiz</a>
+      <a class="mode-link" href="practice.html">Practice</a>
+    </nav>
+    <div class="lang-toggle" role="group" aria-label="Native language">
+      <button type="button" class="lang-btn" data-lang="en">EN</button>
+      <button type="button" class="lang-btn" data-lang="uk">UK</button>
+    </div>
+    <p class="streak-badge" id="streak-badge"></p>
+  </header>
+
+  <main>
+    <section id="review-loading" class="lesson-picker">
+      <p>Loading vocabulary…</p>
+    </section>
+
+    <section id="review" class="quiz" hidden>
+      <div class="quiz-score-row">
+        <span class="quiz-score" id="review-progress"></span>
+        <span class="quiz-score" id="review-score"></span>
+      </div>
+
+      <div class="sentence-card quiz-card">
+        <p class="quiz-direction" id="review-direction"></p>
+        <p class="sentence quiz-prompt" id="review-prompt"></p>
+        <p class="cloze-hint" id="review-hint" hidden></p>
+        <button id="review-play-btn" aria-label="Play pronunciation" hidden>🔊 Listen</button>
+
+        <div class="quiz-options" id="review-options"></div>
+
+        <form id="review-type-form" class="quiz-type-form" hidden>
+          <input type="text" id="review-type-input" autocomplete="off" autocapitalize="off" spellcheck="false" />
+          <button type="submit">Check</button>
+        </form>
+        <p class="quiz-feedback" id="review-feedback" hidden></p>
+      </div>
+
+      <div class="controls">
+        <button id="review-next-btn">Next &rarr;</button>
+      </div>
+    </section>
+
+    <section id="review-done" class="sentence-card review-done" hidden>
+      <h2 id="review-done-title"></h2>
+      <p id="review-done-summary"></p>
+      <div class="controls">
+        <button type="button" id="review-again-btn" hidden>Review more</button>
+        <a class="mode-link" href="index.html">Back to lessons</a>
+      </div>
+    </section>
+  </main>
+
+  <audio id="clip-audio-el"></audio>
+
+  <script src="js/lang.js"></script>
+  <script src="js/progress.js"></script>
+  <script src="js/review.js"></script>
+</body>
+</html>

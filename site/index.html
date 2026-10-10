@@ -13,6 +13,7 @@
     <nav class="mode-nav">
       <a class="mode-link active" href="index.html">Lessons</a>
       <a class="mode-link" href="book.html">Book</a>
+      <a class="mode-link" href="review.html">Review</a>
       <a class="mode-link" href="quiz.html">Quiz</a>
       <a class="mode-link" href="practice.html">Practice</a>
     </nav>
@@ -20,7 +21,7 @@
       <button type="button" class="lang-btn" data-lang="en">EN</button>
       <button type="button" class="lang-btn" data-lang="uk">UK</button>
     </div>
-    <a class="review-banner" id="review-banner" href="quiz.html?due=1" hidden></a>
+    <a class="review-banner" id="review-banner" href="review.html" hidden></a>
   </header>
 
   <main>
@@ -54,6 +55,13 @@
         <button id="play-sentence-btn" aria-label="Play this sentence">▶ Play sentence</button>
         <button id="next-btn" aria-label="Next sentence">Next &rarr;</button>
         <button id="random-btn" aria-label="Jump to a random sentence">🔀 Random</button>
+      </div>
+
+      <div class="shadow-controls" id="shadow-controls" hidden>
+        <button type="button" id="shadow-record-btn">🎙 Record yourself</button>
+        <button type="button" id="shadow-compare-btn" disabled>⇄ Compare with original</button>
+        <span class="shadow-status" id="shadow-status" aria-live="polite"></span>
+        <audio id="shadow-audio-el"></audio>
       </div>
 
       <div class="lesson-audio-controls">

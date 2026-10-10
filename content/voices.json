@@ -1,5 +1,5 @@
 {
   "en": { "engine": "edge", "voice": "en-US-AriaNeural" },
-  "et": { "engine": "tartunlp", "speaker": "mari", "speed": 1 },
+  "et": { "engine": "edge", "voice": "et-EE-AnuNeural" },
   "uk": { "engine": "edge", "voice": "uk-UA-PolinaNeural" }
 }

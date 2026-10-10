@@ -1,4 +1,4 @@
-// Shared across quiz.html / practice.html: per-word spaced-repetition history and a daily practice
+// Shared across quiz.html / practice.html / review.html: per-word spaced-repetition history and a daily practice
 // streak, both localStorage-backed (single learner, single browser — no accounts, no backend).
 (function (global) {
   "use strict";
@@ -76,6 +76,13 @@
     return words.filter((w) => isDue(w.et));
   }
 
+  // null for a never-answered word — lets the Review page tell "scheduled review" apart from "new
+  // word", which isDue() deliberately lumps together.
+  function getBox(et) {
+    const entry = loadHistory()[et.toLowerCase()];
+    return entry ? entry.box : null;
+  }
+
   // A word counts as "mastered" once it's survived 3 correct reviews in a row (box >= 3, an 8-day-or-
   // longer interval) — a deliberately coarse bar for a per-lesson progress indicator, not a claim of
   // long-term retention. Unseen and recently-failed words (both sit at box 0) count the same: neither
@@ -121,5 +128,5 @@
     return streak;
   }
 
-  global.EstLrnProgress = { recordAnswer, isDue, getDueWords, getMasteryFraction, getStreak };
+  global.EstLrnProgress = { recordAnswer, isDue, getDueWords, getBox, getMasteryFraction, getStreak };
 })(window);
