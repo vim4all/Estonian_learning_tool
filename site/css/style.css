@@ -1,35 +1,45 @@
 :root {
-  --bg: #faf9f7;
+  --bg: #f6f5f2;
   --fg: #1c1b1a;
-  --muted: #6b6660;
+  --muted: #5f5a54;
   --accent: #0f6e5e;
   --accent-contrast: #ffffff;
   /* Tint used for "this is the active tab/toggle" state — deliberately not the solid --accent fill,
-     which is reserved for primary action buttons (Play, Check, Next…) so the two read as visually
-     distinct affordances instead of every pill on the page looking equally "pressable". */
-  --accent-soft: #e3f3ee;
+     which is reserved for primary action buttons (.btn-primary: Play, Check, Next…) so the two read
+     as visually distinct affordances instead of every pill on the page looking equally "pressable". */
+  --accent-soft: #e0f1eb;
   --card-bg: #ffffff;
-  --border: #e4e0da;
+  --surface-2: #efede9; /* inset surfaces inside a card: chips, options, inputs */
+  --border: #dcd7d0;
   --success: #106647;
   --success-contrast: #ffffff;
   --danger: #a8392f;
   --danger-contrast: #ffffff;
+  --shadow: 0 1px 2px rgba(0, 0, 0, 0.04), 0 2px 8px rgba(0, 0, 0, 0.04);
+
+  --radius: 0.9rem;
+  --tap: 2.75rem; /* minimum touch target (44px) */
+  --topbar-h: 3.25rem;
+  --bottomnav-h: 3.75rem;
+  --safe-bottom: env(safe-area-inset-bottom, 0px);
 }
 
 @media (prefers-color-scheme: dark) {
   :root {
-    --bg: #17181a;
+    --bg: #141517;
     --fg: #f2f1ee;
-    --muted: #a8a29a;
+    --muted: #b0aaa2;
     --accent: #3ecfa8;
     --accent-contrast: #0b1512;
-    --accent-soft: #16332c;
-    --card-bg: #202225;
-    --border: #33343a;
+    --accent-soft: #163a31;
+    --card-bg: #1f2124;
+    --surface-2: #2a2c30;
+    --border: #3a3c42;
     --success: #2fae7c;
     --success-contrast: #0b1512;
     --danger: #e0685c;
     --danger-contrast: #1a0a08;
+    --shadow: none;
   }
 }
 
@@ -40,79 +50,152 @@
    rules come after it — so toggling the `hidden` attribute alone silently does nothing. */
 [hidden] { display: none !important; }
 
+html {
+  -webkit-text-size-adjust: 100%;
+  text-size-adjust: 100%;
+}
+
 body {
   margin: 0;
+  overflow-x: hidden;
   background: var(--bg);
   color: var(--fg);
-  font-family: system-ui, -apple-system, "Segoe UI", sans-serif;
+  font-family: system-ui, -apple-system, "Segoe UI", Roboto, sans-serif;
+  line-height: 1.45;
   min-height: 100vh;
+  -webkit-tap-highlight-color: transparent;
 }
 
-.app-header {
-  padding: 1rem 1rem 0.75rem;
-  text-align: center;
+/* ---------------------------------------------------------------------------------------------
+   Buttons. Every <button> gets an explicit foreground colour here: several components (vocab
+   cards, word chips, quiz options) are <button>s, and anything inheriting a primary button's
+   contrast colour ends up dark-on-dark in dark mode. Default = neutral; .btn-primary = solid accent.
+   --------------------------------------------------------------------------------------------- */
+
+button {
+  font: inherit;
+  font-size: 1rem;
+  min-height: var(--tap);
+  padding: 0.55rem 1.1rem;
+  border-radius: 0.7rem;
+  border: 1px solid var(--border);
+  background: var(--card-bg);
+  color: var(--fg);
+  cursor: pointer;
+  touch-action: manipulation; /* no double-tap-zoom delay on phones */
+  transition: background-color 0.15s, border-color 0.15s, opacity 0.15s;
 }
 
-.app-header h1 {
-  margin: 0;
-  font-size: 1.3rem;
+button:focus-visible,
+a:focus-visible,
+select:focus-visible,
+input:focus-visible {
+  outline: 2px solid var(--accent);
+  outline-offset: 2px;
 }
 
-.subtitle {
-  margin: 0.2rem 0 0;
-  color: var(--muted);
-  font-size: 0.85rem;
-}
-
-/* On a phone-width screen the header (title + subtitle + nav + toggles) already costs a lot of the
-   viewport before any lesson/question content appears — the subtitle repeats what the active nav
-   tab already says, so it's the one row that's safe to drop rather than shrink further. */
-@media (max-width: 480px) {
-  .subtitle {
-    display: none;
+@media (hover: hover) {
+  button:not(:disabled):hover {
+    border-color: var(--accent);
   }
 }
 
-main {
-  max-width: 640px;
-  margin: 0 auto;
-  padding: 0 1rem 3rem;
+button:disabled {
+  opacity: 0.4;
+  cursor: not-allowed;
+}
+
+.btn-primary {
+  background: var(--accent);
+  border-color: var(--accent);
+  color: var(--accent-contrast);
+  font-weight: 600;
+}
+
+@media (hover: hover) {
+  .btn-primary:not(:disabled):hover {
+    opacity: 0.9;
+  }
+}
+
+.btn-ghost {
+  background: transparent;
+  border-color: transparent;
+  color: var(--muted);
+}
+
+.btn-small {
+  min-height: 2.25rem;
+  padding: 0.3rem 0.75rem;
+  font-size: 0.85rem;
+}
+
+kbd {
+  font: inherit;
+  font-size: 0.75rem;
+  padding: 0.05rem 0.35rem;
+  border: 1px solid var(--border);
+  border-bottom-width: 2px;
+  border-radius: 0.3rem;
+  background: var(--card-bg);
+}
+
+/* ---------------------------------------------------------------------------------------------
+   Top bar + navigation. Desktop: one sticky row (brand · tabs · language). Phone: the tabs move
+   to a fixed bottom tab bar within thumb reach, and the top bar keeps just brand + language.
+   --------------------------------------------------------------------------------------------- */
+
+.topbar {
+  position: sticky;
+  top: 0;
+  z-index: 20;
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  min-height: var(--topbar-h);
+  padding: 0.4rem max(1rem, env(safe-area-inset-left)) 0.4rem max(1rem, env(safe-area-inset-right));
+  background: color-mix(in srgb, var(--bg) 88%, transparent);
+  backdrop-filter: saturate(1.4) blur(10px);
+  -webkit-backdrop-filter: saturate(1.4) blur(10px);
+  border-bottom: 1px solid var(--border);
+}
+
+.brand {
+  font-weight: 800;
+  font-size: 1.15rem;
+  color: var(--fg);
+  text-decoration: none;
+  letter-spacing: -0.01em;
+}
+
+.brand span {
+  color: var(--accent);
 }
 
 .mode-nav {
   display: flex;
-  flex-wrap: wrap;
-  justify-content: center;
-  gap: 0.5rem;
-  margin-top: 0.5rem;
+  gap: 0.25rem;
+  margin: 0 auto;
 }
 
 .mode-link {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.35rem;
   color: var(--muted);
   text-decoration: none;
-  padding: 0.3rem 0.8rem;
+  padding: 0.4rem 0.8rem;
   border-radius: 999px;
   border: 1px solid transparent;
-  font-size: 0.9rem;
-}
-
-@media (max-width: 480px) {
-  .mode-nav {
-    gap: 0.15rem;
-  }
-
-  .mode-link {
-    padding: 0.3rem 0.45rem;
-    font-size: 0.85rem;
-  }
+  font-size: 0.92rem;
+  min-height: 2.25rem;
 }
 
 .mode-link:hover {
   color: var(--fg);
 }
 
-/* Active-tab tint, not a solid fill: a solid --accent is reserved for primary action buttons
-   (Play, Check, Next…) so "this is where you are" and "click this to do something" look different. */
+/* Active-tab tint, not a solid fill: a solid --accent is reserved for primary action buttons. */
 .mode-link.active {
   background: var(--accent-soft);
   border-color: var(--accent);
@@ -120,59 +203,168 @@ main {
   font-weight: 600;
 }
 
-.lang-toggle {
-  display: flex;
-  justify-content: center;
-  gap: 0.4rem;
-  margin-top: 0.4rem;
+.nav-icon {
+  font-size: 1rem;
+  line-height: 1;
 }
 
-.app-header .view-toggle {
-  margin-top: 0.4rem;
+.lang-toggle {
+  display: flex;
+  gap: 0.3rem;
 }
 
 .lang-btn {
+  min-height: 2.25rem;
   font-size: 0.8rem;
   padding: 0.25rem 0.7rem;
   border-radius: 999px;
-  border: 1px solid var(--border);
-  background: var(--card-bg);
   color: var(--muted);
 }
 
+@media (max-width: 720px) {
+  body {
+    padding-bottom: calc(var(--bottomnav-h) + var(--safe-bottom));
+  }
+
+  /* backdrop-filter makes .topbar the containing block for position:fixed descendants, which
+     would pin the "bottom" tab bar to the top bar instead of the screen — so solid bg here. */
+  .topbar {
+    justify-content: space-between;
+    background: var(--bg);
+    backdrop-filter: none;
+    -webkit-backdrop-filter: none;
+  }
+
+  .mode-nav {
+    position: fixed;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    z-index: 20;
+    margin: 0;
+    gap: 0;
+    height: calc(var(--bottomnav-h) + var(--safe-bottom));
+    padding-bottom: var(--safe-bottom);
+    background: var(--card-bg);
+    border-top: 1px solid var(--border);
+  }
+
+  .mode-nav .mode-link {
+    flex: 1;
+    flex-direction: column;
+    justify-content: center;
+    gap: 0.15rem;
+    padding: 0.25rem 0;
+    border-radius: 0;
+    border: 0;
+    font-size: 0.7rem;
+  }
+
+  .mode-nav .mode-link.active {
+    background: transparent;
+    box-shadow: inset 0 3px 0 var(--accent);
+  }
+
+  .mode-nav .nav-icon {
+    font-size: 1.25rem;
+  }
+}
+
+/* ---------------------------------------------------------------------------------------------
+   Page head (subtitle + page-specific toggles) and main column
+   --------------------------------------------------------------------------------------------- */
+
+.page-head {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 0.6rem;
+  max-width: 760px;
+  margin: 0 auto;
+  padding: 1rem 1rem 0.75rem;
+  text-align: center;
+}
+
+.page-head:empty {
+  display: none;
+}
+
+.subtitle {
+  margin: 0;
+  color: var(--muted);
+  font-size: 0.9rem;
+}
+
+/* On a phone the subtitle just repeats what the active tab says — drop it to save vertical space. */
+@media (max-width: 480px) {
+  .subtitle {
+    display: none;
+  }
+
+  .page-head {
+    padding-top: 0.75rem;
+  }
+}
+
+main {
+  max-width: 760px;
+  margin: 0 auto;
+  padding: 0 1rem 3rem;
+}
+
+@media (max-width: 480px) {
+  main {
+    padding: 0 0.75rem 2rem;
+  }
+}
+
 .review-banner {
-  display: inline-block;
-  margin-top: 0.4rem;
-  padding: 0.35rem 0.9rem;
+  display: inline-flex;
+  align-items: center;
+  min-height: 2.25rem;
+  padding: 0.35rem 1rem;
   border-radius: 999px;
   background: var(--accent);
   color: var(--accent-contrast);
   text-decoration: none;
   font-weight: 600;
-  font-size: 0.85rem;
+  font-size: 0.88rem;
 }
 
+.streak-badge {
+  color: var(--accent);
+  font-weight: 600;
+  font-size: 0.9rem;
+  margin: 0;
+}
+
+.streak-badge:empty {
+  display: none;
+}
+
+/* ---------------------------------------------------------------------------------------------
+   Pill toggles (view mode, quiz mode, speed)
+   --------------------------------------------------------------------------------------------- */
+
+.view-toggle,
 .speed-toggle {
   display: flex;
-  gap: 0.3rem;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 0.35rem;
 }
 
+.view-btn,
 .speed-btn {
-  font-size: 0.8rem;
-  padding: 0.3rem 0.6rem;
+  min-height: 2.25rem;
+  font-size: 0.85rem;
+  padding: 0.3rem 0.8rem;
   border-radius: 999px;
-  border: 1px solid var(--border);
-  background: var(--card-bg);
   color: var(--muted);
 }
 
-.speed-btn.active {
-  background: var(--accent-soft);
-  border-color: var(--accent);
-  color: var(--accent);
-  font-weight: 600;
-}
-
+.view-btn.active,
+.speed-btn.active,
 .lang-btn.active {
   background: var(--accent-soft);
   border-color: var(--accent);
@@ -180,91 +372,121 @@ main {
   font-weight: 600;
 }
 
+/* Quiz/practice mode toggles: a horizontally scrollable strip on narrow screens rather than
+   three wrapped rows of pills pushing the question below the fold. */
+@media (max-width: 480px) {
+  .page-head .view-toggle {
+    flex-wrap: nowrap;
+    justify-content: flex-start;
+    overflow-x: auto;
+    max-width: 100%;
+    padding-bottom: 0.2rem;
+    scrollbar-width: none;
+  }
+
+  .page-head .view-toggle::-webkit-scrollbar {
+    display: none;
+  }
+
+  .page-head .view-btn {
+    flex: 0 0 auto;
+  }
+}
+
+/* ---------------------------------------------------------------------------------------------
+   Pickers, panels, toggles
+   --------------------------------------------------------------------------------------------- */
+
 .lesson-picker {
   display: flex;
   align-items: center;
-  gap: 0.5rem;
+  gap: 0.5rem 0.75rem;
   justify-content: center;
   margin-bottom: 1rem;
   flex-wrap: wrap;
 }
 
-.view-toggle {
-  display: flex;
-  gap: 0.4rem;
-  flex-wrap: wrap;
-  justify-content: center;
-}
-
-.view-btn {
-  font-size: 0.85rem;
-  padding: 0.35rem 0.7rem;
-  border-radius: 999px;
-  border: 1px solid var(--border);
-  background: var(--card-bg);
-  color: var(--muted);
-}
-
-.view-btn.active {
-  background: var(--accent-soft);
-  border-color: var(--accent);
-  color: var(--accent);
-  font-weight: 600;
-}
-
-.vocab-grid {
-  display: grid;
-  grid-template-columns: repeat(auto-fill, minmax(140px, 1fr));
-  gap: 0.75rem;
-}
-
-.vocab-card {
-  background: var(--card-bg);
-  border: 1px solid var(--border);
-  border-radius: 0.75rem;
-  padding: 1rem 0.75rem;
-  text-align: center;
-  cursor: pointer;
-}
-
-.vocab-card:hover {
-  border-color: var(--accent);
-}
-
-.vocab-et {
-  font-weight: 700;
-  color: var(--accent);
-  font-size: 1.1rem;
-}
-
-.vocab-ipa {
-  color: var(--muted);
-  font-size: 0.8rem;
-  margin-top: 0.15rem;
-}
-
-.vocab-native {
-  margin-top: 0.4rem;
-  font-size: 0.95rem;
-}
-
-.vocab-pagination {
-  align-items: center;
-}
-
-#vocab-page-label {
+.lesson-picker label {
   color: var(--muted);
   font-size: 0.9rem;
 }
 
 .lesson-picker select {
-  max-width: 100%;
+  flex: 1 1 14rem;
+  max-width: 26rem;
+  min-height: var(--tap);
+  font: inherit;
   font-size: 1rem;
   padding: 0.4rem 0.6rem;
-  border-radius: 0.5rem;
+  border-radius: 0.6rem;
   border: 1px solid var(--border);
   background: var(--card-bg);
   color: var(--fg);
+}
+
+@media (max-width: 480px) {
+  /* Label above a full-width select reads better than a cramped inline row. */
+  .lesson-picker label {
+    flex-basis: 100%;
+    text-align: left;
+    margin-bottom: -0.25rem;
+  }
+
+  .lesson-picker select {
+    flex-basis: 100%;
+    width: 100%;
+    min-width: 0; /* a long option label would otherwise widen the page past the screen */
+    max-width: none;
+  }
+
+  .lesson-picker .view-toggle {
+    flex-basis: 100%;
+  }
+
+  .lesson-picker .view-btn {
+    flex: 1;
+  }
+}
+
+.panel {
+  background: var(--card-bg);
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+  padding: 0.9rem 1rem;
+  box-shadow: var(--shadow);
+}
+
+.panel-title {
+  margin: 0 0 0.6rem;
+  color: var(--muted);
+  font-size: 0.75rem;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.04em;
+}
+
+.panel-row {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-wrap: wrap;
+  gap: 0.5rem 0.75rem;
+}
+
+.toggle {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.45rem;
+  min-height: var(--tap);
+  font-size: 0.9rem;
+  color: var(--muted);
+  cursor: pointer;
+}
+
+.toggle input {
+  width: 1.15rem;
+  height: 1.15rem;
+  accent-color: var(--accent);
 }
 
 .progress {
@@ -277,8 +499,8 @@ main {
   display: flex;
   align-items: center;
   gap: 0.6rem;
-  max-width: 320px;
-  margin: 0 auto 1.25rem;
+  max-width: 340px;
+  margin: 0 auto 1rem;
 }
 
 .mastery-bar-track {
@@ -302,22 +524,52 @@ main {
   white-space: nowrap;
 }
 
+/* ---------------------------------------------------------------------------------------------
+   Lesson carousel
+   --------------------------------------------------------------------------------------------- */
+
+.card-meta {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 0.5rem;
+}
+
+.card-meta .progress {
+  margin: 0;
+  font-variant-numeric: tabular-nums;
+  font-size: 0.9rem;
+}
+
 .sentence-card {
   background: var(--card-bg);
   border: 1px solid var(--border);
-  border-radius: 1rem;
+  border-radius: 1.1rem;
   padding: 2rem 1.5rem;
   text-align: center;
+  box-shadow: var(--shadow);
+}
+
+@media (max-width: 480px) {
+  .sentence-card {
+    padding: 1.4rem 1rem;
+  }
 }
 
 .sentence {
-  font-size: 1.4rem;
+  font-size: clamp(1.2rem, 1rem + 1.2vw, 1.55rem);
+  line-height: 1.35;
   margin: 0.5rem 0;
+  overflow-wrap: anywhere;
 }
 
 .sentence-et {
   color: var(--accent);
-  font-weight: 600;
+  font-weight: 650;
+}
+
+.sentence-en {
+  color: var(--fg);
 }
 
 .notes {
@@ -336,17 +588,12 @@ main {
 }
 
 .word-chip {
-  border: 1px solid var(--border);
-  background: var(--bg);
-  color: var(--fg);
+  min-height: 2.25rem;
   border-radius: 999px;
-  padding: 0.3rem 0.75rem;
-  font-size: 0.9rem;
-  cursor: pointer;
-}
-
-.word-chip:hover {
-  border-color: var(--accent);
+  background: var(--surface-2);
+  color: var(--fg);
+  padding: 0.3rem 0.85rem;
+  font-size: 0.92rem;
 }
 
 .word-chip .ipa {
@@ -355,12 +602,73 @@ main {
   margin-left: 0.3rem;
 }
 
+.topic-tag {
+  display: inline-block;
+  color: var(--accent);
+  background: var(--accent-soft);
+  border-radius: 999px;
+  padding: 0.15rem 0.7rem;
+  font-size: 0.72rem;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.03em;
+  margin: 0 0 0.75rem;
+}
+
+/* Prev | Play | Next — a fixed three-column row so Play stays centred and the arrows never wrap. */
+.carousel-nav {
+  display: grid;
+  grid-template-columns: 1fr 1.6fr 1fr;
+  gap: 0.5rem;
+  margin-top: 1rem;
+}
+
+.carousel-nav button {
+  min-height: 3rem;
+}
+
+@media (max-width: 480px) {
+  .carousel-nav {
+    grid-template-columns: 1fr 2.4fr 1fr;
+  }
+
+  .carousel-nav .btn-text {
+    display: none;
+  }
+}
+
+.kbd-hint,
+.swipe-hint {
+  text-align: center;
+  color: var(--muted);
+  font-size: 0.78rem;
+  margin: 0.6rem 0 0;
+}
+
+/* Keyboard tip only where there's a keyboard-and-mouse; swipe tip only on touch screens. */
+.swipe-hint { display: none; }
+
+@media (hover: none) and (pointer: coarse) {
+  .kbd-hint { display: none; }
+  .swipe-hint { display: block; }
+}
+
 .controls {
   display: flex;
   gap: 0.5rem;
   justify-content: center;
-  margin-top: 1.5rem;
+  align-items: center;
+  margin-top: 1.25rem;
   flex-wrap: wrap;
+}
+
+.lesson-audio-controls {
+  margin-top: 1.25rem;
+  text-align: center;
+}
+
+.lesson-audio-controls .speed-toggle {
+  margin-top: 0.6rem;
 }
 
 /* Shadowing: record yourself saying the sentence, then hear the original and yours back to back */
@@ -371,13 +679,7 @@ main {
   align-items: center;
   justify-content: center;
   gap: 0.5rem;
-  margin-top: 0.75rem;
-}
-
-.shadow-controls button {
-  background: var(--card-bg);
-  color: var(--fg);
-  border: 1px solid var(--border);
+  margin-top: 1rem;
 }
 
 .shadow-controls button.recording {
@@ -394,61 +696,104 @@ main {
   min-height: 1.2em;
 }
 
-.lesson-audio-controls {
+@media (max-width: 480px) {
+  .shadow-controls button {
+    flex: 1 1 0;
+    font-size: 0.9rem;
+    padding-inline: 0.5rem;
+  }
+}
+
+/* ---------------------------------------------------------------------------------------------
+   Vocabulary grid
+   --------------------------------------------------------------------------------------------- */
+
+.vocab-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(10.5rem, 1fr));
+  gap: 0.75rem;
+}
+
+@media (max-width: 480px) {
+  .vocab-grid {
+    grid-template-columns: 1fr 1fr;
+    gap: 0.5rem;
+  }
+}
+
+.vocab-card {
+  position: relative;
   display: flex;
+  flex-direction: column;
   align-items: center;
   justify-content: center;
-  gap: 1rem;
-  flex-wrap: wrap;
-  margin-top: 1rem;
-}
-
-.topic-tag {
-  display: inline-block;
-  color: var(--accent);
-  background: var(--bg);
-  border: 1px solid var(--border);
-  border-radius: 999px;
-  padding: 0.15rem 0.7rem;
-  font-size: 0.75rem;
-  font-weight: 600;
-  text-transform: uppercase;
-  letter-spacing: 0.03em;
-  margin-bottom: 0.75rem;
-}
-
-button {
-  font-size: 1rem;
-  padding: 0.6rem 1.1rem;
-  border-radius: 0.6rem;
-  border: 1px solid var(--border);
-  background: var(--accent);
-  color: var(--accent-contrast);
-  cursor: pointer;
-}
-
-button:hover {
-  opacity: 0.9;
-}
-
-button:disabled {
-  opacity: 0.4;
-  cursor: not-allowed;
-}
-
-#prev-btn, #next-btn, #stop-btn, #random-btn {
+  gap: 0.2rem;
+  min-height: 7rem;
+  padding: 1rem 0.75rem;
+  border-radius: var(--radius);
   background: var(--card-bg);
   color: var(--fg);
-  border: 1px solid var(--border);
+  text-align: center;
+  box-shadow: var(--shadow);
 }
 
-/* Quiz */
+.vocab-card.playing {
+  border-color: var(--accent);
+  background: var(--accent-soft);
+}
+
+.vocab-speaker {
+  position: absolute;
+  top: 0.4rem;
+  right: 0.5rem;
+  font-size: 0.8rem;
+  opacity: 0.55;
+}
+
+.vocab-card.playing .vocab-speaker {
+  opacity: 1;
+}
+
+.vocab-et {
+  font-weight: 700;
+  color: var(--accent);
+  font-size: 1.15rem;
+  overflow-wrap: anywhere;
+}
+
+.vocab-ipa {
+  color: var(--muted);
+  font-size: 0.8rem;
+}
+
+.vocab-native {
+  margin-top: 0.3rem;
+  color: var(--fg);
+  font-size: 0.95rem;
+  overflow-wrap: anywhere;
+}
+
+.vocab-pagination {
+  align-items: center;
+}
+
+#vocab-page-label {
+  color: var(--muted);
+  font-size: 0.9rem;
+  font-variant-numeric: tabular-nums;
+  min-width: 3.5rem;
+  text-align: center;
+}
+
+/* ---------------------------------------------------------------------------------------------
+   Quiz / review
+   --------------------------------------------------------------------------------------------- */
 
 .quiz-score-row {
   display: flex;
   align-items: center;
   justify-content: center;
-  gap: 1.25rem;
+  gap: 0.25rem 1.25rem;
   flex-wrap: wrap;
   margin-bottom: 0.5rem;
 }
@@ -456,6 +801,12 @@ button:disabled {
 .quiz-score {
   color: var(--muted);
   font-weight: 600;
+  text-align: center;
+  font-variant-numeric: tabular-nums;
+}
+
+#practice-score {
+  margin-bottom: 0.75rem;
 }
 
 .due-note {
@@ -466,15 +817,6 @@ button:disabled {
   margin: 0 0 0.75rem;
 }
 
-.streak-badge {
-  text-align: center;
-  color: var(--accent);
-  font-weight: 600;
-  font-size: 0.9rem;
-  margin: 0.35rem 0 0;
-  min-height: 1.2em;
-}
-
 .quiz-card {
   display: flex;
   flex-direction: column;
@@ -483,10 +825,10 @@ button:disabled {
 
 .quiz-direction {
   color: var(--muted);
-  font-size: 0.8rem;
+  font-size: 0.78rem;
   font-weight: 600;
   text-transform: uppercase;
-  letter-spacing: 0.03em;
+  letter-spacing: 0.04em;
   margin: 0 0 0.5rem;
 }
 
@@ -495,31 +837,30 @@ button:disabled {
   font-weight: 700;
 }
 
-#quiz-play-btn {
-  background: var(--card-bg);
-  color: var(--fg);
-  border: 1px solid var(--border);
+#quiz-play-btn,
+#review-play-btn {
   margin-top: 0.5rem;
 }
 
 .quiz-options {
   display: grid;
   grid-template-columns: 1fr 1fr;
-  gap: 0.75rem;
+  gap: 0.6rem;
   width: 100%;
   margin-top: 1.5rem;
 }
 
-.quiz-option {
-  background: var(--bg);
-  color: var(--fg);
-  border: 1px solid var(--border);
-  padding: 0.75rem 1rem;
-  text-align: center;
+.quiz-options:empty {
+  display: none;
 }
 
-.quiz-option:not(:disabled):hover {
-  border-color: var(--accent);
+.quiz-option {
+  min-height: 3.25rem;
+  background: var(--surface-2);
+  color: var(--fg);
+  padding: 0.7rem 1rem;
+  text-align: center;
+  overflow-wrap: anywhere;
 }
 
 .quiz-option.correct {
@@ -551,11 +892,15 @@ button:disabled {
 
 .quiz-type-form input {
   flex: 1;
-  font-size: 1rem;
+  min-width: 0;
+  min-height: var(--tap);
+  /* 16px+ keeps iOS Safari from zooming the page in when the field is focused. */
+  font: inherit;
+  font-size: max(1rem, 16px);
   padding: 0.6rem 0.9rem;
-  border-radius: 0.6rem;
+  border-radius: 0.7rem;
   border: 1px solid var(--border);
-  background: var(--bg);
+  background: var(--surface-2);
   color: var(--fg);
 }
 
@@ -564,8 +909,9 @@ button:disabled {
 }
 
 .quiz-feedback {
-  margin-top: 1rem;
+  margin: 1rem 0 0;
   font-weight: 600;
+  text-align: center;
 }
 
 .quiz-feedback.correct {
@@ -576,7 +922,19 @@ button:disabled {
   color: var(--danger);
 }
 
-/* Sentence practice: cloze + word order */
+/* On phones, the "Next" button after an answer is full width and easy to hit. */
+@media (max-width: 480px) {
+  #quiz-next-btn,
+  #review-next-btn,
+  #practice-next-btn {
+    width: 100%;
+    min-height: 3rem;
+  }
+}
+
+/* ---------------------------------------------------------------------------------------------
+   Sentence practice: cloze + word order
+   --------------------------------------------------------------------------------------------- */
 
 .cloze-sentence {
   color: var(--accent);
@@ -584,9 +942,6 @@ button:disabled {
 }
 
 #cloze-hint-btn {
-  background: var(--card-bg);
-  color: var(--fg);
-  border: 1px solid var(--border);
   margin-top: 0.5rem;
 }
 
@@ -599,18 +954,19 @@ button:disabled {
 .order-native {
   color: var(--muted);
   font-size: 1.1rem;
-  margin-bottom: 1rem;
+  margin: 0 0 1rem;
 }
 
 .order-answer {
-  min-height: 3rem;
+  width: 100%;
+  min-height: 3.5rem;
   display: flex;
   flex-wrap: wrap;
   gap: 0.5rem;
   align-items: center;
   padding: 0.75rem;
   border: 1px dashed var(--border);
-  border-radius: 0.6rem;
+  border-radius: 0.7rem;
   margin-bottom: 1rem;
 }
 
@@ -628,16 +984,11 @@ button:disabled {
 }
 
 .order-tile {
-  background: var(--bg);
+  background: var(--surface-2);
   color: var(--fg);
-  border: 1px solid var(--border);
-  border-radius: 0.5rem;
-  padding: 0.5rem 0.9rem;
+  border-radius: 0.55rem;
+  padding: 0.45rem 0.9rem;
   font-size: 1rem;
-}
-
-.order-tile:hover {
-  border-color: var(--accent);
 }
 
 .order-solution {
@@ -646,11 +997,9 @@ button:disabled {
   margin-top: 0.75rem;
 }
 
-/* Book reader */
-
-.book-main {
-  max-width: 720px;
-}
+/* ---------------------------------------------------------------------------------------------
+   Book reader
+   --------------------------------------------------------------------------------------------- */
 
 .book-meta {
   text-align: center;
@@ -679,41 +1028,52 @@ button:disabled {
   display: flex;
   align-items: center;
   justify-content: center;
-  gap: 1rem;
+  gap: 0.5rem 0.75rem;
   flex-wrap: wrap;
-  margin-bottom: 2rem;
+  margin-bottom: 1.5rem;
 }
 
-.toggle {
-  display: flex;
-  align-items: center;
-  gap: 0.4rem;
-  font-size: 0.9rem;
-  color: var(--muted);
-  cursor: pointer;
+/* Keep the chapter player reachable while reading a long chapter (desktop only — on a phone the
+   wrapped controls would cover too much of the text). */
+@media (min-width: 721px) and (min-height: 560px) {
+  .reader-controls {
+    position: sticky;
+    top: calc(var(--topbar-h) + 0.5rem);
+    z-index: 10;
+  }
 }
 
 .paragraphs {
   display: flex;
   flex-direction: column;
-  gap: 1.75rem;
+  gap: 1.25rem;
 }
 
 .paragraph {
   background: var(--card-bg);
   border: 1px solid var(--border);
-  border-radius: 0.9rem;
-  padding: 1.25rem 1.5rem;
+  border-radius: var(--radius);
+  padding: 1rem 1.25rem;
+  box-shadow: var(--shadow);
+}
+
+@media (max-width: 480px) {
+  .paragraph {
+    padding: 0.75rem 0.9rem;
+  }
 }
 
 .sentence-pair {
-  padding: 0.5rem 0;
+  padding: 0.55rem 0.5rem;
+  margin: 0 -0.5rem;
   border-radius: 0.5rem;
   cursor: pointer;
 }
 
-.sentence-pair:hover {
-  background: var(--bg);
+@media (hover: hover) {
+  .sentence-pair:hover {
+    background: var(--surface-2);
+  }
 }
 
 .sentence-pair:not(:last-child) {
@@ -723,7 +1083,7 @@ button:disabled {
 .sentence-pair-en {
   color: var(--muted);
   font-size: 1rem;
-  margin: 0 0 0.3rem;
+  margin: 0.3rem 0 0;
 }
 
 .hide-en .sentence-pair-en {
@@ -754,7 +1114,7 @@ button:disabled {
   font-size: 0.85rem;
   font-weight: 400;
   pointer-events: none;
-  z-index: 10;
+  z-index: 30;
   max-width: 16rem;
 }
 

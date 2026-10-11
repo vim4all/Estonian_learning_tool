@@ -43,7 +43,7 @@
   let isAnswered = false;
 
   async function fetchJson(path) {
-    const res = await fetch(path);
+    const res = await fetch(path, EstLrnBuild.FETCH_OPTS);
     if (!res.ok) throw new Error(`Failed to fetch ${path}: ${res.status}`);
     return res.json();
   }

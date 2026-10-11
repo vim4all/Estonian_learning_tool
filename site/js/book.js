@@ -27,7 +27,7 @@
   EstLrnSpeed.initSpeedToggle([chapterAudioEl, clipAudioEl]);
 
   async function fetchJson(path) {
-    const res = await fetch(path);
+    const res = await fetch(path, EstLrnBuild.FETCH_OPTS);
     if (!res.ok) throw new Error(`Failed to fetch ${path}: ${res.status}`);
     return res.json();
   }
@@ -78,7 +78,7 @@
     currentChapter = chapter;
     chapterAudioEl.pause();
     clipAudioEl.pause();
-    chapterAudioEl.src = chapter.chapterAudio[nativeLang];
+    chapterAudioEl.src = EstLrnBuild.bust(chapter.chapterAudio[nativeLang]);
     EstLrnSpeed.applyTo(chapterAudioEl);
 
     chapterTitleEnEl.textContent = chapter.title[nativeLang];
@@ -188,7 +188,7 @@
       };
       clipAudioEl.addEventListener("ended", onDone);
       clipAudioEl.addEventListener("pause", onDone);
-      clipAudioEl.play();
+      clipAudioEl.play().catch(onDone); // a failed play() fires neither event
     });
   }
 

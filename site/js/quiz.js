@@ -37,7 +37,7 @@
   let answered = false;
 
   async function fetchJson(path) {
-    const res = await fetch(path);
+    const res = await fetch(path, EstLrnBuild.FETCH_OPTS);
     if (!res.ok) throw new Error(`Failed to fetch ${path}: ${res.status}`);
     return res.json();
   }
@@ -309,7 +309,8 @@
   function playPrompt() {
     if (!current.promptAudio) return;
     clipAudioEl.src = current.promptAudio;
-    clipAudioEl.play();
+    // Rejects when the clip fails to load or the learner moves on first — nothing to recover.
+    clipAudioEl.play().catch(() => {});
   }
 
   playBtn.addEventListener("click", playPrompt);

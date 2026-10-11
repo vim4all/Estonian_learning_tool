@@ -1,27 +1,32 @@
 <!doctype html>
-<html lang="en">
+<html lang="en" data-build="__BUILD__">
 <head>
   <meta charset="utf-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
   <title>EstLrn — Book Reader</title>
-  <link rel="stylesheet" href="css/style.css" />
+  <meta name="theme-color" content="#faf9f7" media="(prefers-color-scheme: light)" />
+  <meta name="theme-color" content="#17181a" media="(prefers-color-scheme: dark)" />
+  <link rel="stylesheet" href="css/style.css?v=__BUILD__" />
 </head>
 <body>
-  <header class="app-header">
-    <h1>EstLrn</h1>
-    <p class="subtitle">Parallel-text reading, Estonian in English or Ukrainian</p>
-    <nav class="mode-nav">
-      <a class="mode-link" href="index.html">Lessons</a>
-      <a class="mode-link active" href="book.html">Book</a>
-      <a class="mode-link" href="review.html">Review</a>
-      <a class="mode-link" href="quiz.html">Quiz</a>
-      <a class="mode-link" href="practice.html">Practice</a>
+  <header class="topbar">
+    <a class="brand" href="index.html">Est<span>Lrn</span></a>
+    <nav class="mode-nav" aria-label="Sections">
+      <a class="mode-link" href="index.html"><span class="nav-icon" aria-hidden="true">📚</span><span class="nav-label">Lessons</span></a>
+      <a class="mode-link active" href="book.html" aria-current="page"><span class="nav-icon" aria-hidden="true">📖</span><span class="nav-label">Book</span></a>
+      <a class="mode-link" href="review.html"><span class="nav-icon" aria-hidden="true">🔁</span><span class="nav-label">Review</span></a>
+      <a class="mode-link" href="quiz.html"><span class="nav-icon" aria-hidden="true">❓</span><span class="nav-label">Quiz</span></a>
+      <a class="mode-link" href="practice.html"><span class="nav-icon" aria-hidden="true">✍️</span><span class="nav-label">Practice</span></a>
     </nav>
     <div class="lang-toggle" role="group" aria-label="Native language">
       <button type="button" class="lang-btn" data-lang="en">EN</button>
       <button type="button" class="lang-btn" data-lang="uk">UK</button>
     </div>
   </header>
+
+  <div class="page-head">
+    <p class="subtitle">Parallel-text reading, Estonian in English or Ukrainian</p>
+  </div>
 
   <main class="book-main">
     <section id="book-picker" class="lesson-picker">
@@ -38,8 +43,8 @@
         <p id="book-author" class="book-author"></p>
       </div>
 
-      <div class="reader-controls">
-        <button id="play-chapter-btn">▶ Play chapter</button>
+      <div class="panel reader-controls">
+        <button id="play-chapter-btn" class="btn-primary">▶ Play chapter</button>
         <button id="stop-btn" aria-label="Stop playback">■ Stop</button>
         <label class="toggle">
           <input type="checkbox" id="hide-en-toggle" />
@@ -60,8 +65,9 @@
 
   <audio id="clip-audio-el"></audio>
 
-  <script src="js/lang.js"></script>
-  <script src="js/speed.js"></script>
-  <script src="js/book.js"></script>
+  <script src="js/build.js?v=__BUILD__"></script>
+  <script src="js/lang.js?v=__BUILD__"></script>
+  <script src="js/speed.js?v=__BUILD__"></script>
+  <script src="js/book.js?v=__BUILD__"></script>
 </body>
 </html>

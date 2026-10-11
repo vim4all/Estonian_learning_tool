@@ -29,6 +29,14 @@ jobs:
 
       - run: npm run generate-audio
 
+      # Cache-busting: stamp the commit SHA into every page (<html data-build>, ?v= on CSS/JS) and
+      # publish it as version.json, which site/js/build.js polls to reload stale pages on phones.
+      - name: Stamp build version
+        run: |
+          BUILD="${GITHUB_SHA::12}"
+          sed -i "s/__BUILD__/${BUILD}/g" site/*.html
+          printf '{"build":"%s"}\n' "$BUILD" > site/version.json
+
       - uses: actions/upload-pages-artifact@v3
         with:
           path: site

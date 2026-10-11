@@ -62,7 +62,7 @@
   EstLrnSpeed.initSpeedToggle([lessonAudioEl, clipAudioEl]);
 
   async function fetchJson(path) {
-    const res = await fetch(path);
+    const res = await fetch(path, EstLrnBuild.FETCH_OPTS);
     if (!res.ok) throw new Error(`Failed to fetch ${path}: ${res.status}`);
     return res.json();
   }
@@ -159,7 +159,7 @@
     lessonAudioEl.pause();
     clipAudioEl.pause();
     currentLesson = await fetchJson(`data/lessons/${lessonId}.json`);
-    lessonAudioEl.src = currentLesson.lessonAudio[nativeLang];
+    lessonAudioEl.src = EstLrnBuild.bust(currentLesson.lessonAudio[nativeLang]);
     EstLrnSpeed.applyTo(lessonAudioEl);
     currentIndex = 0;
     setViewMode(viewMode);
@@ -216,12 +216,19 @@
       const card = document.createElement("button");
       card.type = "button";
       card.className = "vocab-card";
+      card.setAttribute("aria-label", `${word.et} — ${word[nativeLang]}. Play pronunciation`);
       card.innerHTML = `
-        <div class="vocab-et">${word.et}</div>
-        ${word.ipa ? `<div class="vocab-ipa">/${word.ipa}/</div>` : ""}
-        <div class="vocab-native">${word[nativeLang]}</div>
+        <span class="vocab-speaker" aria-hidden="true">🔊</span>
+        <span class="vocab-et">${word.et}</span>
+        ${word.ipa ? `<span class="vocab-ipa">/${word.ipa}/</span>` : ""}
+        <span class="vocab-native">${word[nativeLang]}</span>
       `;
-      card.addEventListener("click", () => playClip(word.audioEt));
+      card.addEventListener("click", async () => {
+        vocabGridEl.querySelectorAll(".vocab-card.playing").forEach((c) => c.classList.remove("playing"));
+        card.classList.add("playing");
+        await playClip(word.audioEt);
+        card.classList.remove("playing");
+      });
       vocabGridEl.appendChild(card);
     }
 
@@ -351,6 +358,46 @@
     lessonAudioEl.play();
   });
   stopBtn.addEventListener("click", stopPlayback);
+
+  // --- Keyboard (PC) and swipe (phone) navigation for the sentence carousel ----------------------
+
+  function goPrev() {
+    if (!prevBtn.disabled) prevBtn.click();
+  }
+
+  function goNext() {
+    if (!nextBtn.disabled) nextBtn.click();
+  }
+
+  document.addEventListener("keydown", (event) => {
+    if (viewMode !== "sentences" || carousel.hidden || event.altKey || event.ctrlKey || event.metaKey) return;
+    // Leave keys alone while the learner is in a form control (the lesson <select>, a focused button…).
+    if (event.target.closest("input, select, textarea, button, a")) return;
+    if (event.key === "ArrowLeft") goPrev();
+    else if (event.key === "ArrowRight") goNext();
+    else if (event.key === " ") {
+      event.preventDefault(); // otherwise Space scrolls the page
+      if (!playSentenceBtn.disabled) playCurrentSentence();
+    }
+  });
+
+  const sentenceCardEl = document.querySelector(".sentence-card");
+  let touchStart = null;
+  sentenceCardEl.addEventListener("touchstart", (event) => {
+    const t = event.changedTouches[0];
+    touchStart = { x: t.clientX, y: t.clientY };
+  }, { passive: true });
+  sentenceCardEl.addEventListener("touchend", (event) => {
+    if (!touchStart) return;
+    const t = event.changedTouches[0];
+    const dx = t.clientX - touchStart.x;
+    const dy = t.clientY - touchStart.y;
+    touchStart = null;
+    // Mostly-horizontal swipe of a reasonable length; anything else is a scroll or a tap.
+    if (Math.abs(dx) < 50 || Math.abs(dx) < Math.abs(dy) * 1.5) return;
+    if (dx < 0) goNext();
+    else goPrev();
+  }, { passive: true });
 
   // --- Shadowing: record yourself, then hear the original and your attempt back to back ---------
 
